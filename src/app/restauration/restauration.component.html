@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<main id="content" role="main">
+<div *ngIf="!confirm" class="di_for">
+  <form>
+      <span class="u-label u-label--secondary">Restauration de mot passe</span>
+      <div class="contenu">
+    <div class="form-group">
+      <label class="h6 small d-block text-uppercase" for="exampleInputEmail1"></label>
+      <input type="email" class="form-control" [(ngModel)]="mail" id="exampleInputEmail1" name="mail" aria-describedby="emailHelp" placeholder="Email" />
+      <div class="col-12">
+        <span class="small text-danger aff_erreu">{{sms_err}}</span><br/>
+      </div>
+    </div>
+    <div class="col-7 col-sm-6 text-center btn_cli">
+        <div *ngIf="loading" id="testimonialsNavMain" class="js-slick-carousel js-slick-carousel u-slick u-content-centered-y p-4 mb-0 u-stroke-midnightblue load"
+        data-infinite="true"
+        data-autoplay="true"
+        data-speed="5000"
+        data-fade="true"
+        data-nav-for="#testimonialsNavPagination">
+        </div>
+    <button type="submit" class="btn btn-primary" (click)="restor()">Valider</button>
+  </div>
+  </div>
+  </form>
+  </div>
+
+
+
+<div class="mb-7 con_marg" *ngIf="confirm">
+    <h1 class="h3 text-primary font-weight-normal mb-0"><span class="font-weight-bold">Restauration Réussie</span></h1>
+    <p>Un Email vous à été envoyé sur l'adresse <span class="text-success">{{Email}}</span>. 
+       Veuillez consulter votre compte pour vous connecter.</p>
+    <div class="col-7 col-sm-6 text-right">
+     <a href=""  href="/home"><button type="submit" class="btn btn-primary u-btn-primary transition-3d-hover" (click)="sign()">Se Connecter</button></a>
+    </div>
+  </div>
+
+</main>
+<app-footer></app-footer>

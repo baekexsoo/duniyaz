@@ -1,0 +1,31 @@
+.di_for{
+    width: 50%;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 15%;
+    border: outset;
+}
+.u-label--secondary{
+    width: 100%;
+    border-radius: 0;
+    text-align: center;
+    color: black;
+}
+.form-control{
+    margin-top: 10%;
+}
+.btn_cli{
+    margin: auto;
+    text-align: center;
+    margin-bottom: 5%;
+}
+.contenu{
+    width: 60%;
+    margin: auto;
+}
+.con_marg{
+    width: 40%;
+    margin: auto;
+    margin-top: 10%;
+
+}

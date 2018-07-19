@@ -1,0 +1,101 @@
+<main id="content" role="main">
+  <!-- Form -->
+  <div class="d-flex align-items-center position-relative min-height-100vh--lg">
+    <!-- Navbar -->
+    <header class="position-absolute-top-0 z-index-2">
+      <nav class="d-flex justify-content-between align-items-center">
+        <!-- Logo -->
+      </nav>
+    </header>
+    <!-- End Navbar -->
+
+    <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center u-gradient-half-primary-v1 min-height-100vh--lg px-0">
+      <div class="w-100 p-5">
+          <app-annonce></app-annonce>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 u-space-3 u-space-0--lg">
+          <!-- Form -->
+          <form class="js-validate mt-5">
+            <!-- Title -->
+            <div class="mb-7">
+              <h2 class="h3 text-primary font-weight-normal mb-0">Bienvenu <span class="font-weight-bold"> .</span></h2>
+              <p>Veuillez vous connecter.</p>
+            </div>
+            <!-- End Title -->
+
+            <!-- Input -->
+            <div class="js-form-message mb-4">
+              <label class="h6 small d-block text-uppercase">Adresse Email</label>
+
+              <div class="js-focus-state input-group u-form">
+                <input type="email" class="form-control u-form__input" name="email" required
+                [(ngModel)]="e_mail"
+                       placeholder="user@rintio.com"
+                       aria-label="jack@walley.com"
+                       data-msg="veuillez entrer une adresse email valide."
+                       data-error-class="u-has-error"
+                       data-success-class="u-has-success">
+              </div>
+            </div>
+            <!-- End Input -->
+
+            <!-- Input -->
+            <div class="js-form-message mb-4">
+              <div class="d-flex justify-content-between align-items-center">
+                <label class="h6 small d-block text-uppercase">Mot de passe</label>
+
+                <div class="mb-2">
+                  <a class="small u-link-muted" href="/restauration">Mot de passe oublié?</a>
+                </div>
+              </div>
+
+              <div class="js-focus-state input-group u-form">
+                <input type="password" class="form-control u-form__input" name="password" required
+                [(ngModel)]="pass"
+                       placeholder="********"
+                       aria-label="********"
+                       data-msg="Mot de passe incorrect. Réessayez."
+                       data-error-class="u-has-error"
+                       data-success-class="u-has-success">
+              </div>
+                <div class="col-12">
+                <span class="small text-danger">{{warning}}</span><br/>
+                
+              </div>
+            </div>
+            <!-- End Input -->
+
+            <!-- Button -->
+            <div class="row align-items-center mb-5">
+              <div class="col-6">
+                <span class="small text-muted">Vous n'avez pas de compte?</span><br/>
+                <a class="small" href="/signin" >Inscrivez-vous</a>
+              </div>
+              
+              <div class="col-6 text-right">
+                  <div *ngIf="loader" id="testimonialsNavMain" class="js-slick-carousel js-slick-carousel u-slick u-content-centered-y p-4 mb-0 u-stroke-midnightblue"
+             data-infinite="true"
+             data-autoplay="true"
+             data-speed="5000"
+             data-fade="true"
+             data-nav-for="#testimonialsNavPagination"></div>
+                 
+                
+                  
+                <button type="submit" class="btn btn-primary u-btn-primary transition-3d-hover" (click)="con()">Se connecter</button>
+              </div>
+            </div>
+            <!-- End Button -->
+          </form>
+          <!-- End Form -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Form -->
+</main>
+

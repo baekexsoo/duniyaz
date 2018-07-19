@@ -1,0 +1,24 @@
+.card {
+    border-bottom-color:  #000;
+}
+
+.class_inp{
+   display: inline-block;
+    width: 100%;
+    padding: 0.75rem 2rem 0.75rem 1rem;
+    line-height: 1.5;
+    color: #8f95a0;
+    vertical-align: middle;
+    background: #fff;
+    background-size: 8px 10px;
+    border: 1px solid #d4d7dd;
+    border-radius: 0.25rem;
+    -webkit-appearance: none;
+}
+
+.class_la{
+    margin-top: -25%;
+}
+.class_marg{
+    margin-top: -8%;
+}

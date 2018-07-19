@@ -1,0 +1,39 @@
+@media screen and (orientation:portrait){
+    .btn_marg{
+        margin-left: auto;
+    }
+}
+.btn_pro{
+    margin-top: 1%;
+    
+ }
+ .btn_produ{
+    margin-top: -2%;
+    margin-left: -8%;
+    height: 49px;
+    font-size: 16px;
+    text-align: center;
+ }
+.img_logo{
+    width: 10%;
+    margin-right: 40%;
+    margin-top: -1%;
+}
+.div_btn_prod{
+    margin-left: auto;
+    width: 30%; 
+    display: inline-flex;
+    text-align: center;
+}
+.hre_bien{
+    text-decoration: none;
+    margin-top: 3%;
+}
+.btn-primary {
+    background-color: #3bc9a7;
+    border-color: #3bc9a7;
+}
+
+.dec{
+    padding: 0%;
+}
