@@ -16,10 +16,10 @@ const httpOptions = {
 })
 export class SolService {
 
-  sol_url = 'http://5.135.129.180:7050/prediction/previsions';
-  agr_url = 'http://5.135.129.180:7051/engrais/modeleEngraiss';
-  url_img = 'http://5.135.129.180:7050/prediction/previsions/file/'
-  url_prediction = 'http://5.135.129.180:7050/prediction/previsions';
+  sol_url = 'http://192.168.9.16:7050/prediction/previsions';
+  agr_url = 'http://192.168.9.16:7051/engrais/modeleEngraiss';
+  url_img = 'http://192.168.9.16:7050/prediction/previsions/file/'
+  url_prediction = 'http://192.168.9.16:7050/prediction/previsions';
 
   constructor( public Api:Api, private http: HttpClient ) { }
 
