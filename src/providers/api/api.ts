@@ -7,9 +7,9 @@ import {Constant} from '../../app/api';
  */
 @Injectable()
 export class Api {
-     url: string = 'http://5.135.129.180:7080';
+     url: string = 'http://192.168.9.16:7080';
      
-     _serveur = "http://5.135.129.180";
+     _serveur = "http://192.168.9.16";
      _port : string = "7080";
     
     constructor(public http: HttpClient) {
