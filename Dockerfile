@@ -1,14 +1,30 @@
-# Stage 0, "build-stage", based on Node.js, to build and compile Angular
-FROM node:10.5 as build-stage
-WORKDIR /app
-COPY package*.json /app/
+# base image
+FROM node:9.6.1
+
+# set working directory
+RUN mkdir /usr/src/app
+WORKDIR /usr/src/app
+#WORKDIR /app
+
+# add `/usr/src/app/node_modules/.bin` to $PATH
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
+
+# install and cache app dependencies
+COPY package*.json /usr/src/app/
 RUN npm install
-COPY ./ /app/
-ARG configuration=production
+RUN npm install -g @angular/cli@1.7.1
+
+# add app
+COPY . /usr/src/app
+
+#ARG configuration=production
 RUN npm install cluster --ambient --save
-RUN npm run build -- --output-path=./dist/out --configuration $configuration
+
+# start app
+CMD ng serve --host 0.0.0.0
 
 # Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
-FROM nginx:1.15
-COPY --from=build-stage /app/dist/out/ /usr/share/nginx/html
-COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+#FROM nginx:1.15
+#COPY --from=build-stage /app/dist/out/ /usr/share/nginx/html
+#COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+
