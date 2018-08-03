@@ -1,9 +1,19 @@
 
-<app-header></app-header>
+<app-header *ngIf="act_header"></app-header>
 
 <main id="content" role="main">
-<div *ngIf="!confirm" class="co_body">
-    <span class="u-label u-label--secondary">Modifier votre mot de passe</span>
+    <div class="d-flex align-items-center position-relative min-height-100vh--lg">
+
+    <div class="col-lg-5 col-xl-4 d-none d-lg-flex align-items-center u-gradient-half-primary-v1 min-height-100vh--lg px-0">
+        <div class="w-100 p-5">
+            <app-annonce></app-annonce>
+        </div>
+      </div>
+<div *ngIf="!confirm">
+    <div class="mb-7">
+        <h2 class="h3 text-primary font-weight-normal mb-0">Modifier votre mot de passe<span class="font-weight-bold"> .</span></h2>
+
+      </div>
 <form class="js-validate w-60 mx-auto dis__form">
   <div *ngIf="act_btn" class="js-form-message mb-4">
     <label class="h6 small d-block text-uppercase">Ancien mot de passe</label>
@@ -77,6 +87,6 @@ data-nav-for="#testimonialsNavPagination">
    <a routerLink="/prediction" ><button type="submit" class="btn btn-primary u-btn-primary text-white transition-3d-hover"> Retour</button></a>
   </div>
 </div>
-
+</div>
 </main>
 <app-footer></app-footer>

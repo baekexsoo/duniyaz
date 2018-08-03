@@ -44,7 +44,7 @@
         <!-- End Accueil -->
 
         <!-- selection sol -->
-        <div class="w-lg-55" *ngIf="step==1">
+        <div class="w-lg-55 u-space-1-top" *ngIf="step==1">
           <div class="u-bg-img-hero" style="background-image: url(../../assets/svg/bg/bg1.svg);">
             <div class="container">
               <!-- Title -->
@@ -90,13 +90,17 @@
                   <!-- End Checkbox -->
                 </form>
               </div>
+              <div *ngIf="type_sol" class="u-space-1-top">
+              <div class="alert_sol"> Veuillez cliquer sur un type de sol
+              </div>  
+              </div>
 
               <!-- fin filtre type de sol -->
-              <div *ngIf="type_sol" class="row ml-2 mt-3">
+              <div *ngIf="type_sol" class="row ml-2 mt-0">
                 <div class="card-group d-block d-lg-flex u-card--gutters-4-lg">
                   <div class="card bg-transparent border-0 mb-5" *ngFor="let s of sols" (click)="userslect(s)">
                     <!-- Job Listing -->
-                    <div class="card-body info-v2 bg-white text-center rounded transition-3d-hover p-6">
+                    <div class="card-body info-v2 bg-white text-center rounded transition-3d-hover">
                       <img class="u-md-avatar rounded mb-4" src="{{get_sol_img(s.img)}}" alt="Image Description">
                       <div class="mb-4">
                         <h4 class="h6 mb-1"></h4>
@@ -111,7 +115,7 @@
 
               </div>
 
-              <a class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover text-white"  (click)="goto(2)" *ngIf="sols.length>0 && type_sol">
+              <a class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover text-white"  (click)="goto(2)" *ngIf="sols.length>0 && type_sol && btn_suivant">
                 Suivant
                 <span class="fa fa-angle-right ml-2"></span>
               </a>
@@ -170,7 +174,7 @@
                             <div class="js-focus-state input-group u-form u-form--no-addon-brd">
                               <select class="custom-select" name="type" [(ngModel)]="type_engrais" (click)="list_engr()">
                                 <option selected></option>
-                                <option *ngFor="let a of data_engrais" [value]="a.id">{{a.nom}}</option>
+                                <option *ngFor="let a of data_engrais" [value]="a.nom">{{a.nom}}</option>
                               </select>
 
                             </div>

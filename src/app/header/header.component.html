@@ -30,20 +30,44 @@
                           <a class="u-header__topbar-nav-link dec" href="/h"><span class="badge badge-success">Producteur</span></a>
                         </li>
                         <li class="list-inline-item mr-0">
-                          <a class="u-header__topbar-nav-link dec" href="#">{{data_mail}}Romeo Adanhounme</a>
+                          <a class="u-header__topbar-nav-link dec" href="#">{{data_mail}}</a>
                         </li>
                         <li class="list-inline-item">
                           <!-- Account Sidebar Toggle Button -->
                           <a id="sidebarNavToggler" class="btn btn-xs u-btn--icon u-btn-text-secondary u-sidebar__toggler" role="button" >
-                            <span class="fa fa-power-off u-btn--icon__inner font-size-14" (click)="logout();"></span>
+                            
                           </a>
+                          <div class="position-relative">
+                            <a id="dropdownBasicExampleInvoker" class="u-unfold-wrapper" href="javascript:;" role="button"
+                               aria-controls="dropdownBasicExample"
+                               aria-haspopup="true"
+                               aria-expanded="false"
+                               data-unfold-event="click"
+                               data-unfold-target="#dropdownBasicExample"
+                               data-unfold-type="css-animation"
+                               data-unfold-duration="300"
+                               data-unfold-delay="300"
+                               data-unfold-hide-on-scroll="true"
+                               data-unfold-animation-in="slideInUp"
+                               data-unfold-animation-out="fadeOut">
+                               <span class="fa fa-user u-btn--icon__inner font-size-14"></span>
+                              <!-- <span class="fa fa-user u-btn--icon__inner font-size-14" (click)="logout();"></span>-->
+                              <span class="fa fa-angle-down u-unfold__icon-pointer"></span>
+                            </a>
+                          
+                            <div id="dropdownBasicExample" class="u-unfold mt-2" aria-labelledby="dropdownBasicExampleInvoker">
+                              <a class="u-list__link" href="../profil/profil.component.html">Profil</a>
+                              <a class="u-list__link" href="../update-pwd/update-pwd.component.html">Mot de passe</a>
+                              <a class="u-list__link" (click)="logout();" href="#" >Déconnexion</a>
+                            </div>
+                          </div>
                           <!-- End Account Sidebar Toggle Button -->
                         </li>
                       </ul>
                     </div>
                     <!-- End Links -->
                   </div>
-        
+                 
                   <ul class="list-inline ml-2 mb-0">
                     
                   

@@ -61,6 +61,12 @@
   <script src="../../assets/js/components/hs.slick-carousel.js"></script>
   <script src="../../assets/js/components/hs.show-animation.js"></script>
   <script src="../../assets/js/components/hs.go-to.js"></script>
+  <script src="assets/js/components/hs.unfold.js"></script><script>
+    $(document).on('ready', function () {
+      // initialization of unfold component
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
+    });
+  </script>
 
   <!-- JS Plugins Init. -->
 <script>
@@ -75,6 +81,12 @@
   $(document).on('ready', function () {
     // initialization of slick carousel
     $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+  });
+</script>
+<script>
+  $(document).on('ready', function () {
+    // initialization of unfold component
+    $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
   });
 </script>
 </body>

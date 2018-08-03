@@ -34,13 +34,13 @@ const appRoutes: Routes = [
     
     { path: 'user', component: SpaceUserComponent},
     { path: 'profil', component: ProfilComponent},
-
+    
        { path: 'visualisation', component: DatavizComponent},
   ], canActivate: [AuthGuard]
 },
 { path: 'update', component: UpdatePwdComponent},
-    { path: 'prediction', component: SelectionSolComponent},
   { path: 'signin', component: SigninComponent },
+  { path: 'prediction', component: SelectionSolComponent},
   { path: 'home', component: HomeComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'signin/form/sms', component: SmsCreatComponent},

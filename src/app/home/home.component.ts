@@ -34,6 +34,8 @@ export class HomeComponent implements OnInit {
                     "usermail" : this.e_mail
                 }
                   sessionStorage.setItem("duniya", JSON.stringify(duniya));
+                 
+                 //----------------------------------------------------------------------------------------
                   let compte = {
                     "usermail" : this.e_mail
                   }

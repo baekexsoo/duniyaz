@@ -21,6 +21,7 @@ export class UpdatePwdComponent implements OnInit {
   rece_pass: any;
   tokens: any;
   url: any;
+  act_header: boolean;
   act_btn: boolean;
   charg :boolean;
   confirm = false;
@@ -38,10 +39,11 @@ export class UpdatePwdComponent implements OnInit {
   affichage(){
     if (this.tokens === null || this.tokens === undefined){
       this.act_btn = true;
+      this.act_header = true;
     }
     else{
       this.act_btn = false;
-      
+      this.act_header = false;
     }
   }
 
@@ -59,9 +61,9 @@ export class UpdatePwdComponent implements OnInit {
       return this.modif.update(this.nouveau,this.tokens).subscribe(
         response =>{
           this.rece_resul = response;
+          console.log(this.rece_resul)
           this.confirm = true;
           this.sms_reus = true;
-      
         })
       }
     }

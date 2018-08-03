@@ -30,9 +30,10 @@ export class SelectionSolComponent implements OnInit {
   step = 0 ; // variable qui definit l'état du workflow.
   type_sol = false;
   select = false;
+  btn_suivant = false;
   donne_engrais = {
     dose: 0,
-    idModele: '',
+    idModele:'',
   }
   prediction = {
     input: {
@@ -74,7 +75,7 @@ export class SelectionSolComponent implements OnInit {
  constructor( public sol: SolService, public Prediction: PredictionService) {}
 
   ngOnInit() {
-      this.goto(2);
+      this.goto(0);
       this.retrieveDepartements();
       this.selectedDepartement = new Departement();
       this.list_engr();
@@ -106,6 +107,8 @@ export class SelectionSolComponent implements OnInit {
     this.prediction.sol.departement = this.selectedDepartement.nom;
     this.prediction.sol.commune = this.selectedCommune.nom;
     console.log(this.prediction.sol);
+    this.btn_suivant = true;
+
  }
   retrieveDepartements() {
 
@@ -148,7 +151,7 @@ export class SelectionSolComponent implements OnInit {
         this.data_engrais = response;
         console.log(this.donne_engrais.idModele);
         for (var i = 0; i < this.data_engrais.length; i++) {
-          if (this.data_engrais[i]['id'] === this.type_engrais) {
+          if (this.data_engrais[i]['nom'] === this.type_engrais) {
             this.donne_engrais.idModele = this.type_engrais;
             this.tauxN = this.data_engrais[i]['tauxN'];
             this.tauxK = this.data_engrais[i]['tauxK'];
@@ -170,6 +173,7 @@ predict() {
   console.log(JSON.stringify(this.data))
     this.loadresult = true;
     this.data = this.prediction;
+    console.log(this.data)
     this.Prediction.prediction(this.data).subscribe(
      response => {
          this.result.prediction = Math.round(response.prediction);

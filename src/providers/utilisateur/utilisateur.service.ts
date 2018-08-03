@@ -53,17 +53,17 @@ export class UtilisateurService {
   }
 
   modif_token(email : string){
-   let url = '/utilisateur/utilisateurs/generate_token?mail=';
+   let url = 'utilisateur/utilisateurs/generate_token?mail=';
     return this.Api.get(url + email, {}, {responseType: 'text'});
   }
 
   update(pass:string, token: string){
-    let url= '/utilisateur/utilisateurs/reset?password=';
-    return this.Api.post(url + pass + '&token=' + token, httpOptions);
+    let url= 'utilisateur/utilisateurs/reset?password=';
+    return this.Api.put(url + pass + '&token=' + token, httpOptions);
    
   }
   update_complete(donne: any):Observable<any>{
-    let url = '/utilisateur/utilisateurs'; 
+    let url = 'utilisateur/utilisateurs'; 
     return this.Api.put(url, donne, httpOptions);
   }
 }
