@@ -1,14 +1,11 @@
-# Stage 0, "build-stage", based on Node.js, to build and compile Angular
-FROM node:10.5 as build-stage
+FROM node:10.5
+RUN mkdir /app
+RUN chmod 777 /app
 WORKDIR /app
 COPY package*.json /app/
 RUN npm install
-COPY ./ /app/
-ARG configuration=production
+RUN npm install -g @angular/cli@1.7.1
+COPY . /app
 RUN npm install cluster --ambient --save
-RUN npm run build -- --output-path=./dist/out --configuration $configuration
+CMD ng serve -o --host 0.0.0.0
 
-# Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
-FROM nginx:1.15
-COPY --from=build-stage /app/dist/out/ /usr/share/nginx/html
-COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
