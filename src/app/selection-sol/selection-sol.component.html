@@ -139,8 +139,7 @@
               <!-- End Title -->
               <div class="uk-text-center mb-3">
               <a class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover text-white" href="#modal-sections" uk-toggle>Ajout des Engrais</a>
-              </div>
-
+              </div>          
               <table class="table table-bordered table-striped">
                 <thead align="center">
                 <tr>
@@ -173,8 +172,8 @@
                             </label>
                             <div class="js-focus-state input-group u-form u-form--no-addon-brd">
                               <select class="custom-select" name="type" [(ngModel)]="type_engrais" (click)="list_engr()">
-                                <option selected></option>
-                                <option *ngFor="let a of data_engrais" [value]="a.nom">{{a.nom}}</option>
+                                
+                                <option *ngFor="let a of data_engrais" [value]="a.id">{{a.nom}}</option>
                               </select>
 
                             </div>
@@ -257,7 +256,6 @@
 
       </figure>
       <!-- End SVG Shapes v4 -->
-      
       <!-- Sidebar -->
       <div class="col-lg-4 u-bg-img-hero min-height-100vh--lg position-absolute-top-right-0--lg px-lg-0 u-space-1-top u-bg-light-blue-50">
         <!-- Fancybox -->
@@ -268,10 +266,17 @@
               <span class="fa fa-play u-media-player__icon-inner"></span>
             </span>
           </a>
+          <div class="text-center text-lg-left mb-3 mb-lg-0" *ngIf="animat_pred" (click)="predict();">
+            <a class="js-fancybox u-media-player u-media-player--left-minus-50x-top-50x-lg mb-4" href="javascript:;" data-src="//vimeo.com/167434033"
+              data-speed="700" data-animate-in="zoomIn" data-animate-out="zoomOut" data-caption="Front - Responsive Website Template">
+              <span class="u-media-player__icon u-media-player__icon--lg u-media-player__icon--success">
+                <span class="fa fa-play u-media-player__icon-inner"></span>
+              </span>
+            </a>
+          </div>
         </div>
         <!-- End Fancybox -->
-
-        <!-- -->
+        
         <!-- Stats Section -->
         <div class="container col-xs-12">
 
