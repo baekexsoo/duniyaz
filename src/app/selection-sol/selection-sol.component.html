@@ -282,7 +282,11 @@
 
 
           <div class="justify-content-md-between mx-auto col-xs-12 u-space-3" *ngIf="loadresult===false">
+              <div *ngIf="erreur_alert" class="alert alert-dark" role="alert">
+                  This is a dark alert—check it out!
+                </div>
             <div class="u-content-centered">
+                
               <!-- Figures -->
               <div class="text-center">
                 <h3 class="display-2 text-success font-weight-bold js-counter">{{result.prediction}}</h3>

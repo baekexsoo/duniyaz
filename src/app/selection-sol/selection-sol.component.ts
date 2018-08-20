@@ -74,10 +74,11 @@ export class SelectionSolComponent implements OnInit {
  supp: any
  animat_pred= false
  nom_engrais: any
+ erreur_alert = false
  constructor( public sol: SolService, public Prediction: PredictionService) {}
 
   ngOnInit() {
-      this.goto(0);
+      this.goto(1);
       this.retrieveDepartements();
       this.selectedDepartement = new Departement();
       this.list_engr();
@@ -180,12 +181,17 @@ predict() {
     console.log(JSON.stringify(this.prediction))
     this.Prediction.prediction(this.prediction).subscribe(
      response => {
+      if(this.result.prediction === 500 || this.result.prediction === 0){
+        this.erreur_alert = true
+      }else{
          this.result.prediction = Math.round(response.prediction);
         // this.result.prediction = parseFloat(this.result.prediction.toPrecision(2));
          this.loadresult = false;
+        }
      },
      error => {
          this.loadresult = false;
+        
      }
     );
     
