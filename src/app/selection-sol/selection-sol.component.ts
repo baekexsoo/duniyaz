@@ -78,7 +78,7 @@ export class SelectionSolComponent implements OnInit {
  constructor( public sol: SolService, public Prediction: PredictionService) {}
 
   ngOnInit() {
-      this.goto(1);
+      this.goto(2);
       this.retrieveDepartements();
       this.selectedDepartement = new Departement();
       this.list_engr();
@@ -158,11 +158,11 @@ export class SelectionSolComponent implements OnInit {
         for (var i = 0; i < this.data_engrais.length; i++) {
           if (this.data_engrais[i]['id'] === this.type_engrais) {
             this.donne_engrais.idModele = this.type_engrais;
-            this.tauxN = this.data_engrais[i]['tauxN'];
-            this.tauxK = this.data_engrais[i]['tauxK'];
-            this.tauxP = this.data_engrais[i]['tauxP'];
-            this.tauxS = this.data_engrais[i]['tauxS'];
-            this.tauxB = this.data_engrais[i]['tauxB'];
+            this.tauxN = this.data_engrais[i]['tauxN']*this.donne_engrais.dose;
+            this.tauxK = this.data_engrais[i]['tauxK']*this.donne_engrais.dose;
+            this.tauxP = this.data_engrais[i]['tauxP']*this.donne_engrais.dose;
+            this.tauxS = this.data_engrais[i]['tauxS']*this.donne_engrais.dose;
+            this.tauxB = this.data_engrais[i]['tauxB']*this.donne_engrais.dose;
           }
         }
         }
