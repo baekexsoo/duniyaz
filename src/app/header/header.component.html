@@ -18,14 +18,14 @@
           </a>
           <!-- End Logo -->
             <div class="container u-header__hide-content pt-2 navbar-brand u-header__navbar-brand u-header__navbar-brand-top-space">
-                <div class="d-flex align-items-center mb-0">
+                <div class="d-flex align-items-center mb-0 mt-0">
                   
                   <div class="ml-auto">
                     
         
                     <!-- Links -->
                     <div class="d-xs-inline-block ml-lg-auto">
-                      <ul class="list-inline ml-2 mb-0">
+                      <ul class="list-inline ml-2 mb-0 affich_nom">
                         <li class="d-none d-sm-inline-block list-inline-item mr-0">
                           <a class="u-header__topbar-nav-link dec" href="/h"><span class="badge badge-success">Producteur</span></a>
                         </li>
@@ -50,9 +50,18 @@
                                data-unfold-hide-on-scroll="true"
                                data-unfold-animation-in="slideInUp"
                                data-unfold-animation-out="fadeOut">
-                               <span class="fa fa-user u-btn--icon__inner font-size-14"></span>
+                               <!--<span class="fa fa-user u-btn--icon__inner font-size-14"></span>-->
                               <!-- <span class="fa fa-user u-btn--icon__inner font-size-14" (click)="logout();"></span>-->
-                              <span class="fa fa-angle-down u-unfold__icon-pointer"></span>
+                              <span uk-icon="user"></span>
+                                <div uk-dropdown>
+                                    <ul class="uk-nav uk-dropdown-nav">
+                                        <li class="uk-active"><a href="../profil/profil.component.html">Profil</a></li>
+ 
+                                        <li class="uk-active"><a href="../update-pwd/update-pwd.component.html">Mot de passe</a></li>
+                                        <li class="uk-active"><a (click)="logout();" href="#">Déconnexion</a></li>
+ 
+                                    </ul>
+                                </div>
                             </a>
                           
                             <div id="dropdownBasicExample" class="u-unfold mt-2" aria-labelledby="dropdownBasicExampleInvoker">

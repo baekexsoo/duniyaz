@@ -7,5 +7,5 @@ RUN npm install
 RUN npm install -g @angular/cli@1.7.1
 COPY . /app
 RUN npm install cluster --ambient --save
-CMD ng serve -o --host 0.0.0.0
+CMD ng serve -o --host 0.0.0.0 --disableHostCheck true
 

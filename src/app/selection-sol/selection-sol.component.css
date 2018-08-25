@@ -27,3 +27,10 @@
     color: blue;
     text-align: center
 }
+.class_precedent{
+    position: absolute;
+    bottom: 0;
+}
+.btn_padding{
+    padding: 0%
+}
