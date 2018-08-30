@@ -65,6 +65,11 @@ export class SelectionSolComponent implements OnInit {
         tauxK: number;
         tauxB: number;
         tauxS: number;
+        tauxN1: number;
+        tauxP1: number;
+        tauxK1: number;
+        tauxB1: number;
+        tauxS1: number;
  type_engrais: '';
  caracte_sol: any;
  data_img: any;
@@ -99,7 +104,6 @@ export class SelectionSolComponent implements OnInit {
     console.log(this.prediction.input.listDoseEngrais);
    }
    this.animat_pred = true
-
   }
 
   fon_sup_ajou(i) {
@@ -159,10 +163,15 @@ export class SelectionSolComponent implements OnInit {
           if (this.data_engrais[i]['id'] === this.type_engrais) {
             this.donne_engrais.idModele = this.type_engrais;
             this.tauxN = this.data_engrais[i]['tauxN']*this.donne_engrais.dose;
+            this.tauxN1 =parseFloat(this.tauxN.toFixed(2)) 
             this.tauxK = this.data_engrais[i]['tauxK']*this.donne_engrais.dose;
+            this.tauxK1 =parseFloat(this.tauxK.toFixed(2))
             this.tauxP = this.data_engrais[i]['tauxP']*this.donne_engrais.dose;
+            this.tauxP1 =parseFloat(this.tauxP.toFixed(2))
             this.tauxS = this.data_engrais[i]['tauxS']*this.donne_engrais.dose;
+            this.tauxS1 =parseFloat(this.tauxS.toFixed(2))
             this.tauxB = this.data_engrais[i]['tauxB']*this.donne_engrais.dose;
+            this.tauxB1 =parseFloat(this.tauxB.toFixed(2))
           }
         }
         }

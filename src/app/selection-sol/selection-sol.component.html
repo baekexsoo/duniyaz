@@ -84,7 +84,7 @@
                     </div>
 
                     <div class="col-lg-4 align-self-lg-end">
-                      <button type="submit" class="btn btn-block btn-primary u-btn-primary transition-3d-hover" (click)="btn_recherche()">Rechercher</button>
+                      <button type="submit" class="btn btn-primary u-btn-primary transition-3d-hover" (click)="btn_recherche()">Rechercher</button>
                     </div>
                   </div>
                   <!-- End Checkbox -->
@@ -137,8 +137,8 @@
                 <h2 class="h3 font-weight-medium">Quel type d'engrais utilisez-vous ?</h2>
               </div>
               <!-- End Title -->
-              <div class="uk-text-center mb-3">
-              <a class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover text-white btn_padding" href="#modal-sections" uk-toggle>Ajout des Engrais</a>
+              <div class="uk-text-left mb-3">
+              <a class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover text-white btn_padding" href="#modal-sections" uk-toggle><i class="fas fa-plus"></i></a>
               </div>          
               <table class="table table-bordered table-striped">
                 <thead align="center">
@@ -190,34 +190,34 @@
 
                           <div class="col-lg-12 mb-4 mb-lg-0 mt-5">
 
-                            <input type="range" name="tauxN"  [(ngModel)]="tauxN" class="custom-range" min="0.0000" max="75" step="0.1" id="customRange3" />
-                            <span class="text-secondary">tauxN: {{tauxN}}</span>
+                            <input type="range" name="tauxN"  [(ngModel)]="tauxN1" class="custom-range" min="0.0000" max="75" step="0.1" id="customRange3" />
+                            <span class="text-secondary">tauxN: {{tauxN1}}</span>
                             <!-- End Input -->
                           </div>
                           <div class="col-lg-12 mb-4 mb-lg-0 mt-5">
 
-                            <input type="range" name="tauxP" [(ngModel)]="tauxP" class="custom-range" min="0.0000" max="75" step="0.1" id="customRange3" />
-                            <span class="text-secondary">tauxP: {{tauxP}}</span>
+                            <input type="range" name="tauxP" [(ngModel)]="tauxP1" class="custom-range" min="0.0000" max="75" step="0.1" id="customRange3" />
+                            <span class="text-secondary">tauxP: {{tauxP1}}</span>
                             <!-- End Input -->
                           </div>
                           <div class="col-lg-12 mb-4 mb-lg-0 mt-5">
 
-                            <input type="range" name="tauxK" [(ngModel)]="tauxK" class="custom-range" min="0.0000" max="75" step="0.1" id="customRange3" />
-                            <span class="text-secondary">tauxK: {{tauxK}}</span>
-                            <!-- End Input -->
-                          </div>
-
-                          <div class="col-lg-12 mb-4 mb-lg-0 mt-5">
-
-                            <input type="range" name="tauxB" [(ngModel)]="tauxB" class="custom-range" min="0.00" max="75" step="0.1" id="customRange3" />
-                            <span class="text-secondary">tauxB: {{tauxB}}</span>
+                            <input type="range" name="tauxK" [(ngModel)]="tauxK1" class="custom-range" min="0.0000" max="75" step="0.1" id="customRange3" />
+                            <span class="text-secondary">tauxK: {{tauxK1}}</span>
                             <!-- End Input -->
                           </div>
 
                           <div class="col-lg-12 mb-4 mb-lg-0 mt-5">
 
-                            <input type="range" name="tauxS" [(ngModel)]="tauxS" class="custom-range" min="0.00" max="75" step="0.1" id="customRange3" />
-                            <span class="text-secondary">tauxS: {{tauxS}}</span>
+                            <input type="range" name="tauxB" [(ngModel)]="tauxB1" class="custom-range" min="0.00" max="75" step="0.1" id="customRange3" />
+                            <span class="text-secondary">tauxB: {{tauxB1}}</span>
+                            <!-- End Input -->
+                          </div>
+
+                          <div class="col-lg-12 mb-4 mb-lg-0 mt-5">
+
+                            <input type="range" name="tauxS" [(ngModel)]="tauxS1" class="custom-range" min="0.00" max="75" step="0.1" id="customRange3" />
+                            <span class="text-secondary">tauxS: {{tauxS1}}</span>
                             <!-- End Input -->
                           </div>
                         </div>
