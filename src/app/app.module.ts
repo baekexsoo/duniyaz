@@ -34,13 +34,12 @@ const appRoutes: Routes = [
     
     { path: 'user', component: SpaceUserComponent},
     { path: 'profil', component: ProfilComponent},
-    
+    { path: 'prediction', component: SelectionSolComponent},
 
        { path: 'visualisation', component: DatavizComponent},
   ], canActivate: [AuthGuard]
 },
 { path: 'update', component: UpdatePwdComponent},
-{ path: 'prediction', component: SelectionSolComponent},
   { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'},
