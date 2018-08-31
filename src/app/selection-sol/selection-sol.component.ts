@@ -94,16 +94,19 @@ export class SelectionSolComponent implements OnInit {
   fonc_preditio() {
     console.log(JSON.stringify(this.prediction));
  }
-  fon_ajou() {
-
-   if (this.donne_engrais.dose > 0) {
-    // console.log(this.donne_engrais);
+  fon_ajou(i) {
     this.prediction.input.listDoseEngrais.push({dose: this.donne_engrais.dose, idModele:this.donne_engrais.idModele});
     this.donne_engrais.dose = null;
     this.donne_engrais.idModele = undefined;
     console.log(this.prediction.input.listDoseEngrais);
+
+   if (this.prediction.input.listDoseEngrais[0]['dose'] === null){
+   
+   this.prediction.input.listDoseEngrais.shift()
+   console.log(this.prediction.input.listDoseEngrais);
+
    }
-   this.animat_pred = true
+  // this.animat_pred = true
   }
 
   fon_sup_ajou(i) {
