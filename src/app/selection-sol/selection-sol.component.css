@@ -1,9 +1,17 @@
 .card {
     border-bottom-color:  #000;
 }
-.u-bg-img-hero .container .uk-text-left .u-btn-wide{
-    margin-left: 85%;
-    min-width: 3em;
+.select_box{
+    width: 150vh
+}
+.u-medi{
+    background-color: #132d5c;
+    color: #fff;
+    width: 3rem;
+    height: 3rem;
+}
+.btn_mar{
+    margin-left: 82%;
 }
 .class_inp{
    display: inline-block;
@@ -28,12 +36,9 @@
 
 .alert_sol{
     color: blue;
-    text-align: center
+    margin-left: 20%
 }
 .class_precedent{
     position: absolute;
     bottom: 0;
-}
-.btn_padding{
-    padding: 0%
 }
