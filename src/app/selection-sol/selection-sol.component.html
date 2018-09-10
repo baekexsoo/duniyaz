@@ -116,7 +116,7 @@
                 </div>  
                 </div>
 
-              <a class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover text-white"  (click)="goto(2)" *ngIf="sols.length>0 && type_sol && btn_suivant">
+              <a class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover text-white class_precedent mb-3"  (click)="goto(2)" *ngIf="sols.length>0 && type_sol && btn_suivant">
                 Suivant
                 <span class="fa fa-angle-right ml-2"></span>
               </a>
@@ -138,7 +138,7 @@
                 <h2 class="h3 font-weight-medium">Quel type d'engrais utilisez-vous ?</h2>
               </div>
               <!-- End Title -->
-              <div class="text-white u-bg-img-hero">
+              <div class="text-white u-bg-img-hero mb-2">
               <a  href="#modal-sections" class="js-fancybox u-media-player btn_mar mb-4" href="javascript:;"
               data-src="//vimeo.com/167434033"
               data-speed="700"
@@ -146,7 +146,7 @@
               data-animate-out="zoomOut"
               data-caption="Front - Responsive Website Template" uk-toggle="target: #modal-sections">
              <span class="u-media-player__icon u-media-player__icon--lg u-medi">
-               <span class="fas fa-plus u-media-player__icon-inner"></span>
+               <span class="fas fa-plus u-media-player__icon-inner plus_centre"></span>
              </span>
            </a>  
           </div>       
@@ -248,7 +248,7 @@
               <!-- formulaire de filtre de type de sol-->
 
               <div class="mt-2 row justify-content-center class_precedent text-center col-xs-12 center-block">
-              <a class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover text-white" (click)="goto(1)">
+              <a class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover text-white ml-3 mb-3" (click)="goto(1)">
                 <span class="fa fa-angle-left ml-2"></span>
                 Précédent
               </a>
@@ -292,15 +292,16 @@
 
 
           <div class="justify-content-md-between mx-auto col-xs-12 u-space-3" *ngIf="loadresult===false">
-              <div *ngIf="erreur_alert" class="alert alert-dark" role="alert">
-                 erreur reprenez plus tard
-                </div>
+              
             <div class="u-content-centered">
                 
               <!-- Figures -->
               <div class="text-center">
                 <h3 class="display-2 text-success font-weight-bold js-counter">{{result.prediction}}</h3>
                 <p>Kg/hectare</p>
+                <div *ngIf="erreur_alert" class="alert alert-danger" role="alert">
+                  Veuillez vérifier vos parametres. 
+                 </div>
               </div>
               <!-- End Figures -->
             </div>

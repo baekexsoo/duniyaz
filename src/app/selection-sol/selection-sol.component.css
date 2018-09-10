@@ -10,6 +10,9 @@
     width: 3rem;
     height: 3rem;
 }
+.plus_centre{
+    margin-left: 0%;
+}
 .btn_mar{
     margin-left: 82%;
 }
@@ -37,6 +40,12 @@
 .alert_sol{
     color: blue;
     margin-left: 20%
+}
+
+@media screen and (orientation:portrait){
+    .class_precedent{
+        position: absolute;
+    }
 }
 .class_precedent{
     position: absolute;

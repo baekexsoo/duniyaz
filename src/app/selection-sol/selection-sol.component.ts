@@ -188,17 +188,18 @@ loadresult = false ;
     
 predict() {
   if(this.prediction.input.listDoseEngrais[0]["dose"] === null){
-    this.prediction.input.listDoseEngrais.shift()
+    /*this.prediction.input.listDoseEngrais.shift()
     this.loadresult = true;
     console.log(JSON.stringify(this.prediction))
     this.Prediction.prediction(this.prediction).subscribe(
      response => {
-      if(this.result.prediction === 500 || this.result.prediction === 0){
+      if(this.result.prediction === 0){
         this.erreur_alert = true
       }else{
          this.result.prediction = Math.round(response.prediction);
         // this.result.prediction = parseFloat(this.result.prediction.toPrecision(2));
          this.loadresult = false;
+         console.log(this.result.prediction)
         }
      },
      error => {
@@ -206,15 +207,19 @@ predict() {
         
      }
     );
-    
+    */
   }else{
   console.log(JSON.stringify(this.prediction))
     this.loadresult = true;
     this.Prediction.prediction(this.prediction).subscribe(
      response => {
+       if (response.prediction === 0){
+        this.erreur_alert = true;
+       }
          this.result.prediction = Math.round(response.prediction);
         // this.result.prediction = parseFloat(this.result.prediction.toPrecision(2));
          this.loadresult = false;
+         console.log(this.result.prediction)
      },
      error => {
          this.loadresult = false;
