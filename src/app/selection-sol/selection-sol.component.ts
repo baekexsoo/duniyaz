@@ -78,7 +78,7 @@ export class SelectionSolComponent implements OnInit {
  engr_ajou2: any;
  supp: any
  animat_pred= false
- nom_engrais: any
+ name_engrais: any
  erreur_alert = false
  constructor( public sol: SolService, public Prediction: PredictionService) {}
 
@@ -106,7 +106,7 @@ export class SelectionSolComponent implements OnInit {
    console.log(this.prediction.input.listDoseEngrais);
 
    }
-  // this.animat_pred = true
+    this.animat_pred = true
   }
 
   fon_sup_ajou(i) {
@@ -157,6 +157,16 @@ export class SelectionSolComponent implements OnInit {
     this.type_sol = true;
  }
 
+ nom_engrais(){
+  return this.sol.engr_id(this.type_engrais).subscribe(
+    response =>{
+    this.name_engrais = response;
+    this.donne_engrais.idModele = this.name_engrais.nom;
+    console.log(this.name_engrais.nom)
+  }
+  )
+ }
+
   list_engr() {
     return this.sol.get_ang().subscribe(
       response => {
@@ -164,7 +174,7 @@ export class SelectionSolComponent implements OnInit {
         console.log(this.donne_engrais.idModele);
         for (var i = 0; i < this.data_engrais.length; i++) {
           if (this.data_engrais[i]['id'] === this.type_engrais) {
-            this.donne_engrais.idModele = this.type_engrais;
+            this.nom_engrais();
             this.tauxN = this.data_engrais[i]['tauxN']*this.donne_engrais.dose;
             this.tauxN1 =parseFloat(this.tauxN.toFixed(2)) 
             this.tauxK = this.data_engrais[i]['tauxK']*this.donne_engrais.dose;
