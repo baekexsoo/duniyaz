@@ -1,0 +1,195 @@
+<app-header></app-header>
+
+
+
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main" style="background-image:url(../../assets/img/1920x1080/img28.jpg)">
+    <div class="container u-space-3-top--lg mb-5">
+
+       <!-- Title -->
+       <div class="mb-7">
+          <h1 class="h3 text-primary font-weight-normal mb-0">Bienvenue sur <span class="font-weight-bold">Agroduniya</span></h1>
+          <p>Rechercher le marché le plus proche de vous.</p>
+        </div>
+        <!-- End Title -->
+
+      <div style="
+      background-color: #ffffffc7;
+      border-radius: 100px;">
+         <form class="js-validate mt-5">
+           
+            <div class="row ml-5 ">
+                <!-- Input -->
+                <div class="col-sm-3 col-xs-3 mt-2 ">
+                  <div class="js-form-message">
+                    <label class="h6 small d-block text-uppercase">
+                      Département
+                      <span class="text-danger">*</span>
+                    </label>
+    
+                    <div class="js-focus-state input-group u-form">
+                      <input class="form-control u-form__input" type="text" name="name" required
+                             placeholder="votre département"
+                             aria-label="Jack Wayley"
+                             data-msg="Veuillez entrer une département."
+                             data-error-class="u-has-error"
+                             data-success-class="u-has-success">
+                    </div>
+                  </div>
+                </div>
+                <!-- End Input -->
+
+                <!-- Input -->
+                <div class="col-sm-3 mt-2">
+                    <div class="js-form-message">
+                      <label class="h6 small d-block text-uppercase">
+                        Ville
+                        <span class="text-danger">*</span>
+                      </label>
+      
+                      <div class="js-focus-state input-group u-form">
+                        <input class="form-control u-form__input" type="text" name="name" required
+                               placeholder="votre ville"
+                               aria-label="Jack Wayley"
+                               data-msg="Veuillez entrer une ville."
+                               data-error-class="u-has-error"
+                               data-success-class="u-has-success">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Input -->
+
+                  <!-- Input -->
+                <div class="col-sm-3 mt-2">
+                    <div class="js-form-message">
+                      <label class="h6 small d-block text-uppercase">
+                       Date du marché
+                        <span class="text-danger">*</span>
+                      </label>
+      
+                      <div class="js-focus-state input-group u-form">
+                        <input class="form-control u-form__input" type="text" name="name" required
+                               placeholder="Date d'animation du marché"
+                               aria-label="Jack Wayley"
+                               data-msg="Veuillez selectionner une date."
+                               data-error-class="u-has-error"
+                               data-success-class="u-has-success">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Input -->
+                  <!-- Input -->
+                <div class="col-sm-3 mt-5">
+                    <div class="text-center ">
+                        <button type="submit" class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
+                      </div>
+                  </div>
+                  <!-- End Input -->
+            </div>
+          </form>
+      </div>
+    </div>
+    <div class="container ">
+        <table class="table  table-hover" style="background-color:#ffffffe0; border-radius: 10px;  text-align: center">
+            <thead> <!--| paginate: { itemsPerPage: 5, currentPage: p }-->
+              <tr>
+                <th scope="col">Période</th>
+                <th scope="col">Departement</th>
+                <th scope="col">Arrondissement</th>
+                <th scope="col">Ville</th>
+                <th scope="col">Prochaine date</th>
+                <th scope="col">Produits</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">5</th>
+                <td>ZOU</td>
+                <td>Bohicon 2</td>
+                <td>ABOMEY</td>
+                <td>13/12/2018</td>
+                <td>Mais, Kluiklui, Afintin, Orange </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>MONO</td>
+                <td>Come 1</td>
+                <td>COME</td>
+                <td>15/12/2018</td>
+                <td>Manioc, Mais, Ablo</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>BORGOU</td>
+                <td>PARAKOU 3</td>
+                <td>PARAKOU</td>
+                <td>13/12/2018</td>
+                <td>Mais, Igname</td>
+              </tr>
+              <tr>
+                  <th scope="row">4</th>
+                  <td>OUEME</td>
+                  <td>2eme Arrondissement</td>
+                  <td>PORTO-NOVO</td>
+                  <td>14/12/2018</td>
+                  <td>Mais, Crabe</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>ATLANTIQUE</td>
+                    <td>Zinvié</td>
+                    <td>ABOMEY-CALAVI</td>
+                    <td>16/12/2018</td>
+                    <td>Mais, Ananas</td>
+                  </tr>
+                  <tr>
+                      <th scope="row">6</th>
+                      <td>LITTORAL</td>
+                      <td>13e Arrondissement</td>
+                      <td>COTONOU</td>
+                      <td>13/12/2018</td>
+                      <td>Mais</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>MONO</td>
+                        <td>Sè</td>
+                        <td>COME</td>
+                        <td>17/12/2018</td>
+                        <td>Mais, Canne à Sucre</td>
+                      </tr>
+                      <tr>
+                          <th scope="row">8</th>
+                          <td>ATLANTIQUE</td>
+                          <td>Cocotomey</td>
+                          <td>ABOMEY-CALAVI</td>
+                          <td>13/12/2018</td>
+                          <td>Mais, Coco</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>ZOU</td>
+                            <td>Bohicon 2</td>
+                            <td>BOHICON</td>
+                            <td>13/12/2018</td>
+                            <td>Mais, Kluiklui, Afintin, Orange</td>
+                          </tr>
+                         
+            </tbody>
+
+            <!--div class="paginate uk-text-center" >
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>        
+            </div--> 
+          </table>
+    </div>
+     
+    </main>
+    <!-- ========== END MAIN ========== -->
+
+
+
+
+
+                
+<app-footer></app-footer>

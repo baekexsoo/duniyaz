@@ -27,6 +27,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SelectionSolComponent } from './selection-sol/selection-sol.component';
 import { AuthGuard } from './auth/auth.guard';
 import { DatavizComponent } from './dataviz/dataviz.component';
+import { AccueilMarcheComponent } from './accueil-marche/accueil-marche.component';
 
 const appRoutes: Routes = [
 
@@ -35,11 +36,11 @@ const appRoutes: Routes = [
     { path: 'user', component: SpaceUserComponent},
     { path: 'profil', component: ProfilComponent},
     { path: 'prediction', component: SelectionSolComponent},
-
+    { path: 'update', component: UpdatePwdComponent},
        { path: 'visualisation', component: DatavizComponent},
   ], canActivate: [AuthGuard]
 },
-{ path: 'update', component: UpdatePwdComponent},
+  { path: 'accueil', component: AccueilMarcheComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -68,7 +69,8 @@ const appRoutes: Routes = [
     NotFoundComponent,
     FooterComponent,
     SelectionSolComponent,
-    DatavizComponent
+    DatavizComponent,
+    AccueilMarcheComponent
   ],
   imports: [
     FormsModule,

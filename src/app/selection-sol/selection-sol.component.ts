@@ -5,6 +5,7 @@ import { Commune } from '../entities/commune';
 import { Sols } from '../entities/sols';
 import {PredictionService} from '../../providers/prediction/prediction.service';
 import {DataAnalys} from '../../providers/mock/prediction';
+import { ActivatedRouteSnapshot, ActivatedRoute } from '@angular/router';
 import { format } from 'url';
 import { removeAllListeners, removeListener } from 'cluster';
 import { removeDebugNodeFromIndex } from '@angular/core/src/debug/debug_node';
@@ -80,10 +81,10 @@ export class SelectionSolComponent implements OnInit {
  animat_pred= false
  name_engrais: any
  erreur_alert = false
- constructor( public sol: SolService, public Prediction: PredictionService) {}
+ constructor(private route: ActivatedRoute, public sol: SolService, public Prediction: PredictionService) {}
 
   ngOnInit() {
-      this.goto(0);
+      this.goto(2);
       this.retrieveDepartements();
       this.selectedDepartement = new Departement();
       this.list_engr();

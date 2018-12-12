@@ -55,8 +55,8 @@
                               <div uk-icon="" class="marg_ico"><span class="fa fa-user u-btn--icon__inner font-size-14"></span></div>
                                 <div uk-dropdown>
                                     <ul class="uk-nav uk-dropdown-nav">
-                                        <li class="uk-active"><a href="../profil/profil.component.html">Profil</a></li>
-                                        <li class="uk-active"><a href="../update-pwd/update-pwd.component.html">Mot de passe</a></li>
+                                        <li class="uk-active"><a [routerLink]="['/profil']">Profil</a></li>
+                                        <li class="uk-active"><a [routerLink]="['/update']">Mot de passe</a></li>
                                         <li class="uk-active"><a (click)="logout();" href="#">Déconnexion</a></li>
  
                                     </ul>
