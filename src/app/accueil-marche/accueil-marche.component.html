@@ -90,7 +90,7 @@
     </div>
     <div class="container ">
         <table class="table  table-hover" style="background-color:#ffffffe0; border-radius: 10px;  text-align: center">
-            <thead>
+            <thead> <!--| paginate: { itemsPerPage: 5, currentPage: p }-->
               <tr>
                 <th scope="col">Période</th>
                 <th scope="col">Departement</th>
@@ -102,7 +102,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of search_result | paginate: { itemsPerPage: 5, currentPage: p }">
+              <tr *ngFor="let item of search_result">
                 <th scope="row">{{item.periode}} </th>
                 <td>{{item.departement}}</td>
                 <td>{{item.arrondissement}}</td>
@@ -114,9 +114,9 @@
                          
             </tbody>
 
-            <div class="paginate uk-text-center" >
+            <!--div class="paginate uk-text-center" >
                 <pagination-controls (pageChange)="p = $event"></pagination-controls>        
-            </div> 
+            </div--> 
           </table>
     </div>
      
