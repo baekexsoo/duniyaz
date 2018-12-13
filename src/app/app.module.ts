@@ -38,12 +38,12 @@ const appRoutes: Routes = [
     { path: 'profil', component: ProfilComponent},
     { path: 'prediction', component: SelectionSolComponent},
     { path: 'update', component: UpdatePwdComponent},
-       { path: 'visualisation', component: DatavizComponent},
+    { path: 'visualisation', component: DatavizComponent},
   ], canActivate: [AuthGuard]
 },
   { path: 'accueil', component: AccueilMarcheComponent },
   { path: 'signin', component: SigninComponent },
-  { path: 'home', component: HomeComponent},
+  //{ path: 'home', component: HomeComponent},
   { path: '', redirectTo: 'accueil', pathMatch: 'full'},
   { path: 'signin/form/sms', component: SmsCreatComponent},
   { path: 'update/activate/:ref?', component: UpdatePwdComponent},
@@ -51,8 +51,6 @@ const appRoutes: Routes = [
   { path: 'h', component: SpaceUserComponent},
   { path: 'error', component: NotFoundComponent},
   { path: '**', redirectTo: 'accueil', pathMatch: 'full'},
-
-
 ]
 @NgModule({
   declarations: [
