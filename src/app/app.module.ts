@@ -28,6 +28,7 @@ import { SelectionSolComponent } from './selection-sol/selection-sol.component';
 import { AuthGuard } from './auth/auth.guard';
 import { DatavizComponent } from './dataviz/dataviz.component';
 import { AccueilMarcheComponent } from './accueil-marche/accueil-marche.component';
+import { MarketService } from '../providers/market/market.service';
 
 const appRoutes: Routes = [
 
@@ -43,13 +44,13 @@ const appRoutes: Routes = [
   { path: 'accueil', component: AccueilMarcheComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent},
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: '', redirectTo: 'accueil', pathMatch: 'full'},
   { path: 'signin/form/sms', component: SmsCreatComponent},
   { path: 'update/activate/:ref?', component: UpdatePwdComponent},
   { path: 'restauration', component: RestaurationComponent},
   { path: 'h', component: SpaceUserComponent},
   { path: 'error', component: NotFoundComponent},
-  { path: '**', redirectTo: 'home', pathMatch: 'full'},
+  { path: '**', redirectTo: 'accueil', pathMatch: 'full'},
 
 
 ]
@@ -87,7 +88,8 @@ const appRoutes: Routes = [
   UtilisateurService,
   Api,
   WindowRefService,
-  AuthGuard
+  AuthGuard,
+  MarketService
   ],
   bootstrap: [AppComponent]
 })
