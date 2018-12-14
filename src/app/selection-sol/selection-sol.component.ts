@@ -84,7 +84,7 @@ export class SelectionSolComponent implements OnInit {
  constructor(private route: ActivatedRoute, public sol: SolService, public Prediction: PredictionService) {}
 
   ngOnInit() {
-      this.goto(2);
+      this.goto(0);
       this.retrieveDepartements();
       this.selectedDepartement = new Departement();
       this.list_engr();

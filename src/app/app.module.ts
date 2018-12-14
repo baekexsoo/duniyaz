@@ -5,7 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import {WindowRefService} from './window-ref.service';
-//import { LocalStorage, SessionStorage } from '';
+// import { LocalStorage, SessionStorage } from '';
+import {DataTableModule} from 'angular-6-datatable';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -32,26 +34,25 @@ import { MarketService } from '../providers/market/market.service';
 
 const appRoutes: Routes = [
 
-  { path:'', children: [
-    
+  { path: '', children: [
     { path: 'user', component: SpaceUserComponent},
     { path: 'profil', component: ProfilComponent},
-    { path: 'prediction', component: SelectionSolComponent},
     { path: 'update', component: UpdatePwdComponent},
     { path: 'visualisation', component: DatavizComponent},
   ], canActivate: [AuthGuard]
 },
   { path: 'accueil', component: AccueilMarcheComponent },
   { path: 'signin', component: SigninComponent },
-  //{ path: 'home', component: HomeComponent},
+  { path: 'home', component: HomeComponent},
   { path: '', redirectTo: 'accueil', pathMatch: 'full'},
   { path: 'signin/form/sms', component: SmsCreatComponent},
   { path: 'update/activate/:ref?', component: UpdatePwdComponent},
   { path: 'restauration', component: RestaurationComponent},
   { path: 'h', component: SpaceUserComponent},
   { path: 'error', component: NotFoundComponent},
+  { path: 'prediction', component: SelectionSolComponent},
   { path: '**', redirectTo: 'accueil', pathMatch: 'full'},
-]
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,6 +77,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     RouterModule,
+    DataTableModule,
     HttpModule,
     RouterModule.forRoot(
       appRoutes,

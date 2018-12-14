@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MarketService } from 'src/providers/market/market.service';
-
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-accueil-marche',
@@ -8,7 +8,7 @@ import { MarketService } from 'src/providers/market/market.service';
   styleUrls: ['./accueil-marche.component.css']
 })
 export class AccueilMarcheComponent implements OnInit {
-  
+  step = 0 ; // variable qui definit l'état du workflow.
   search_result: any;
   liste_departement: any;
   liste_communes: any;
@@ -19,10 +19,21 @@ export class AccueilMarcheComponent implements OnInit {
           ville: ''
               };
 
-  constructor(public market: MarketService) { }
+  constructor(public market: MarketService, private router: Router) { }
 
   ngOnInit() {
+    this.goto(0);
     this.list_departement();
+    
+  }
+  goto(n= 0) {
+    this.step = n;
+  }
+  aff_maps() {
+    this.step = 1;
+  }
+  aff_tab() {
+    this.step = 0;
   }
   search_market() {
     if(this.objet_market.departement === '' && this.objet_market.date === '') {

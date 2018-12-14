@@ -1,3 +1,4 @@
+<app-header></app-header>
 <main id="content" role="main">
   <!-- Form -->
   <div class="d-flex align-items-center position-relative min-height-100vh--lg">
@@ -18,84 +19,38 @@
     <div class="container">
       <div class="row no-gutters">
         <div class="col-md-8 col-lg-7 col-xl-6 offset-md-2 offset-lg-2 offset-xl-3 u-space-2 u-space-0--lg">
-            <a class="justify-content-center" href="../home/index.html" aria-label="DUNIYA">
-              <img src="../../assets/svg/logos/logo.svg" class="cent_log" alt="Logo">
-              <!--img src="../../assets/svg/logos/Sans_titre.png" class="d-inline-block d-lg-none" alt="Logo"-->
-            </a>
+            <!--<a class="justify-content-center" href="../home/index.html" aria-label="DUNIYA">
+              <img src="../../assets/svg/logos/logo.png" class="cent_log" alt="Logo">
+              img src="../../assets/svg/logos/Sans_titre.png" class="d-inline-block d-lg-none" alt="Logo"
+            </a>-->
         
           <!-- Form -->
           <form class="js-validate mt-5">
             <!-- Title -->
             <div class="mb-7">
+              
                 
-              <h2 class="h3 text-primary font-weight-normal mb-0">Bienvenue <span class="font-weight-bold"> .</span></h2>
-              <p>Veuillez vous connecter.</p>
+              <h2 class="h3 text-primary font-size-48--md-down font-weight-normal mb-0">Bienvenue sur <span class="font-weight-bold"> Duniya data</span></h2>
+              <p>Rechercher le marché le plus proche de vous.</p>
+                <!-- Button -->
+            <div class="row align-items-center mb-5">
+                <div class="col-6">
+                    <button type="submit" [routerLink]="['/accueil']" class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Commencez <span class="fa fa-angle-right ml-2"></span></button>
+                  <!--span class="small text-muted">Vous n'avez pas de compte?</span><br/>-->
+                </div>
+              
+              </div>
+              <!-- End Button -->
+            
             </div>
             <!-- End Title -->
-
-            <!-- Input -->
-            <div class="js-form-message mb-4">
-              <label class="h6 small d-block text-uppercase">Adresse Email</label>
-
-              <div class="js-focus-state input-group u-form">
-                <input type="email" class="form-control u-form__input" name="email" required
-                [(ngModel)]="e_mail"
-                       placeholder="user@rintio.com"
-                       aria-label="jack@walley.com"
-                       data-msg="veuillez entrer une adresse email valide."
-                       data-error-class="u-has-error"
-                       data-success-class="u-has-success">
-              </div>
-            </div>
-            <!-- End Input -->
-
-            <!-- Input -->
-            <div class="js-form-message mb-4">
-              <div class="d-flex justify-content-between align-items-center">
-                <label class="h6 small d-block text-uppercase">Mot de passe</label>
-
-                <div class="mb-2">
-                  <a class="small u-link-muted" href="/restauration">Mot de passe oublié?</a>
-                </div>
-              </div>
-
-              <div class="js-focus-state input-group u-form">
-                <input type="password" class="form-control u-form__input" name="password" required
-                [(ngModel)]="pass"
-                       placeholder="********"
-                       aria-label="********"
-                       data-msg="Mot de passe incorrect. Réessayez."
-                       data-error-class="u-has-error"
-                       data-success-class="u-has-success">
-              </div>
-                <div class="col-12">
-                <span class="small text-danger">{{warning}}</span><br/>
-                
-              </div>
-            </div>
-            <!-- End Input -->
-
-            <!-- Button -->
-            <div class="row align-items-center mb-5">
-              <div class="col-6">
-                <!--span class="small text-muted">Vous n'avez pas de compte?</span><br/>
-                <a class="small" href="/signin" >Inscrivez-vous</a-->
-              </div>
+            <img src="../assets/svg/flat-icons/walking-man-flat-concept-illustration.svg" alt="SVG Illustration">
+            <div class="col-lg-7 mb-7 mb-lg-0">
               
-              <div class="col-6 text-right">
-                  <div *ngIf="loader" id="testimonialsNavMain" class="js-slick-carousel js-slick-carousel u-slick u-content-centered-y p-4 mb-0 u-stroke-midnightblue"
-             data-infinite="true"
-             data-autoplay="true"
-             data-speed="5000"
-             data-fade="true"
-             data-nav-for="#testimonialsNavPagination"></div>
-                 
-                
-                  
-                <button type="submit" class="btn btn-primary u-btn-primary transition-3d-hover" (click)="con()">Se connecter</button>
-              </div>
             </div>
-            <!-- End Button -->
+
+          
+
           </form>
           <!-- End Form -->
         </div>

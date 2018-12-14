@@ -13,7 +13,7 @@
         <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar">
           <!-- Logo -->
           <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-top-space" href="../home/index.html" aria-label="DUNIYA">
-            <img src="../../assets/svg/logos/logo.svg" class="d-none d-lg-inline-block" alt="Logo">
+            <img src="../../assets/svg/logos/logo.png" class="d-none d-lg-inline-block" alt="Logo">
             <img src="../../assets/svg/logos/Sans_titre.png" class="d-inline-block d-lg-none" alt="Logo">
           </a>
           <!-- End Logo -->
@@ -27,11 +27,15 @@
                     <div class="d-xs-inline-block ml-lg-auto">
                       <ul class="list-inline affich_nom">
                         <li class="d-none d-sm-inline-block list-inline-item mr-2">
+                          <a class="u-header__topbar-nav-link dec" href="/h"><span class="badge badge-success">Marché</span></a>
+                        </li>
+                        <!--
+                           <li class="d-none d-sm-inline-block list-inline-item mr-2">
                           <a class="u-header__topbar-nav-link dec" href="/h"><span class="badge badge-success">Producteur</span></a>
                         </li>
                         <li class="list-inline-item mr-0">
                           <a class="u-header__topbar-nav-link dec mt-2" href="#">{{data_mail}}</a>
-                        </li>
+                        </li>-->
                         <li class="list-inline-item">
                           <!-- Account Sidebar Toggle Button -->
                           <a id="sidebarNavToggler" class="btn btn-xs u-btn--icon u-btn-text-secondary u-sidebar__toggler" role="button" >
@@ -52,7 +56,7 @@
                                data-unfold-animation-out="fadeOut">
                                <!--<span class="fa fa-user u-btn--icon__inner font-size-14"></span>-->
                               <!-- <span class="fa fa-user u-btn--icon__inner font-size-14" (click)="logout();"></span>-->
-                              <div uk-icon="" class="marg_ico"><span class="fa fa-user u-btn--icon__inner font-size-14"></span></div>
+                              <!--<div uk-icon="" class="marg_ico"><span class="fa fa-user u-btn--icon__inner font-size-14"></span></div>-->
                                 <div uk-dropdown>
                                     <ul class="uk-nav uk-dropdown-nav">
                                         <li class="uk-active"><a [routerLink]="['/profil']">Profil</a></li>

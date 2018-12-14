@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   data_mail: any;
   rec_session: any;
   donne: any;
-  constructor( private route: ActivatedRoute,public profil: UtilisateurService,private router: Router) {
+  constructor( private route: ActivatedRoute,public profil: UtilisateurService, private router: Router) {
     this.rec_session = sessionStorage.compte;
     this.bienve();
    }
