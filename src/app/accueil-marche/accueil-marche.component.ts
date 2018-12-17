@@ -41,7 +41,6 @@ export class AccueilMarcheComponent implements OnInit {
     } else {
     return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
       this.search_result = response.listMarkets;
-      
     })
   }
   }
@@ -56,6 +55,7 @@ export class AccueilMarcheComponent implements OnInit {
     this.warning = '';
     return this.market.commune(this.objet_market.departement).subscribe( response => {
       this.liste_communes = response.ville_list;
+      
     })
   }
 
