@@ -25,10 +25,10 @@
         
                     <!-- Links -->
                     <div class="d-xs-inline-block ml-lg-auto">
-                      <ul class="list-inline affich_nom">
-                        <li class="d-none d-sm-inline-block list-inline-item mr-2">
-                          <a class="u-header__topbar-nav-link dec" href="/h"><span class="badge badge-success">Marché</span></a>
-                        </li>
+                      <ul class="">
+                        <!--li class="d-sm-inline-block list-inline-item mr-2">
+                          <a class="u-header__topbar-nav-link dec" [routerLink]="['/accueil']">Marché</a>
+                        </li-->
                         <!--
                            <li class="d-none d-sm-inline-block list-inline-item mr-2">
                           <a class="u-header__topbar-nav-link dec" href="/h"><span class="badge badge-success">Producteur</span></a>
@@ -36,7 +36,7 @@
                         <li class="list-inline-item mr-0">
                           <a class="u-header__topbar-nav-link dec mt-2" href="#">{{data_mail}}</a>
                         </li>-->
-                        <li class="list-inline-item">
+                        <li class="d-none list-inline-item">
                           <!-- Account Sidebar Toggle Button -->
                           <a id="sidebarNavToggler" class="btn btn-xs u-btn--icon u-btn-text-secondary u-sidebar__toggler" role="button" >
                             
@@ -83,7 +83,11 @@
                   </ul>
                 </div>
               </div>
-          
+              <ul class="font_url" id="nav">
+                <li class="d-sm-inline-block list-inline-item mr-2">
+                  <a class="u-header__topbar-nav-link dec" [routerLink]="['/accueil']">Marché</a>
+                </li>
+              </ul>
           </nav>
         <!-- End Nav -->
       </div>

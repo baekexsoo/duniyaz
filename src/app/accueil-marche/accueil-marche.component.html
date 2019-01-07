@@ -19,7 +19,7 @@
       border-radius: 100px;">
          <form class="js-validate mt-5">
            
-            <div class="row ml-5 ">
+            <div class="row ml-5 mr-5">
                 <!-- Input -->
                 <div class="col-sm-3 col-xs-3 mt-2 ">
                   <div class="js-form-message">
@@ -89,8 +89,16 @@
       </div>
     </div>
     <div class="container "  *ngIf="step==0">
-        <table class="table  table-hover" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5" style="background-color:#ffffffe0; border-radius: 10px;">
-            <thead> <!--| paginate: { itemsPerPage: 5, currentPage: p }-->
+        <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search">
+            <div class="input-group-prepend u-form__prepend">
+              <span class="input-group-text u-form__text">
+                <span class="fa fa-search u-form__text-inner"></span>
+              </span>
+            </div>
+            <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="search">
+          </form>
+        <table class="table  table-hover" style="background-color:#ffffffe0; border-radius: 10px;">
+            <thead>
               <tr>
                 <th scope="col">Période</th>
                 <th scope="col">Departement</th>
@@ -102,8 +110,8 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of search_result">
-                <th scope="row">{{item.periode}} </th>
+              <tr *ngFor="let item of search_result | filter: search | paginate: { itemsPerPage: 10, currentPage: p }">
+                <td>{{item.periode}}</td>
                 <td>{{item.departement}}</td>
                 <td>{{item.arrondissement}}</td>
                 <td>{{item.commune}}</td>
@@ -113,11 +121,9 @@
               </tr>
                          
             </tbody>
-
-            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
-            <!--div class="paginate uk-text-center" >
+            <div class="paginate uk-text-center" style="width:500%">
                 <pagination-controls (pageChange)="p = $event"></pagination-controls>        
-            </div--> 
+            </div>
           </table>
     </div>
     <div  *ngIf="step==1">
@@ -126,5 +132,6 @@
      
     </main>
     <!-- ========== END MAIN ========== -->
-                
-<app-footer></app-footer>
+      <div>
+        <app-footer></app-footer>
+      </div>          

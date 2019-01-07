@@ -5,9 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import {WindowRefService} from './window-ref.service';
+import {NgxPaginationModule} from 'ngx-pagination';
+// import { FilterModule } from 'ng-filter';
 // import { LocalStorage, SessionStorage } from '';
-import {DataTableModule} from 'angular-6-datatable';
-
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -77,8 +77,9 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     RouterModule,
-    DataTableModule,
+    NgxPaginationModule,
     HttpModule,
+    // FilterModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

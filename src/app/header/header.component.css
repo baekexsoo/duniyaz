@@ -40,8 +40,19 @@ span svg{
 .dec{
     padding: 0%;
 }
-
-.affich_nom{
-    margin-top: -9%;
-    margin-left: -1rem;
+#nav {
+	padding: 0; margin: 0;
+	text-align: center; /* centrer le texte */
 }
+#nav li {
+	display: inline;
+	list-style: none;
+}
+#nav a {
+	display:inline-block;
+	margin: 0 30px;
+}
+
+.font_url li a {
+    color: black;
+} 
