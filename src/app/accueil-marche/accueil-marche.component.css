@@ -1,4 +1,5 @@
 .search{
-    width: 35%;
+    /*width: 35%;*/
+    background-color: gainsboro;
     height: 40px;
 }
