@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import {WindowRefService} from './window-ref.service';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 // import { FilterModule } from 'ng-filter';
 // import { LocalStorage, SessionStorage } from '';
 
@@ -79,6 +81,7 @@ const appRoutes: Routes = [
     RouterModule,
     NgxPaginationModule,
     HttpModule,
+    NgbModule,
     // FilterModule,
     RouterModule.forRoot(
       appRoutes,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MarketService } from 'src/providers/market/market.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-accueil-marche',
@@ -12,19 +13,28 @@ export class AccueilMarcheComponent implements OnInit {
   search_result: any;
   liste_departement: any;
   liste_communes: any;
+  Today: any ;
+  dte: any;
   warning = '';
+  
   objet_market = {
-          date: '',
+          date: this.dte,
           departement: '',
           ville: ''
               };
 
-  constructor(public market: MarketService, private router: Router) { }
+  constructor(public market: MarketService, private router: Router, private calendar: NgbCalendar) { 
+   
+  }
 
   ngOnInit() {
+    this.Today =  this.calendar.getToday();
+    this.objet_market.date = this.Today.day + '/' + this.Today.month + '/' + this.Today.year;
+    console.log(this.objet_market.date);
+
     this.goto(0);
     this.list_departement();
-    
+   
   }
   goto(n= 0) {
     this.step = n;
@@ -36,13 +46,13 @@ export class AccueilMarcheComponent implements OnInit {
     this.step = 0;
   }
   search_market() {
-    if(this.objet_market.departement === '' && this.objet_market.date === '') {
-      this.warning = 'Remplissez un champ';
-    } else {
+    let dat = this.Today.day + '/' + this.Today.month + '/' + this.Today.year;
+    this.objet_market.date = dat ;
+     console.log(this.objet_market)
     return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
+      console.log(response);
       this.search_result = response.listMarkets;
-    })
-  }
+    }, error => { console.log('Error:: ' + error); } );
   }
 
   list_departement() {

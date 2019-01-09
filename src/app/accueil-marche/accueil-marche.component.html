@@ -57,7 +57,7 @@
                   </div>
                   <!-- End Input -->
 
-                  <!-- Input -->
+                  <!-- Input -->  
                 <div class="col-sm-3 mt-2">
                     <div class="js-form-message">
                       <label class="h6 small d-block text-uppercase">
@@ -65,13 +65,8 @@
                         <span class="text-danger">*</span>
                       </label>
       
-                      <div class="js-focus-state input-group u-form">
-                        <input class="form-control u-form__input" type="date" [(ngModel)]="objet_market.date" name="name" required
-                               placeholder="Date d'animation du marché"
-                               aria-label="Jack Wayley"
-                               data-msg="Veuillez selectionner une date."
-                               data-error-class="u-has-error"
-                               data-success-class="u-has-success">
+                      <div class="js-focus-state input-group u-form " (click)="d.toggle()">
+                        <input class="form-control u-form__input" type="text" id="dp" [(ngModel)]="Today" name="name" ngbDatepicker #d="ngbDatepicker">
                       </div>
                     </div>
                   </div>
@@ -107,10 +102,10 @@
             </thead>
             <tbody>
               <tr *ngFor="let item of search_result | paginate: { itemsPerPage: 7, currentPage: p }">
-                <td><small> {{item.name | titlecase}}</small></td>
-                <td><small>{{item.departement | titlecase}} > {{item.arrondissement | titlecase}} > {{item.commune | titlecase}}
+                <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
+                <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.arrondissement | titlecase}} > {{item.commune | titlecase}}
                     </small></td>
-                <td><small>
+                <td style="width:32vh"><small>
                   ouvert tous les {{item.periode}} jours.<br>
                   jour d'animation {{item.lastMarketDay}}
                    </small></td>
