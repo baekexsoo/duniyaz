@@ -34,7 +34,10 @@ export class AccueilMarcheComponent implements OnInit {
 
     this.goto(0);
     this.list_departement();
+<<<<<<< HEAD
    
+=======
+>>>>>>> 383f962c98d618b874820614096ac092df9957e5
   }
   goto(n= 0) {
     this.step = n;
@@ -65,7 +68,7 @@ export class AccueilMarcheComponent implements OnInit {
     this.warning = '';
     return this.market.commune(this.objet_market.departement).subscribe( response => {
       this.liste_communes = response.ville_list;
-      
+      console.log(response);
     })
   }
 

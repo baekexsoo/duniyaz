@@ -24,11 +24,11 @@
                   <div class="js-form-message">
                     <label class="h6 small d-block text-uppercase">
                       Département
-                      <span class="text-danger">*</span>
+                      
                     </label>
     
                     <div class="js-focus-state input-group u-form">
-                        <select class="custom-select" name="commune" (change)="list_commune()" [(ngModel)]="objet_market.departement">
+                        <select class="custom-select" name="commune" [(ngModel)]="objet_market.departement" (change)="list_commune()">
                             <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
                           </select>
                     </div>
@@ -45,7 +45,7 @@
                     <div class="js-form-message">
                       <label class="h6 small d-block text-uppercase">
                         Ville
-                        <span class="text-danger">*</span>
+                        
                       </label>
       
                       <div class="js-focus-state input-group u-form">
@@ -62,7 +62,7 @@
                     <div class="js-form-message">
                       <label class="h6 small d-block text-uppercase">
                        Date d'animation
-                        <span class="text-danger">*</span>
+                        
                       </label>
       
                       <div class="js-focus-state input-group u-form " (click)="d.toggle()">
@@ -82,21 +82,21 @@
           </form>
       </div>
     </div>
-    <div class="container "  *ngIf="step==0">
+    <div class="container" style="width: 70%" *ngIf="step==0">
         <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search mb-2">
             <div class="input-group-prepend u-form__prepend">
               <span class="input-group-text u-form__text">
                 <span class="fa fa-search u-form__text-inner"></span>
               </span>
             </div>
-            <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="search">
+            <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre">
           </form>
         <table class="table  table-hover" style="background-color:#ffffffe0; border-radius: 10px;">
             <thead>
               <tr>
-                <th>Nom</th>
+                <th>Marchés</th>
                 <th>Localisation</th>
-                <th>Ouverture</th>
+                <th>Jour d'ouverture</th>
                 <th>Produits</th>
               </tr>
             </thead>
@@ -105,18 +105,19 @@
                 <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
                 <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.arrondissement | titlecase}} > {{item.commune | titlecase}}
                     </small></td>
-                <td style="width:32vh"><small>
+                <td style="width:40vh"><small>
                   ouvert tous les {{item.periode}} jours.<br>
-                  jour d'animation {{item.lastMarketDay}}
+                  jour du marché {{item.lastMarketDay}}
                    </small></td>
-                <td><small> {{ item.products.join('\n') }}</small> </td>
+                <td><small> {{ item.products.join(', ') }} </small> </td>
               </tr>
                          
             </tbody>
-            <div class="paginate uk-text-center" style="width:350%">
-                <pagination-controls (pageChange)="p = $event"></pagination-controls>        
-            </div>
+           
           </table>
+          <div class="paginate uk-text-center">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>        
+        </div>
     </div>
     <div  *ngIf="step==1">
        
