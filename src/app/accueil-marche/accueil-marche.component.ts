@@ -34,10 +34,6 @@ export class AccueilMarcheComponent implements OnInit {
 
     this.goto(0);
     this.list_departement();
-<<<<<<< HEAD
-   
-=======
->>>>>>> 383f962c98d618b874820614096ac092df9957e5
   }
   goto(n= 0) {
     this.step = n;
