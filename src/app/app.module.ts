@@ -33,6 +33,10 @@ import { AuthGuard } from './auth/auth.guard';
 import { DatavizComponent } from './dataviz/dataviz.component';
 import { AccueilMarcheComponent } from './accueil-marche/accueil-marche.component';
 import { MarketService } from '../providers/market/market.service';
+import { ExportService } from '../providers/exportateurs/export.service';
+import { DistributeursService } from '../providers/distributeurs/distributeurs.service';
+import { ExportateursComponent } from './exportateurs/exportateurs/exportateurs.component';
+import { DistributeursComponent } from './distributeurs/distributeurs/distributeurs.component';
 
 const appRoutes: Routes = [
 
@@ -46,6 +50,8 @@ const appRoutes: Routes = [
   { path: 'accueil', component: AccueilMarcheComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent},
+  { path: 'exportateurs', component: ExportateursComponent},
+  { path: 'distributeurs', component: DistributeursComponent},
   { path: '', redirectTo: 'accueil', pathMatch: 'full'},
   { path: 'signin/form/sms', component: SmsCreatComponent},
   { path: 'update/activate/:ref?', component: UpdatePwdComponent},
@@ -72,7 +78,9 @@ const appRoutes: Routes = [
     FooterComponent,
     SelectionSolComponent,
     DatavizComponent,
-    AccueilMarcheComponent
+    AccueilMarcheComponent,
+    ExportateursComponent,
+    DistributeursComponent
   ],
   imports: [
     FormsModule,
@@ -93,7 +101,10 @@ const appRoutes: Routes = [
   Api,
   WindowRefService,
   AuthGuard,
-  MarketService
+  MarketService,
+  ExportService,
+  DistributeursService
+
   ],
   bootstrap: [AppComponent]
 })
