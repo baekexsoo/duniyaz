@@ -86,8 +86,19 @@
               <ul class="font_url" id="nav">
                 <li class="d-sm-inline-block list-inline-item mr-2">
                   <a class="u-header__topbar-nav-link dec" [routerLink]="['/accueil']" style="text-decoration: none"> Marchés</a>
-                
+               
                 </li>
+                <li class="nav-item dropdown">  
+  
+                    <a class="nav-link dropdown-toggle togle" style="  font-size: 0.875rem;" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Autres</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" [routerLink]="['/exportateurs']">Exportateurs</a>
+                      <a class="dropdown-item" [routerLink]="['/distributeurs']">Distributeurs</a>
+                      <a class="dropdown-item" [routerLink]="['/cultures']">Cultures</a>
+                      <!--div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Separated link</a-->
+                    </div>
+                  </li>
               </ul>
           </nav>
         <!-- End Nav -->
