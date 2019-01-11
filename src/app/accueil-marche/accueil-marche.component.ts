@@ -16,7 +16,6 @@ export class AccueilMarcheComponent implements OnInit {
   Today: any ;
   dte: any;
   warning = '';
-  
   objet_market = {
           date: this.dte,
           departement: '',
