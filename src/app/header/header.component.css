@@ -50,9 +50,10 @@ span svg{
 }
 #nav a {
 	display:inline-block;
-	margin: 0 30px;
+    margin: 0 30px;
 }
 
 .font_url li a {
     color: black;
 } 
+
