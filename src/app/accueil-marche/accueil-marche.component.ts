@@ -32,6 +32,7 @@ export class AccueilMarcheComponent implements OnInit {
     this.objet_market.date = this.Today.day + '/' + this.Today.month + '/' + this.Today.year;
     console.log(this.objet_market.date);
 
+    this.list_accueil();
     this.goto(0);
     this.list_departement();
   }
@@ -44,16 +45,18 @@ export class AccueilMarcheComponent implements OnInit {
   aff_tab() {
     this.step = 0;
   }
+  
   search_market() {
     let dat = this.Today.day + '/' + this.Today.month + '/' + this.Today.year;
     this.objet_market.date = dat ;
-     console.log(this.objet_market)
     return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
-      console.log(response);
       this.search_result = response.listMarkets;
     }, error => { console.log('Error:: ' + error); } );
   }
-
+  list_accueil() {
+    console.log(this.search_result);
+    this.search_market();
+  }
   list_departement() {
     return this.market.departement().subscribe(response => {
       this.liste_departement = response;

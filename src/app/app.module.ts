@@ -33,6 +33,8 @@ import { AuthGuard } from './auth/auth.guard';
 import { DatavizComponent } from './dataviz/dataviz.component';
 import { AccueilMarcheComponent } from './accueil-marche/accueil-marche.component';
 import { MarketService } from '../providers/market/market.service';
+import { TransformateurComponent } from './transformateur/transformateur.component';
+import { TransformeService } from 'src/providers/transforme/transforme.service';
 
 const appRoutes: Routes = [
 
@@ -44,6 +46,7 @@ const appRoutes: Routes = [
   ], canActivate: [AuthGuard]
 },
   { path: 'accueil', component: AccueilMarcheComponent },
+  { path: 'transformateur', component: TransformateurComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent},
   { path: '', redirectTo: 'accueil', pathMatch: 'full'},
@@ -72,7 +75,8 @@ const appRoutes: Routes = [
     FooterComponent,
     SelectionSolComponent,
     DatavizComponent,
-    AccueilMarcheComponent
+    AccueilMarcheComponent,
+    TransformateurComponent
   ],
   imports: [
     FormsModule,
@@ -93,7 +97,8 @@ const appRoutes: Routes = [
   Api,
   WindowRefService,
   AuthGuard,
-  MarketService
+  MarketService,
+  TransformeService
   ],
   bootstrap: [AppComponent]
 })
