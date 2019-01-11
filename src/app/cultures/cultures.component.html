@@ -105,7 +105,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let export of list | paginate: { itemsPerPage: 7, currentPage: p }">
+              <tr *ngFor="let export of list |filter: search | paginate: { itemsPerPage: 7, currentPage: p }">
                 <td style="width:40vh"><small> {{ export.culture }}  </small></td>
                 <td style="width:50vh; padding-left: 10vh;"><small> {{ export.nomVariete }}  </small> </td>
                 <td style="width:50vh"><small> {{ export.cycleMaturite }} Jours  </small> </td>
