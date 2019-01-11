@@ -35,6 +35,13 @@ import { AccueilMarcheComponent } from './accueil-marche/accueil-marche.componen
 import { MarketService } from '../providers/market/market.service';
 import { TransformateurComponent } from './transformateur/transformateur.component';
 import { TransformeService } from 'src/providers/transforme/transforme.service';
+import { ExportService } from '../providers/exportateurs/export.service';
+import { DistributeursService } from '../providers/distributeurs/distributeurs.service';
+import { ExportateursComponent } from './exportateurs/exportateurs/exportateurs.component';
+import { DistributeursComponent } from './distributeurs/distributeurs/distributeurs.component';
+import { CulturesComponent } from './cultures/cultures.component';
+import { CultureService } from '../providers/culture/culture.service';
+import { from } from 'rxjs';
 
 const appRoutes: Routes = [
 
@@ -49,6 +56,9 @@ const appRoutes: Routes = [
   { path: 'transformateur', component: TransformateurComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent},
+  { path: 'exportateurs', component: ExportateursComponent},
+  { path: 'distributeurs', component: DistributeursComponent},
+  { path: 'culture', component: CulturesComponent},
   { path: '', redirectTo: 'accueil', pathMatch: 'full'},
   { path: 'signin/form/sms', component: SmsCreatComponent},
   { path: 'update/activate/:ref?', component: UpdatePwdComponent},
@@ -76,7 +86,10 @@ const appRoutes: Routes = [
     SelectionSolComponent,
     DatavizComponent,
     AccueilMarcheComponent,
-    TransformateurComponent
+    TransformateurComponent,
+    ExportateursComponent,
+    DistributeursComponent,
+    CulturesComponent
   ],
   imports: [
     FormsModule,
@@ -98,7 +111,10 @@ const appRoutes: Routes = [
   WindowRefService,
   AuthGuard,
   MarketService,
-  TransformeService
+  TransformeService,
+  ExportService,
+  DistributeursService,
+  CultureService
   ],
   bootstrap: [AppComponent]
 })

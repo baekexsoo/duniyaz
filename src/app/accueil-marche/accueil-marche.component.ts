@@ -16,7 +16,6 @@ export class AccueilMarcheComponent implements OnInit {
   Today: any ;
   dte: any;
   warning = '';
-  
   objet_market = {
           date: this.dte,
           departement: '',
@@ -29,7 +28,7 @@ export class AccueilMarcheComponent implements OnInit {
 
   ngOnInit() {
     this.Today =  this.calendar.getToday();
-    this.objet_market.date = this.Today.day + '/' + this.Today.month + '/' + this.Today.year;
+   // this.objet_market.date = this.Today.day + '/' + this.Today.month + '/' + this.Today.year;
     console.log(this.objet_market.date);
 
     this.list_accueil();

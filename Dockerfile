@@ -8,5 +8,5 @@ RUN npm install -g @angular/cli@1.7.1
 RUN npm audit fix
 COPY . /app
 RUN npm install cluster --ambient --save
-CMD ng serve -o --host 0.0.0.0 --disableHostCheck true
+CMD 'npm '
 
