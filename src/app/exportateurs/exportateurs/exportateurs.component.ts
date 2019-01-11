@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ExportService } from 'src/providers/exportateurs/export.service';
+import { MarketService } from 'src/providers/market/market.service';
 
 @Component({
   selector: 'app-exportateurs',
@@ -7,17 +8,22 @@ import { ExportService } from 'src/providers/exportateurs/export.service';
   styleUrls: ['./exportateurs.component.css']
 })
 export class ExportateursComponent implements OnInit {
-
+liste_communes: any;
+liste_departement: any;
 liste_exportateurs: any;
+warning: any;
 form_data = {
+  departement: '',
   zone: 'cot',
   produit: 'mais',
   page: 1,
 };
 
-  constructor(private exportService: ExportService) { }
+  constructor(private exportService: ExportService, public market: MarketService) { }
 
   ngOnInit() {
+    this.list_departement();
+
   }
 
   exportateurs() {
@@ -27,5 +33,19 @@ form_data = {
 
     });
 
+  }
+
+  list_departement() {
+    return this.market.departement().subscribe(response => {
+      this.liste_departement = response;
+    });
+  }
+
+  list_commune() {
+    this.warning = '';
+    return this.market.commune(this.form_data.departement).subscribe( response => {
+      this.liste_communes = response.ville_list;
+      console.log(response);
+    });
   }
 }

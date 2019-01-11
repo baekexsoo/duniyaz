@@ -20,15 +20,15 @@
            
             <div class="row ml-5 mr-5">
                 <!-- Input -->
-                <div class="col-sm-4 col-xs-3 mt-2 ">
+                <div class="col-sm-3 col-xs-3 mt-2 ">
                   <div class="js-form-message">
                     <label class="h6 small d-block text-uppercase">
-                      Zone
+                      Département
                       
                     </label>
     
                     <div class="js-focus-state input-group u-form">
-                        <select class="custom-select" name="commune" [(ngModel)]="form_data.zone" (change)="list_commune()">
+                        <select class="custom-select" name="commune" [(ngModel)]="form_data.departement" (change)="list_commune()">
                             <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
                           </select>
                     </div>
@@ -41,16 +41,33 @@
                 <!-- End Input -->
 
                 <!-- Input -->
-                <div class="col-sm-4 mt-2">
+                <div class="col-sm-3 mt-2">
                     <div class="js-form-message">
                       <label class="h6 small d-block text-uppercase">
-                        Produit
+                        Ville
+                        
+                      </label>
+      
+                      <div class="js-focus-state input-group u-form">
+                          <select class="custom-select" name="commune" [(ngModel)]="form_data.zone">
+                              <option selected *ngFor="let c of liste_communes" [ngValue]="c">{{c}}</option>
+                            </select>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Input -->
+
+                    <!-- Input -->
+                <div class="col-sm-3 mt-2">
+                    <div class="js-form-message">
+                      <label class="h6 small d-block text-uppercase">
+                        Produits
                         
                       </label>
       
                       <div class="js-focus-state input-group u-form">
                           <select class="custom-select" name="commune" [(ngModel)]="form_data.produit">
-                              <option selected *ngFor="let c of liste_communes" [ngValue]="c">{{c}}</option>
+                              <option selected *ngFor="let p of liste_produits" [ngValue]="p">{{p}}</option>
                             </select>
                       </div>
                     </div>
@@ -61,7 +78,7 @@
            
                   <!-- End Input -->
                   <!-- Input -->
-                <div class="col-sm-4 mt-5">
+                <div class="col-sm-3 mt-5">
                     <div class="text-center ">
                         <button type="submit" (click)="exportateurs()"  class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
                       </div>
@@ -93,11 +110,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let export of liste_exportateurs | paginate: { itemsPerPage: 7, currentPage: p }">
-                <td style="width:40vh" ><small> {{ export.nomEntreprise }}  </small></td>
-                <td style="width:50vh"><small> {{ export.lieuImplantation }}  </small> </td>
-                <td style="width:50vh"><small> {{ export.quantitExportee }}  </small> </td>
-                <td style="width:50vh"><small> {{ export.produitsexportes }}  </small> </td>
+              <tr *ngFor="let export of liste_exportateurs  | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
+                <td style="width:30vh" ><small> {{ export.nomEntreprise }}  </small></td>
+                <td style="width:60vh"><small> {{ export.lieuImplantation }}  </small> </td>
+                <td style="width:60vh"><small> {{ export.quantitExportee }}  </small> </td>
+                <td style="width:60vh"><small> {{ export.produitsexportes }}  </small> </td>
                 <td style="width:40vh"><small> {{ export.paysExportation }}  </small> </td>
 
               </tr>

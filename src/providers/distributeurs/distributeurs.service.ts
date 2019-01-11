@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class DistributeursService {
 
-  Base_url = 'http://api.dev.duniyadata.com/diistributeurs?zone=';
+  Base_url = 'http://api.dev.duniyadata.com/distributeurs?zone=';
 
   constructor( public api: Api, private http: HttpClient) { }
 

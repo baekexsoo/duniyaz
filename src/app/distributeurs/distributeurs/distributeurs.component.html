@@ -28,10 +28,8 @@
                     </label>
     
                     <div class="js-focus-state input-group u-form">
-                        <select class="custom-select" name="commune" (change)="list_commune()">
-                            <option selected *ngFor="let d of liste_departement" [ngValue]="">
-
-                            </option>
+                        <select class="custom-select" name="commune" [(ngModel)]="form_data.departement" (change)="list_commune()">
+                            <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
                           </select>
                     </div>
                     <div class="col-12">
@@ -51,7 +49,7 @@
                       </label>
       
                       <div class="js-focus-state input-group u-form">
-                          <select class="custom-select" name="commune" >
+                          <select class="custom-select" name="commune" [(ngModel)]="form_data.zone">
                               <option selected *ngFor="let c of liste_communes" [ngValue]="c">{{c}}</option>
                             </select>
                       </div>
@@ -59,24 +57,30 @@
                   </div>
                   <!-- End Input -->
 
-                  <!-- Input -->  
+                    <!-- Input -->
                 <div class="col-sm-3 mt-2">
                     <div class="js-form-message">
                       <label class="h6 small d-block text-uppercase">
-                       Date d'animation
+                        Produits
                         
                       </label>
       
-                      <div class="js-focus-state input-group u-form " (click)="d.toggle()">
-                        <input class="form-control u-form__input" type="text" id="dp"  name="name" ngbDatepicker #d="ngbDatepicker">
+                      <div class="js-focus-state input-group u-form">
+                          <select class="custom-select" name="commune" [(ngModel)]="form_data.produit">
+                              <option selected *ngFor="let p of liste_produits" [ngValue]="p">{{p}}</option>
+                            </select>
                       </div>
                     </div>
                   </div>
                   <!-- End Input -->
+
+                  <!-- Input -->  
+           
+                  <!-- End Input -->
                   <!-- Input -->
                 <div class="col-sm-3 mt-5">
                     <div class="text-center ">
-                        <button type="submit" (click)="search_market()"  class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
+                        <button type="submit" (click)="distributeurs()"  class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
                       </div>
                   </div>
                   <!-- End Input -->
@@ -84,7 +88,7 @@
           </form>
       </div>
     </div>
-    <div class="container" style="width: 70%" *ngIf="step==0">
+    <div class="container" style="width: 70%" *ngIf="liste_distributeurs?.length > 0 ">
         <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search mb-2">
             <div class="input-group-prepend u-form__prepend">
               <span class="input-group-text u-form__text">
@@ -96,22 +100,21 @@
         <table class="table  table-hover" style="background-color:#ffffffe0; border-radius: 10px;">
             <thead>
               <tr>
-                <th>Marchés</th>
-                <th>Localisation</th>
-                <th>Jour d'ouverture</th>
-                <th>Produits</th>
+                <th>Email</th>
+                <th>Raison Sociale</th>
+                <th>Téléphone</th>
+          
+
+
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of search_result | paginate: { itemsPerPage: 7, currentPage: p }">
-                <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
-                <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.arrondissement | titlecase}} > {{item.commune | titlecase}}
-                    </small></td>
-                <td style="width:40vh"><small>
-                  ouvert tous les {{item.periode}} jours.<br>
-                  jour du marché {{item.lastMarketDay}}
-                   </small></td>
-                <td><small> {{ item.products.join(', ') }} </small> </td>
+              <tr *ngFor="let dist of liste_distributeurs | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
+                <td style="width:30vh" ><small> {{ dist.email }}  </small></td>
+                <td style="width:60vh"><small> {{ dist.socialReason }}  </small> </td>
+                <td style="width:60vh"><small> {{ dist.telephone }}  </small> </td>
+
+
               </tr>
                          
             </tbody>

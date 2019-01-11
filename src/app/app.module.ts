@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import {WindowRefService} from './window-ref.service';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 // import { FilterModule } from 'ng-filter';
 // import { LocalStorage, SessionStorage } from '';
@@ -99,6 +101,7 @@ const appRoutes: Routes = [
     NgxPaginationModule,
     HttpModule,
     NgbModule,
+    Ng2SearchPipeModule,
     // FilterModule,
     RouterModule.forRoot(
       appRoutes,
