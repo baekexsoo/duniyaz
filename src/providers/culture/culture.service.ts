@@ -12,7 +12,7 @@ const httpOptions = {
 })
 export class CultureService {
 
-  list_url = 'http://api.dev.duniyadata.com/speculations?zone=';
+  list_url = 'http://api.dev.duniyadata.com/dunya/speculations?zone=';
 
   constructor(private http: HttpClient) { }
 

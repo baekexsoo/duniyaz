@@ -12,7 +12,7 @@ const httpOptions = {
 })
 export class TransformeService {
 
-  list_url = 'http://api.dev.duniyadata.com/transformateurs?zone=';
+  list_url = 'http://api.dev.duniyadata.com/dunya/transformateurs?zone=';
   constructor(private http: HttpClient) { }
   
   liste(zone, produit, page): Observable<any> {

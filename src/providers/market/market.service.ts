@@ -27,8 +27,9 @@ export class MarketService {
   }
 
   commune(data): Observable<any> {
-    let url = 'dunya/markets/departement/' + data;
+    let url = '/dunya/markets/departement/' + data;
     return this.Api.get(url + data, httpOptions);
   }
 
 }
+  
