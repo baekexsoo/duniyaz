@@ -44,6 +44,7 @@ import { DistributeursComponent } from './distributeurs/distributeurs/distribute
 import { CulturesComponent } from './cultures/cultures.component';
 import { CultureService } from '../providers/culture/culture.service';
 import { from } from 'rxjs';
+import { ProgrammesComponent } from './programmes/programmes.component';
 
 const appRoutes: Routes = [
 
@@ -91,7 +92,8 @@ const appRoutes: Routes = [
     TransformateurComponent,
     ExportateursComponent,
     DistributeursComponent,
-    CulturesComponent
+    CulturesComponent,
+    ProgrammesComponent
   ],
   imports: [
     FormsModule,

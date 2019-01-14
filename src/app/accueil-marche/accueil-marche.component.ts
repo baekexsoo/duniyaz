@@ -12,7 +12,7 @@ export class AccueilMarcheComponent implements OnInit {
   step = 0 ; // variable qui definit l'état du workflow.
   search_result: any;
   liste_departement: any;
-  liste_communes: any;
+  liste_communes = [];
   Today: any ;
   dte: any;
   warning = '';

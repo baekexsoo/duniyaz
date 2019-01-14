@@ -66,9 +66,8 @@
                       </label>
       
                       <div class="js-focus-state input-group u-form">
-                          <select class="custom-select" name="commune" [(ngModel)]="form_data.produit">
-                              <option selected *ngFor="let p of liste_produits" [ngValue]="p">{{p}}</option>
-                            </select>
+                        <input type="text" class="form-control u-form__input" placeholder="Exemple : Sorgho" id="produit" name="produit" [(ngModel)]="form_data.produit">
+
                       </div>
                     </div>
                   </div>

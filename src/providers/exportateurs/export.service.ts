@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class ExportService {
 
-  Base_url = 'http://api.dev.duniyadata.com/exportateurs?zone=';
+  Base_url = 'http://api.dev.duniyadata.com/dunya/exportateurs?zone=';
 
   constructor( public api: Api, private http: HttpClient) { }
 

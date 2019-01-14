@@ -15,7 +15,7 @@ warning: any;
 form_data = {
   departement: '',
   zone: 'cot',
-  produit: 'mais',
+  produit: '',
   page: 1,
 };
 
