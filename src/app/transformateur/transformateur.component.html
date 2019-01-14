@@ -20,7 +20,7 @@
            
             <div class="row ml-5 mr-5">
                 <!-- Input -->
-                <div class="col-sm-4 col-xs-3 mt-2 ">
+                <div class="col-sm-3 col-xs-3 mt-2 ">
                   <div class="js-form-message">
                     <label class="h6 small d-block text-uppercase">
                       Département
@@ -43,7 +43,7 @@
                 <!-- End Input -->
 
                 <!-- Input -->
-                <div class="col-sm-4 mt-2">
+                <div class="col-sm-3 mt-2">
                     <div class="js-form-message">
                       <label class="h6 small d-block text-uppercase">
                         Ville
@@ -59,9 +59,22 @@
                     </div>
                   </div>
                   <!-- End Input -->
+                  <!-- Input -->  
+                  <div class="col-sm-3 mt-2">
+                    <div class="js-form-message">
+                      <label class="h6 small d-block text-uppercase">
+                      Produits
+                        
+                      </label>
 
+                      <div class="js-focus-state input-group u-form " (click)="d.toggle()">
+                        <input class="form-control u-form__input" type="text" id="dp" [(ngModel)]="Today" name="name">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Input -->
                   <!-- Input -->
-                <div class="col-sm-4 mt-5">
+                <div class="col-sm-3 mt-5">
                     <div class="text-center ">
                         <button type="submit" (click)="getAll()"  class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
                       </div>
@@ -71,7 +84,7 @@
           </form>
       </div>
     </div>
-    <div class="container" style="width: 70%">
+    <div class="container" style="width: 70%" *ngIf="list?.length > 0" >
         <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search mb-2">
             <div class="input-group-prepend u-form__prepend">
               <span class="input-group-text u-form__text">
@@ -95,9 +108,9 @@
             <tbody>
               <tr *ngFor="let export of list | paginate: { itemsPerPage: 7, currentPage: p }">
                 <td style="width:40vh"><small> {{ export.nomEntreprise }}  </small></td>
-                <td style="width:50vh"><small> {{ export.lieuImplantation }}  </small> </td>
-                <td style="width:50vh"><small> {{ export.masseTransformation }}  </small> </td>
-                <td style="width:50vh"><small> {{ export.domaineTransformation }}  </small> </td>
+                <td style="width:50vh; padding-left: 10vh;"><small> {{ export.lieuImplantation }}  </small> </td>
+                <td style="width:50vh" class="uk-text-center" ><small> {{ export.masseTransformation }}  </small> </td>
+                <td style="width:50vh" class="uk-text-center" ><small> {{ export.domaineTransformation }}  </small> </td>
                 <!--td style="width:40vh"><small> {{ export.paysExportation }}  </small> </td-->
 
               </tr>

@@ -17,17 +17,17 @@ export class MarketService {
   constructor(public Api: Api, private http: HttpClient) { }
 
   recherche(data): Observable<any> {
-    let url = 'markets';
+    let url = 'dunya/markets';
     return this.Api.post(url, data, httpOptions);
   }
 
   departement(): Observable<any> {
-    let url = 'markets/departement';
+    let url = 'dunya/markets/departement';
     return this.Api.get(url, httpOptions);
   }
 
   commune(data): Observable<any> {
-    let url = 'markets/departement/' + data;
+    let url = '/dunya/markets/departement/' + data;
     return this.Api.get(url + data, httpOptions);
   }
 
