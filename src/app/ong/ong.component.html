@@ -28,9 +28,11 @@
                     </label>
     
                     <div class="js-focus-state input-group u-form">
-                        <select class="custom-select" name="commune" [(ngModel)]="objet_market.departement" (change)="list_commune()">
+                        <!--select class="custom-select" name="commune" [(ngModel)]="objet_market.departement" (change)="list_commune()">
                             <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
-                          </select>
+                          </select-->
+                          <input type="text" class="custom-select" name="commune" [(ngModel)]="objet_list.zone">
+
                     </div>
                     <div class="col-12">
                         <span class="small text-danger">{{warning}}</span><br/>
@@ -49,24 +51,25 @@
                       </label>
       
                       <div class="js-focus-state input-group u-form">
-                          <select class="custom-select" name="commune" [(ngModel)]="objet_market.ville">
+                          <!--select class="custom-select" name="commune" [(ngModel)]="objet_market.ville">
                               <option selected *ngFor="let c of liste_communes" [ngValue]="c">{{c}}</option>
-                            </select>
+                            </select-->
+                            <input type="text" class="custom-select" name="commune" [(ngModel)]="objet_list.produit">
                       </div>
                     </div>
                   </div>
                   <!-- End Input -->
 
                   <!-- Input -->  
-                <div class="col-sm-3 mt-2">
+                  <div class="col-sm-3 mt-2">
                     <div class="js-form-message">
                       <label class="h6 small d-block text-uppercase">
-                        Jour de marche
+                       Produits
                         
                       </label>
       
                       <div class="js-focus-state input-group u-form " (click)="d.toggle()">
-                        <input class="form-control u-form__input" type="text" id="dp" [(ngModel)]="Today" name="name" ngbDatepicker #d="ngbDatepicker">
+                        <input class="form-control u-form__input" type="text" id="dp" [(ngModel)]="Today" name="name">
                       </div>
                     </div>
                   </div>
@@ -74,7 +77,7 @@
                   <!-- Input -->
                 <div class="col-sm-3 mt-5">
                     <div class="text-center ">
-                        <button type="submit" (click)="search_market()"  class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
+                        <button type="submit" (click)="getAll()"  class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
                       </div>
                   </div>
                   <!-- End Input -->
@@ -82,9 +85,7 @@
           </form>
       </div>
     </div>
-
-    {{dateString |  date:'EEEE d, MMMM, yyyy'}}
-    <div class="container" style="width: 70%" *ngIf="step==0">
+    <div class="container" style="width: 70%" *ngIf="list?.length > 0">
         <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search mb-2">
             <div class="input-group-prepend u-form__prepend">
               <span class="input-group-text u-form__text">
@@ -93,25 +94,24 @@
             </div>
             <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre">
           </form>
-        <table class="table  table-hover" style="background-color:#ffffffe0; border-radius: 10px;">
+          <table class="table  table-hover" style="background-color:#ffffffe0; border-radius: 10px;">
             <thead>
               <tr>
-                <th>Marchés</th>
+                <th>Nom de la Structure</th>
+                <th class="uk-text-center" >Pays</th>
                 <th>Localisation</th>
-                <th>Jour d'ouverture</th>
-                <th>Produits</th>
+                <th class="uk-text-center" >Direction générale</th>
+                <!--th>Resistance de la variété</th-->
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of search_result | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
-                <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
-                <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.arrondissement | titlecase}} > {{item.commune | titlecase}}</small></td>
-                <td style="width:40vh"><small>
-                  ouvert tous les {{item.periode}} jours.<br>
-                  jour du marché : {{item.lastMarketDay.split('/').reverse().join('/') | date:'fullDate'}}
-                   {{text_table[0]}}
-                   </small></td>
-                <td><small> {{ item.products.join(', ') }} </small> </td>
+              <tr *ngFor="let export of list |filter: search | paginate: { itemsPerPage: 7, currentPage: p }">
+                <td style="width:40vh" class="uk-text-center" ><small> {{ export.structure }}  </small></td>
+                <td style="width:50vh" class="uk-text-center" ><small> {{ export.country }}  </small> </td>
+                <td style="width:50vh"><small> {{ export['telephone']}}, {{export.email.join('\n')}}, {{export.website}} </small> </td>
+                <td style="width:50vh" class="uk-text-center" ><small> {{ export.seat }} </small> </td>
+                <!--td style="width:40vh"><small> {{ export.resistance }}  </small> </td-->
+
               </tr>
                          
             </tbody>

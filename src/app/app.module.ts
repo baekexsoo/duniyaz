@@ -15,7 +15,6 @@ import localeFrExtra from '@angular/common/locales/extra/fr';
 
 // import { FilterModule } from 'ng-filter';
 // import { LocalStorage, SessionStorage } from '';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -48,6 +47,8 @@ import { DistributeursComponent } from './distributeurs/distributeurs/distribute
 import { CulturesComponent } from './cultures/cultures.component';
 import { CultureService } from '../providers/culture/culture.service';
 import { from } from 'rxjs';
+import { OngComponent } from './ong/ong.component';
+import { OngService } from '../providers/ong/ong.service';
 import { ProgrammesComponent } from './programmes/programmes.component';
 
 const appRoutes: Routes = [
@@ -60,6 +61,7 @@ const appRoutes: Routes = [
   ], canActivate: [AuthGuard]
 },
   { path: 'accueil', component: AccueilMarcheComponent },
+  { path: 'ong', component: OngComponent },
   { path: 'transformateur', component: TransformateurComponent },
   { path: 'programmes', component: ProgrammesComponent },
   { path: 'signin', component: SigninComponent },
@@ -99,6 +101,7 @@ const appRoutes: Routes = [
     ExportateursComponent,
     DistributeursComponent,
     CulturesComponent,
+    OngComponent,
     ProgrammesComponent
   ],
   imports: [
@@ -128,6 +131,7 @@ const appRoutes: Routes = [
   DistributeursService,
   CultureService,
   ProgrammeService,
+  OngService
   ],
   bootstrap: [AppComponent]
 })
