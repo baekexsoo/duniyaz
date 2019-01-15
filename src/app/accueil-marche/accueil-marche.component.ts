@@ -21,7 +21,7 @@ export class AccueilMarcheComponent implements OnInit {
           departement: '',
           ville: ''
               };
-
+              dateString: any;
   constructor(public market: MarketService, private router: Router, private calendar: NgbCalendar) { 
    
   }
@@ -30,6 +30,10 @@ export class AccueilMarcheComponent implements OnInit {
     this.Today =  this.calendar.getToday();
    // this.objet_market.date = this.Today.day + '/' + this.Today.month + '/' + this.Today.year;
     console.log(this.objet_market.date);
+
+     const dateStr = '15/01/2019';
+     this.dateString = '15/01/2019';
+     console.log(this.dateString)
 
     this.list_accueil();
     this.goto(0);
@@ -46,10 +50,11 @@ export class AccueilMarcheComponent implements OnInit {
   }
   
   search_market() {
-    let dat = this.Today.day + '/' + this.Today.month + '/' + this.Today.year;
+    let dat = this.Today.day + '/0' + this.Today.month + '/' + this.Today.year;
     this.objet_market.date = dat ;
     return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
       this.search_result = response.listMarkets;
+      console.log(this.search_result);
     }, error => { console.log('Error:: ' + error); } );
   }
   list_accueil() {
