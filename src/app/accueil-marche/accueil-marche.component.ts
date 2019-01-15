@@ -30,7 +30,13 @@ export class AccueilMarcheComponent implements OnInit {
 
   ngOnInit() {
     this.Today =  this.calendar.getToday();
-    // this.objet_market.date = this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
+   // this.objet_market.date = this.Today.day + '/' + this.Today.month + '/' + this.Today.year;
+    console.log(this.objet_market.date);
+
+     const dateStr = '15/01/2019';
+    // this.dateString = '15/01/2019';
+     // console.log(this.dateString)
+
     this.list_accueil();
     this.goto(0);
     this.list_departement();

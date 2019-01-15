@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
@@ -8,6 +8,14 @@ import {WindowRefService} from './window-ref.service';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+<<<<<<< HEAD
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import localeFrExtra from '@angular/common/locales/extra/fr';
+
+
+=======
+>>>>>>> bded4c2e87676fcefdaee342a8177045c0f207bc
 // import { FilterModule } from 'ng-filter';
 // import { LocalStorage, SessionStorage } from '';
 import { AppComponent } from './app.component';
@@ -36,6 +44,7 @@ import { TransformateurComponent } from './transformateur/transformateur.compone
 import { TransformeService } from 'src/providers/transforme/transforme.service';
 import { ExportService } from '../providers/exportateurs/export.service';
 import { DistributeursService } from '../providers/distributeurs/distributeurs.service';
+import { ProgrammeService } from '../providers/programmes/programme.service';
 import { ExportateursComponent } from './exportateurs/exportateurs/exportateurs.component';
 import { DistributeursComponent } from './distributeurs/distributeurs/distributeurs.component';
 import { CulturesComponent } from './cultures/cultures.component';
@@ -57,6 +66,7 @@ const appRoutes: Routes = [
   { path: 'accueil', component: AccueilMarcheComponent },
   { path: 'ong', component: OngComponent },
   { path: 'transformateur', component: TransformateurComponent },
+  { path: 'programmes', component: ProgrammesComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent},
   { path: 'exportateurs', component: ExportateursComponent},
@@ -71,6 +81,7 @@ const appRoutes: Routes = [
   { path: 'prediction', component: SelectionSolComponent},
   { path: '**', redirectTo: 'accueil', pathMatch: 'full'},
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -112,6 +123,7 @@ const appRoutes: Routes = [
     )
   ],
   providers: [
+    { provide: LOCALE_ID, useValue: 'fr' },
   UtilisateurService,
   Api,
   WindowRefService,
@@ -121,8 +133,16 @@ const appRoutes: Routes = [
   ExportService,
   DistributeursService,
   CultureService,
+<<<<<<< HEAD
+  ProgrammeService,
+=======
+>>>>>>> bded4c2e87676fcefdaee342a8177045c0f207bc
   OngService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+      constructor() {
+        registerLocaleData(localeFr, 'fr');
+      }
+}
