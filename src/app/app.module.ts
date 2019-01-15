@@ -8,11 +8,8 @@ import {WindowRefService} from './window-ref.service';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
-
 // import { FilterModule } from 'ng-filter';
 // import { LocalStorage, SessionStorage } from '';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -44,6 +41,8 @@ import { DistributeursComponent } from './distributeurs/distributeurs/distribute
 import { CulturesComponent } from './cultures/cultures.component';
 import { CultureService } from '../providers/culture/culture.service';
 import { from } from 'rxjs';
+import { OngComponent } from './ong/ong.component';
+import { OngService } from '../providers/ong/ong.service';
 
 const appRoutes: Routes = [
 
@@ -55,6 +54,7 @@ const appRoutes: Routes = [
   ], canActivate: [AuthGuard]
 },
   { path: 'accueil', component: AccueilMarcheComponent },
+  { path: 'ong', component: OngComponent },
   { path: 'transformateur', component: TransformateurComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent},
@@ -91,7 +91,8 @@ const appRoutes: Routes = [
     TransformateurComponent,
     ExportateursComponent,
     DistributeursComponent,
-    CulturesComponent
+    CulturesComponent,
+    OngComponent
   ],
   imports: [
     FormsModule,
@@ -117,7 +118,8 @@ const appRoutes: Routes = [
   TransformeService,
   ExportService,
   DistributeursService,
-  CultureService
+  CultureService,
+  OngService
   ],
   bootstrap: [AppComponent]
 })

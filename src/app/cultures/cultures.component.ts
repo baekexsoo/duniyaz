@@ -18,10 +18,8 @@ export class CulturesComponent implements OnInit {
   ngOnInit() {
   }
   getAll() {
-    console.log(this.objet_list);
     return this.culture.liste(this.objet_list.zone, this.objet_list.produit, this.objet_list.page).subscribe(response => {
       this.list = response;
-      console.log(this.list);
     })
   }
 
