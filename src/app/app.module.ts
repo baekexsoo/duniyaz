@@ -43,6 +43,7 @@ import { CultureService } from '../providers/culture/culture.service';
 import { from } from 'rxjs';
 import { OngComponent } from './ong/ong.component';
 import { OngService } from '../providers/ong/ong.service';
+import { ProgrammesComponent } from './programmes/programmes.component';
 
 const appRoutes: Routes = [
 
@@ -92,7 +93,8 @@ const appRoutes: Routes = [
     ExportateursComponent,
     DistributeursComponent,
     CulturesComponent,
-    OngComponent
+    OngComponent,
+    ProgrammesComponent
   ],
   imports: [
     FormsModule,

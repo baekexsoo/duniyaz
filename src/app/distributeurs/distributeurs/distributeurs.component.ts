@@ -17,7 +17,7 @@ export class DistributeursComponent implements OnInit {
   form_data = {
     departement: '',
     zone: 'cot',
-    produit: 'mais',
+    produit: '',
     page: 1,
   };
 
