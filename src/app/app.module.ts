@@ -8,14 +8,11 @@ import {WindowRefService} from './window-ref.service';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-<<<<<<< HEAD
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import localeFrExtra from '@angular/common/locales/extra/fr';
 
 
-=======
->>>>>>> bded4c2e87676fcefdaee342a8177045c0f207bc
 // import { FilterModule } from 'ng-filter';
 // import { LocalStorage, SessionStorage } from '';
 import { AppComponent } from './app.component';
@@ -133,10 +130,7 @@ const appRoutes: Routes = [
   ExportService,
   DistributeursService,
   CultureService,
-<<<<<<< HEAD
   ProgrammeService,
-=======
->>>>>>> bded4c2e87676fcefdaee342a8177045c0f207bc
   OngService
   ],
   bootstrap: [AppComponent]
