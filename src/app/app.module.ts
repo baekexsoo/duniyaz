@@ -133,10 +133,7 @@ const appRoutes: Routes = [
   ExportService,
   DistributeursService,
   CultureService,
-<<<<<<< HEAD
   ProgrammeService,
-=======
->>>>>>> bded4c2e87676fcefdaee342a8177045c0f207bc
   OngService
   ],
   bootstrap: [AppComponent]

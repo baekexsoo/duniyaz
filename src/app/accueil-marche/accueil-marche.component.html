@@ -108,7 +108,7 @@
                 <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.arrondissement | titlecase}} > {{item.commune | titlecase}}</small></td>
                 <td style="width:40vh"><small>
                   ouvert tous les {{item.periode}} jours.<br>
-                  jour du marché : {{item.lastMarketDay.split('/').reverse().join('/') | date:'fullDate'}}
+                  jour du marché :<strong> {{item.lastMarketDay.split('/').reverse().join('/') | date:'fullDate'}}</strong>
                    {{text_table[0]}}
                    </small></td>
                 <td><small> {{ item.products.join(', ') }} </small> </td>
