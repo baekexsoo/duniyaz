@@ -24,6 +24,7 @@ export class AccueilMarcheComponent implements OnInit {
           departement: '',
           ville: ''
               };
+              dateString: any;
 
   constructor(public market: MarketService, private router: Router, private calendar: NgbCalendar) {
   }
@@ -33,8 +34,8 @@ export class AccueilMarcheComponent implements OnInit {
    // this.objet_market.date = this.Today.day + '/' + this.Today.month + '/' + this.Today.year;
     console.log(this.objet_market.date);
 
-     const dateStr = '15/01/2019';
-    // this.dateString = '15/01/2019';
+    // const dateStr = '15/01/2019';
+     this.dateString = '15/01/2019';
      // console.log(this.dateString)
 
     this.list_accueil();
