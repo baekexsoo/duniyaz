@@ -11,6 +11,10 @@ import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 export class AccueilMarcheComponent implements OnInit {
   step = 0 ; // variable qui definit l'état du workflow.
   search_result: any;
+  accueil_list: any;
+  rec_date: any;
+  dat: any;
+  aff_bool = false;
   liste_departement: any;
   liste_communes: any;
   text_table = [];
@@ -30,16 +34,12 @@ export class AccueilMarcheComponent implements OnInit {
 
   ngOnInit() {
     this.Today =  this.calendar.getToday();
-   // this.objet_market.date = this.Today.day + '/' + this.Today.month + '/' + this.Today.year;
+    this.objet_market.date = this.Today.day + '/0' + this.Today.month + '/' + this.Today.year;
     console.log(this.objet_market.date);
-
-     const dateStr = '15/01/2019';
-    // this.dateString = '15/01/2019';
-     // console.log(this.dateString)
-
-    this.list_accueil();
     this.goto(0);
     this.list_departement();
+    this.rec_date = this.objet_market.date;
+    this.list_accueil();
   }
   goto(n= 0) {
     this.step = n;
@@ -51,28 +51,17 @@ export class AccueilMarcheComponent implements OnInit {
     this.step = 0;
   }
   search_market() {
-    let dat = this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
-    this.objet_market.date = dat ;
-    console.log(this.objet_market.date);
+    this.dat = this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
+    this.objet_market.date = this.dat ;
     return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
       this.search_result = response.listMarkets;
-      this.range_market();
-      console.log(this.search_result);
+      this.aff_bool = false;
     }, error => { console.log('Error:: ' + error); } );
   }
   list_accueil() {
     return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
-      this.search_result = response.listMarkets;
-      console.log(this.search_result);
-    for (var i = 0; i < this.search_result.length; i++) {
-      this.rec = this.search_result[i]['nextMarketDay'];
-      if (this.objet_market.date === this.rec ) {
-        this.text_table.push(this.search_result);
-        console.log(this.text_table);
-      } else {
-        this.text = 'Prochaine animation ' + this.rec;
-      }
-    }
+      this.accueil_list = response.listMarkets;
+      this.aff_bool = true;
   });
   }
   list_departement() {
@@ -85,22 +74,7 @@ export class AccueilMarcheComponent implements OnInit {
     this.warning = '';
     return this.market.commune(this.objet_market.departement).subscribe(response => {
       this.liste_communes = response.ville_list;
-      console.log(response);
     })
-  }
-
-  range_market () {
-    for (var i = 0; i < this.search_result.length; i++) {
-        this.rec = this.search_result[i]['nextMarketDay'];
-      if (this.objet_market.date === this.rec ) {
-        this.text = 'Actuellemnt animé ' ;
-      } else {
-        this.text = 'Prochaine animation ' + this.rec;
-      }
-      this.text_table.push(this.text);
-    console.log(this.text);
-
-    }
   }
 
 }
