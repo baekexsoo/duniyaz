@@ -83,7 +83,8 @@
       </div>
     </div>
 
-    {{dateString |  date:'EEEE d, MMMM, yyyy'}}
+
+
     <div class="container" style="width: 70%" *ngIf="step==0">
         <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search mb-2">
             <div class="input-group-prepend u-form__prepend">
@@ -102,14 +103,31 @@
                 <th>Produits</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody *ngIf="!aff_bool" >
               <tr *ngFor="let item of search_result | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
                 <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
                 <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.arrondissement | titlecase}} > {{item.commune | titlecase}}</small></td>
                 <td style="width:40vh"><small>
                   ouvert tous les {{item.periode}} jours.<br>
-                  jour du marché :<strong> {{item.lastMarketDay.split('/').reverse().join('/') | date:'fullDate'}}</strong>
-                   {{text_table[0]}}
+                  <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span></div>
+                  <div *ngIf="item.nextMarketDay !== rec_date">S'animera le : <strong> {{item.nextMarketDay.split('/').reverse().join('/') | date: 'EEEE dd' | slice:0:3}}.
+                                                                                       {{item.nextMarketDay.split('/').reverse().join('/') | date: 'dd'}}
+                                                                                       {{item.nextMarketDay.split('/').reverse().join('/') | date:'MMMM'  | slice:0:3 }}
+                                                                                       {{item.nextMarketDay.split('/').reverse().join('/') | date: 'yyyy'}}
+                                                                                      </strong></div>
+                   </small></td>
+                <td><small> {{ item.products.join(', ') }} </small> </td>
+              </tr>
+                         
+            </tbody>
+            <tbody *ngIf="aff_bool">
+              <tr *ngFor="let item of accueil_list | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
+                <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
+                <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.arrondissement | titlecase}} > {{item.commune | titlecase}}</small></td>
+                <td style="width:40vh"><small>
+                  ouvert tous les {{item.periode}} jours.<br>
+                  <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span></div>
+
                    </small></td>
                 <td><small> {{ item.products.join(', ') }} </small> </td>
               </tr>
@@ -117,6 +135,8 @@
             </tbody>
            
           </table>
+    {{dateString | date: 'EEEE dd' | slice:0:3 }}.  {{dateString | date: 'dd'}} {{dateString | date:'MMMM'  | slice:0:3 }}  {{dateString | date: 'yyyy'}}
+
           <div class="paginate uk-text-center">
             <pagination-controls (pageChange)="p = $event"></pagination-controls>        
         </div>

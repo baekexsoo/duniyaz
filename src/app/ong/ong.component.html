@@ -108,7 +108,7 @@
               <tr *ngFor="let export of list |filter: search | paginate: { itemsPerPage: 7, currentPage: p }">
                 <td style="width:40vh" class="uk-text-center" ><small> {{ export.structure }}  </small></td>
                 <td style="width:50vh" class="uk-text-center" ><small> {{ export.country }}  </small> </td>
-                <td style="width:50vh"><small> {{ export['telephone']}}, {{export.email.join('\n')}}, {{export.website}} </small> </td>
+                <td style="width:50vh"><small> {{ export['telephone']}}, {{export.email}}, {{export.website}} </small> </td>
                 <td style="width:50vh" class="uk-text-center" ><small> {{ export.seat }} </small> </td>
                 <!--td style="width:40vh"><small> {{ export.resistance }}  </small> </td-->
 
