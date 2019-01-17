@@ -15,6 +15,7 @@ export class AccueilMarcheComponent implements OnInit {
   rec_date: any;
   dat: any;
   aff_bool = false;
+  warning_bool = false;
   liste_departement: any;
   liste_communes: any;
   text_table = [];
@@ -61,7 +62,18 @@ export class AccueilMarcheComponent implements OnInit {
     return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
       this.search_result = response;
       this.aff_bool = false;
-    }, error => { console.log('Error:: ' + error); } );
+      this.warning_bool = false;
+    }, error => {
+      if (error.status === 404) {
+        this.warning = 'Aucun marché pour votre recherche';
+        this.warning_bool = true;
+      }
+      if (error.status === 500) {
+        this.warning = 'Oops! il y a un problème';
+        this.warning_bool = true;
+      }
+      console.log(JSON.stringify(error.status));
+      console.log('Error:: ' + error); } );
   }
   list_accueil() {
     return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
@@ -72,11 +84,20 @@ export class AccueilMarcheComponent implements OnInit {
   list_departement() {
     return this.market.departement().subscribe(response => {
       this.liste_departement = response;
-    })
+    }, error => {
+      if (error.status === 404) {
+        this.warning = 'Aucun marché pour votre recherche';
+        this.warning_bool = true;
+      }
+      if (error.status === 500) {
+        this.warning = 'Oops! il y a un problème';
+        this.warning_bool = true;
+      }
+      console.log(JSON.stringify(error.status));
+      console.log('Error:: ' + error); });
   }
 
   list_commune() {
-    this.warning = '';
     return this.market.commune(this.objet_market.departement).subscribe(response => {
       this.liste_communes = response.ville_list;
     })
