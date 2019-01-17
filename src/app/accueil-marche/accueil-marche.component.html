@@ -109,7 +109,7 @@
                 <td style="width:40vh"><small>
                   ouvert tous les {{item.periode}} jours.<br>
                   <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span></div>
-                  <div *ngIf="item.nextMarketDay !== rec_date">S'animera le : {{item.nextMarketDay.split('/').reverse().join('/') | date:'fullDate'}}</div>
+                  <div *ngIf="item.nextMarketDay !== rec_date">S'animera le : <strong> {{item.nextMarketDay.split('/').reverse().join('/') | date:'fullDate'}}</strong></div>
                    </small></td>
                 <td><small> {{ item.products.join(', ') }} </small> </td>
               </tr>
@@ -122,6 +122,7 @@
                 <td style="width:40vh"><small>
                   ouvert tous les {{item.periode}} jours.<br>
                   <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span></div>
+
                    </small></td>
                 <td><small> {{ item.products.join(', ') }} </small> </td>
               </tr>
