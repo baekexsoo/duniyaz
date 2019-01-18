@@ -62,12 +62,26 @@
                         
                       </label>
       
-                      <div class="js-focus-state input-group u-form " (click)="d.toggle()">
+                      <div class="js-focus-state input-group u-form " >
                         <input class="form-control u-form__input" type="text" id="dp" [(ngModel)]="Today" name="name" ngbDatepicker #d="ngbDatepicker">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+                            <i class="fas fa-calendar-alt fa-fw"></i>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <!-- End Input -->
+                  <!--div class="form-group">
+                    <div class="input-group">
+                      <input class="form-control" placeholder="yyyy-mm-dd"
+                             name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                      </div>
+                    </div>
+                  </div-->
                   <!-- Input -->
                 <div class="col-sm-3 mt-5">
                     <div class="text-center ">
@@ -131,7 +145,7 @@
           </table>
 
           <div class="paginate uk-text-center">
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>        
+            <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>        
         </div>
     </div>
 
