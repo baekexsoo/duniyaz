@@ -14,11 +14,10 @@
         </div-->
         <!-- End Title -->
 
-      <div style="
-      background-color: #eaebefc7; border-radius: 100px">
-         <form class="js-validate mt-5">
+      <div class="research-background">
+         <form class="js-validate mt-5 form-pad">
            
-            <div class="row ml-5 mr-5">
+            <div class="row ml-5 mr-5 u-space-3-top--xs">
                 <!-- Input -->
                 <div class="col-sm-3 col-xs-3 mt-2 ">
                   <div class="js-form-message">
@@ -29,7 +28,8 @@
     
                     <div class="js-focus-state input-group u-form">
                         <select class="custom-select" name="commune" [(ngModel)]="objet_market.departement" (change)="list_commune()">
-                            <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
+                          <option selected [ngValue]=""></option>  
+                          <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
                           </select>
                     </div>
                   </div>
@@ -46,6 +46,7 @@
       
                       <div class="js-focus-state input-group u-form">
                           <select class="custom-select" name="commune" [(ngModel)]="objet_market.ville">
+                              <option selected [ngValue]=""></option>
                               <option selected *ngFor="let c of liste_communes" [ngValue]="c">{{c}}</option>
                             </select>
                       </div>
@@ -79,7 +80,7 @@
       </div>
     </div>
 
-    <div class="container" style="width: 70%" *ngIf="!warning_bool">
+    <div class="container w-70" *ngIf="!warning_bool">
         <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search mb-2">
             <div class="input-group-prepend u-form__prepend">
               <span class="input-group-text u-form__text">
