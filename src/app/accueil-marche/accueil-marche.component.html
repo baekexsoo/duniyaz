@@ -28,7 +28,7 @@
     
                     <div class="js-focus-state input-group u-form">
                         <select class="custom-select" name="commune" [(ngModel)]="objet_market.departement" (change)="list_commune()">
-                          <option selected [ngValue]="">Tous</option>  
+                          <option selected value="">Tous</option>  
                           <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
                           </select>
                     </div>
@@ -46,7 +46,7 @@
       
                       <div class="js-focus-state input-group u-form">
                           <select class="custom-select" name="commune" [(ngModel)]="objet_market.ville">
-                              <option selected [ngValue]="">Tous</option>
+                              <option selected value="">Tous</option>
                               <option selected *ngFor="let c of liste_communes" [ngValue]="c">{{c}}</option>
                             </select>
                       </div>
@@ -94,7 +94,7 @@
       </div>
     </div>
     
-    <div class="container w-70" *ngIf="!warning_bool">
+    <div class="container w-70" *ngIf="!warning_bool && !loading">
         <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search mb-2">
             <div class="input-group-prepend u-form__prepend">
               <span class="input-group-text u-form__text">
@@ -143,20 +143,21 @@
                          
             </tbody>
           </table>
-          <div class="row justify-content-center u-space-5-top" *ngIf="loading" >
-            <div id="testimonialsNavMain" class="js-slick-carousel js-slick-carousel u-slick u-content-centered-y p-4 mb-0 u-stroke-midnightblue load"
-                     data-infinite="true"
-                     data-autoplay="true"
-                     data-speed="5000"
-                     data-fade="true"
-                     data-nav-for="#testimonialsNavPagination">
-                      </div>
-                    </div>
-
           <div class="paginate uk-text-center">
             <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>        
         </div>
     </div>
+
+    <div class="row justify-content-center u-space-5-top" *ngIf="loading" style="margin-top: 15vh;">
+      <div id="testimonialsNavMain" class="js-slick-carousel js-slick-carousel u-slick u-content-centered-y p-4 mb-0 u-stroke-midnightblue load"
+               data-infinite="true"
+               data-autoplay="true"
+               data-speed="5000"
+               data-fade="true"
+               data-nav-for="#testimonialsNavPagination">
+                </div>
+              </div>
+
 
     <div class="row justify-content-center mt-5 u-space-3-bottom" *ngIf="warning_bool" >
         <div class="alert alert-danger" role="alert">

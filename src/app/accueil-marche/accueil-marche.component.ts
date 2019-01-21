@@ -61,6 +61,7 @@ export class AccueilMarcheComponent implements OnInit {
     this.loading = true;
     this.dat = this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
     this.objet_market.date = this.dat ;
+    console.log(this.objet_market.departement);
     return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
       this.search_result = response;
       this.loading = false;
@@ -69,13 +70,15 @@ export class AccueilMarcheComponent implements OnInit {
     }, error => {
       if (error.status === 404) {
         this.warning = 'Aucun marché pour votre recherche';
-        this.warning_bool = true;
         this.loading = false;
+        this.warning_bool = true;
+
       }
       if (error.status === 500) {
         this.warning = 'Oops! il y a un problème';
-        this.warning_bool = true;
         this.loading = false;
+        this.warning_bool = true;
+
       }
        } );
   }
