@@ -24,6 +24,8 @@ export class ProgrammesComponent implements OnInit {
     this.list_departement();
 
   }
+
+  
   programmes() {
     return this.programService.list_programmes(this.form_data.zone, this.form_data.produit, this.form_data.page).subscribe(response => {
       this.list_programmes = response;
