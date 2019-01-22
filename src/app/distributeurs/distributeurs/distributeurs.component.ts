@@ -21,7 +21,7 @@ export class DistributeursComponent implements OnInit {
     page: 1,
   };
 
-  constructor(private distributeursService: DistributeursService,  public market: MarketService) { }
+  constructor(private distributeursService: DistributeursService, public market: MarketService) { }
 
   ngOnInit() {
     this.list_departement();

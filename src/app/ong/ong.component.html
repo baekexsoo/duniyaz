@@ -28,11 +28,10 @@
                     </label>
     
                     <div class="js-focus-state input-group u-form">
-                        <!--select class="custom-select" name="commune" [(ngModel)]="objet_market.departement" (change)="list_commune()">
-                            <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
-                          </select-->
-                          <input type="text" class="custom-select" name="commune" [(ngModel)]="objet_list.zone">
-
+                        <select class="custom-select" name="commune" [(ngModel)]="objet_list.departement" (change)="list_commune()">
+                          <option selected value="">Tous</option>
+                          <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
+                          </select>
                     </div>
                     <div class="col-12">
                         <span class="small text-danger">{{warning}}</span><br/>
@@ -51,10 +50,10 @@
                       </label>
       
                       <div class="js-focus-state input-group u-form">
-                          <!--select class="custom-select" name="commune" [(ngModel)]="objet_market.ville">
-                              <option selected *ngFor="let c of liste_communes" [ngValue]="c">{{c}}</option>
-                            </select-->
-                            <input type="text" class="custom-select" name="commune" [(ngModel)]="objet_list.produit">
+                          <select class="custom-select" name="commune" [(ngModel)]="objet_list.zone">
+                            <option selected value="">Tous</option>
+                            <option selected *ngFor="let c of liste_communes" [ngValue]="c">{{c}}</option>
+                            </select>
                       </div>
                     </div>
                   </div>
@@ -69,7 +68,7 @@
                       </label>
       
                       <div class="js-focus-state input-group u-form " (click)="d.toggle()">
-                        <input class="form-control u-form__input" type="text" id="dp" [(ngModel)]="Today" name="name">
+                        <input type="text" class="custom-select" name="commune" [(ngModel)]="objet_list.produit">
                       </div>
                     </div>
                   </div>
