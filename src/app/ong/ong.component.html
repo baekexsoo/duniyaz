@@ -67,8 +67,8 @@
                         
                       </label>
       
-                      <div class="js-focus-state input-group u-form " (click)="d.toggle()">
-                        <input type="text" class="custom-select" name="commune" [(ngModel)]="objet_list.produit">
+                      <div class="js-focus-state input-group u-form " >
+                        <input class="form-control u-form__input" type="text" placeholder="Exemple: Sorgho" id="dp" [(ngModel)]="objet_list.produit" name="name">
                       </div>
                     </div>
                   </div>
@@ -123,10 +123,15 @@
         </div>
     </div>
   </div>
-    <div  *ngIf="step==1">
-       
-    </div>
-     
+  <div class="row justify-content-center u-space-5-top" *ngIf="loading" style="margin-top: 15vh;">
+    <div id="testimonialsNavMain" class="js-slick-carousel js-slick-carousel u-slick u-content-centered-y p-4 mb-0 u-stroke-midnightblue load"
+             data-infinite="true"
+             data-autoplay="true"
+             data-speed="5000"
+             data-fade="true"
+             data-nav-for="#testimonialsNavPagination">
+              </div>
+            </div>
     </main>
     <!-- ========== END MAIN ========== -->
       <div>

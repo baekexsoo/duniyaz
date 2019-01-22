@@ -11,6 +11,7 @@ export class TransformateurComponent implements OnInit {
   liste_departement: any;
   liste_communes: any;
   list: any;
+  loading = false;
   objet_list = {
     departement: '',
     zone: '',
@@ -38,9 +39,11 @@ export class TransformateurComponent implements OnInit {
   }
 
   getAll() {
+    this.loading = true;
     console.log(this.objet_list);
     return this.transformateur.liste(this.objet_list.zone, this.objet_list.produit, this.objet_list.page).subscribe(response => {
       this.list = response;
+      this.loading = false;
       console.log(this.list);
     })
   }

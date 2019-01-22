@@ -13,6 +13,7 @@ export class DistributeursComponent implements OnInit {
   liste_communes: any;
   liste_departement: any;
   liste_exportateurs: any;
+  loading = false;
   warning: any;
   form_data = {
     departement: '',
@@ -43,9 +44,11 @@ export class DistributeursComponent implements OnInit {
   }
 
   distributeurs() {
+    this.loading = true;
     return this.distributeursService.list_distributeurs(this.form_data.zone, this.form_data.produit, this.form_data.page)
     .subscribe(response => {
       this.liste_distributeurs = response;
+    this.loading = false;
       console.log(this.liste_distributeurs);
 
     });

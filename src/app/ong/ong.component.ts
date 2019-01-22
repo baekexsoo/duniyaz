@@ -12,6 +12,7 @@ export class OngComponent implements OnInit {
   liste_departement: any;
   liste_communes: any;
   list: any;
+  loading = false;
   objet_list = {
     departement: '',
     zone: '',
@@ -39,8 +40,10 @@ export class OngComponent implements OnInit {
 
 
   getAll() {
+    this.loading = true;
     return this.ong.liste(this.objet_list.zone, this.objet_list.produit, this.objet_list.page).subscribe( response => {
       this.list = response;
+      this.loading = false;
       console.log(this.list);
     })
   }
