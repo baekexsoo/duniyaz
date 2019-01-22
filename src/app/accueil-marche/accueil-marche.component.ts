@@ -14,6 +14,7 @@ export class AccueilMarcheComponent implements OnInit {
   accueil_list: any;
   rec_date: any;
   dat: any;
+  loading = false;
   aff_bool = false;
   warning_bool = false;
   liste_departement: any;
@@ -57,27 +58,35 @@ export class AccueilMarcheComponent implements OnInit {
     this.step = 0;
   }
   search_market() {
+    this.loading = true;
     this.dat = this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
     this.objet_market.date = this.dat ;
+    console.log(this.objet_market.departement);
     return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
       this.search_result = response;
+      this.loading = false;
       this.aff_bool = false;
       this.warning_bool = false;
     }, error => {
       if (error.status === 404) {
         this.warning = 'Aucun marché pour votre recherche';
+        this.loading = false;
         this.warning_bool = true;
+
       }
       if (error.status === 500) {
         this.warning = 'Oops! il y a un problème';
+        this.loading = false;
         this.warning_bool = true;
+
       }
-      console.log(JSON.stringify(error.status));
-      console.log('Error:: ' + error); } );
+       } );
   }
   list_accueil() {
+    this.loading = true;
     return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
       this.accueil_list = response;
+      this.loading = false;
       this.aff_bool = true;
   });
   }
