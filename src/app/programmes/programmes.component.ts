@@ -11,6 +11,7 @@ export class ProgrammesComponent implements OnInit {
   liste_communes: any;
   liste_departement: any;
   list_programmes: any;
+  loading = false;
   warning: any;
   form_data = {
     departement: '',
@@ -27,8 +28,11 @@ export class ProgrammesComponent implements OnInit {
 
   
   programmes() {
+  this.loading = true;
     return this.programService.list_programmes(this.form_data.zone, this.form_data.produit, this.form_data.page).subscribe(response => {
       this.list_programmes = response;
+  this.loading = false;
+
       console.log(this.list_programmes);
 
     });

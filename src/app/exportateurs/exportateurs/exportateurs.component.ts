@@ -9,6 +9,7 @@ import { MarketService } from 'src/providers/market/market.service';
 })
 export class ExportateursComponent implements OnInit {
 liste_communes: any;
+loading = false;
 liste_departement: any;
 liste_exportateurs: any;
 warning: any;
@@ -27,9 +28,12 @@ form_data = {
   }
 
   exportateurs() {
+  this.loading = true;
     return this.exportService.list_exportateurs(this.form_data.zone, this.form_data.produit, this.form_data.page).subscribe(response => {
       this.liste_exportateurs = response;
-      console.log(this.liste_exportateurs);
+  this.loading = false;
+
+      // console.log(this.liste_exportateurs);
 
     });
 

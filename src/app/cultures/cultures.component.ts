@@ -8,6 +8,7 @@ import { CultureService } from 'src/providers/culture/culture.service';
 export class CulturesComponent implements OnInit {
 
   list: any;
+  loading = false;
   objet_list = {
     zone: '',
     produit: '',
@@ -18,9 +19,11 @@ export class CulturesComponent implements OnInit {
   ngOnInit() {
   }
   getAll() {
+    this.loading = true;
     return this.culture.liste(this.objet_list.zone, this.objet_list.produit, this.objet_list.page).subscribe(response => {
       this.list = response;
-    })
+      this.loading = false;
+    });
   }
 
 }
