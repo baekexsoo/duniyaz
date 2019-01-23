@@ -3,6 +3,11 @@
         margin-left: auto;
     }
 }
+
+.active{
+    background-color: #efeef2;
+    border-radius: 2.3rem;
+}
 .btn_pro{
     margin-top: 1%;
     
