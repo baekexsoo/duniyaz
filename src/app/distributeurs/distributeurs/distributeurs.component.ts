@@ -17,7 +17,7 @@ export class DistributeursComponent implements OnInit {
   warning: any;
   form_data = {
     departement: '',
-    zone: 'cot',
+    zone: '',
     produit: '',
     page: 1,
   };

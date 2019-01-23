@@ -15,7 +15,7 @@ liste_exportateurs: any;
 warning: any;
 form_data = {
   departement: '',
-  zone: 'cot',
+  zone: '',
   produit: '',
   page: 1,
 };
