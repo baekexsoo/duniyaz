@@ -5,6 +5,93 @@
 
   <!-- ========== MAIN ========== -->
   <main id="content" role="main">
+      <p class="col align-self-end d-block d-sm-none">
+          <a class="btn btn-primary" style="margin: 5% 70% -4%;" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fas fa-search"></i>
+          </a>
+        </p>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+              <div class="research-background">
+                  <form class="js-validate mt-5 form-pad">
+                    
+                     <div class="row ml-5 mr-5 u-space-3-top--xs">
+                         <!-- Input -->
+                         <div class="col-sm-3 col-xs-3 mt-2 ">
+                           <div class="js-form-message">
+                             <label class="h6 small d-block text-uppercase">
+                               Département
+                               
+                             </label>
+             
+                             <div class="js-focus-state input-group u-form">
+                                 <select class="custom-select" name="commune" [(ngModel)]="objet_market.departement" (change)="list_commune()">
+                                   <option selected value="">Tous</option>  
+                                   <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
+                                   </select>
+                             </div>
+                           </div>
+                         </div>
+                         <!-- End Input -->
+         
+                         <!-- Input -->
+                         <div class="col-sm-3 mt-2">
+                             <div class="js-form-message">
+                               <label class="h6 small d-block text-uppercase">
+                                 Ville
+                                 
+                               </label>
+               
+                               <div class="js-focus-state input-group u-form">
+                                   <select class="custom-select" name="commune" [(ngModel)]="objet_market.ville">
+                                       <option selected value="">Tous</option>
+                                       <option selected *ngFor="let c of liste_communes" [ngValue]="c">{{c}}</option>
+                                     </select>
+                               </div>
+                             </div>
+                           </div>
+                           <!-- End Input -->
+         
+                           <!-- Input -->  
+                         <div class="col-sm-3 mt-2">
+                             <div class="js-form-message">
+                               <label class="h6 small d-block text-uppercase">
+                                 Jour de marche
+                                 
+                               </label>
+               
+                               <div class="js-focus-state input-group u-form " >
+                                 <input class="form-control u-form__input" type="text" id="dp" [(ngModel)]="Today" name="name" ngbDatepicker #d="ngbDatepicker">
+                                 <div class="input-group-append">
+                                   <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+                                     <i class="fas fa-calendar-alt fa-fw"></i>
+                                   </button>
+                                 </div>
+                               </div>
+                             </div>
+                           </div>
+                           <!-- End Input -->
+                           <!--div class="form-group">
+                             <div class="input-group">
+                               <input class="form-control" placeholder="yyyy-mm-dd"
+                                      name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                               <div class="input-group-append">
+                                 <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                               </div>
+                             </div>
+                           </div-->
+                           <!-- Input -->
+                         <div class="col-sm-3 mt-5">
+                             <div class="text-center ">
+                                 <button type="submit" (click)="search_market()"  class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
+                               </div>
+                           </div>
+                           <!-- End Input -->
+                     </div>
+                   </form>
+               </div>
+          </div>
+        </div>
     <div class="container u-space-3-top--lg mb-5">
 
        <!-- Title -->
@@ -14,7 +101,7 @@
         </div-->
         <!-- End Title -->
 
-      <div class="research-background">
+      <div class="research-background d-none d-sm-block">
          <form class="js-validate mt-5 form-pad">
            
             <div class="row ml-5 mr-5 u-space-3-top--xs">
@@ -154,7 +241,7 @@
                data-autoplay="true"
                data-speed="5000"
                data-fade="true"
-               data-nav-for="#testimonialsNavPagination">
+               data-nav-for="#testimonialsNavPagination" style="margin-top:30%">
                 </div>
               </div>
 

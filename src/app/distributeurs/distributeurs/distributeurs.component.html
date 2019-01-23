@@ -29,7 +29,8 @@
     
                     <div class="js-focus-state input-group u-form">
                         <select class="custom-select" name="commune" [(ngModel)]="form_data.departement" (change)="list_commune()">
-                            <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
+                          <option selected value="">Tous</option>
+                          <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
                           </select>
                     </div>
                     <div class="col-12">
@@ -50,7 +51,8 @@
       
                       <div class="js-focus-state input-group u-form">
                           <select class="custom-select" name="commune" [(ngModel)]="form_data.zone">
-                              <option selected *ngFor="let c of liste_communes" [ngValue]="c">{{c}}</option>
+                            <option selected value="">Tous</option>
+                            <option selected *ngFor="let c of liste_communes" [ngValue]="c">{{c}}</option>
                             </select>
                       </div>
                     </div>

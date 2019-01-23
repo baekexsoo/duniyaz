@@ -15,7 +15,7 @@ export class ProgrammesComponent implements OnInit {
   warning: any;
   form_data = {
     departement: '',
-    zone: 'cot',
+    zone: '',
     produit: '',
     page: 1,
   };
