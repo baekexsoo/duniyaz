@@ -19,33 +19,51 @@
           <!-- End Logo -->
             
             <div class="container">
-              <ul class="font_url pull-right menu-position" id="nav">
-                <li class="d-sm-inline-block list-inline-item mr-2 " >
-                  <a class="u-header__topbar-nav-link dec" [routerLink]="['/accueil']" style="text-decoration: none"> Marchés</a>
+              <ul class="font_url pull-right menu-position d-none d-sm-block" id="nav">
+                <li class="d-sm-inline-block list-inline-item mr-2 defile" routerLinkActive="active">
+                  <a class="u-header__topbar-nav-link dec" routerLink="/accueil" style="text-decoration: none"> Marchés</a>
                
                 </li>
-                <li class="d-sm-inline-block list-inline-item mr-2 " >
+                <li class="d-sm-inline-block list-inline-item mr-2 defile" routerLinkActive="active">
                   <a class="u-header__topbar-nav-link dec" [routerLink]="['/culture']" style="text-decoration: none"> Produits agricoles</a>
                
                 </li>
-                <li class="d-sm-inline-block list-inline-item mr-2 " >
+                <li class="d-sm-inline-block list-inline-item mr-2 defile" routerLinkActive="active">
                   <a class="u-header__topbar-nav-link dec" [routerLink]="['/programmes']" style="text-decoration: none"> Programmes</a>
                
                 </li>
-                <li class="nav-item dropdown">  
-  
+                <li class="nav-item dropdown defile" routerLinkActive="active"   [routerLinkActiveOptions]="{ exact: true }">  
+
                     <a class="nav-link dropdown-toggle togle" style="font-size: 0.875rem;" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Intervenants</a>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" [routerLink]="['/ong']">Ong</a>
-                      <a class="dropdown-item" [routerLink]="['/exportateurs']">Exportateurs</a>
-                      <a class="dropdown-item" [routerLink]="['/distributeurs']">Distributeurs</a>
-                      <a class="dropdown-item" [routerLink]="['/transformateur']">Transformateurs</a>
+                      <a class="dropdown-item defile" [routerLink]="['/ong']">Ong</a>
+                      <a class="dropdown-item defile" [routerLink]="['/exportateurs']">Exportateurs</a>
+                      <a class="dropdown-item defile" [routerLink]="['/distributeurs']">Distributeurs</a>
+                      <a class="dropdown-item defile" [routerLink]="['/transformateur']">Transformateurs</a>
 
                       <!--div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Separated link</a-->
                     </div>
                   </li>
               </ul>
+              
+              <!--div class="dropdown  d-none d-sm-block" style="margin: 5% 50% -4%;">
+                <a class="nav-link dropdown-toggle togle" id="dropdownMenuButton" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-bars" size:7x></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#"> Marchés</a>
+                  <a class="dropdown-item" href="#"> Produits agricoles</a>
+                  <a class="dropdown-item" href="#"> Programmes</a>
+                  <a class="dropdown-item menu_css" href="#"> ro
+                    <ul class="submenu">
+                      <li>ong</li>
+                      <li>Exportateurs</li>
+                      <li>Distributeurs</li>
+                    </ul>
+                  </a>
+                </div>
+              </div-->
             </div>
           </nav>
         <!-- End Nav -->
