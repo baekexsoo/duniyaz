@@ -23,7 +23,7 @@ export class ProgrammesComponent implements OnInit {
 
   ngOnInit() {
     this.list_departement();
-
+    this.programmes();
   }
 
   

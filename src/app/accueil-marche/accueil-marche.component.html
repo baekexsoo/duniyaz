@@ -80,87 +80,88 @@
                                </div>
                              </div>
                            </div-->
-                           <!-- Input -->
-                         <div class="col-sm-3 mt-5">
-                             <div class="text-center ">
-                                 <button type="submit" (click)="search_market()"  class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
-                               </div>
-                           </div>
-                           <!-- End Input -->
-                     </div>
-                   </form>
-               </div>
+            <!-- Input -->
+            <div class="col-sm-3 mt-5">
+              <div class="text-center ">
+                <button type="submit" (click)="search_market()" class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
+              </div>
+            </div>
+            <!-- End Input -->
           </div>
-        </div>
-    <div class="container u-space-3-top--lg mb-5">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container u-space-3-top--lg mb-5">
 
-       <!-- Title -->
-       <!--div class="mb-7">         
+    <!-- Title -->
+    <!--div class="mb-7">         
           <button (click)="aff_tab()" >ssssssss</button>
           <button (click)="aff_maps()" >sgdrghd</button>
         </div-->
-        <!-- End Title -->
+    <!-- End Title -->
 
-      <div class="research-background d-none d-sm-block">
-         <form class="js-validate mt-5 form-pad">
-           
-            <div class="row ml-5 mr-5 u-space-3-top--xs">
-                <!-- Input -->
-                <div class="col-sm-3 col-xs-3 mt-2 ">
-                  <div class="js-form-message">
-                    <label class="h6 small d-block text-uppercase">
-                      Département
-                      
-                    </label>
-    
-                    <div class="js-focus-state input-group u-form">
-                        <select class="custom-select" name="commune" [(ngModel)]="objet_market.departement" (change)="list_commune()">
-                          <option selected value="">Tous</option>  
-                          <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
-                          </select>
-                    </div>
-                  </div>
+    <div class="research-background d-none d-sm-block">
+      <form class="js-validate mt-5 form-pad">
+
+        <div class="row ml-5 mr-5 u-space-3-top--xs">
+          <!-- Input -->
+          <div class="col-sm-3 col-xs-3 mt-2 ">
+            <div class="js-form-message">
+              <label class="h6 small d-block text-uppercase">
+                Département
+
+              </label>
+
+              <div class="js-focus-state input-group u-form">
+                <select class="custom-select" name="commune" [(ngModel)]="objet_market.departement" (change)="list_commune()">
+                  <option selected value="">Tous</option>
+                  <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- End Input -->
+
+          <!-- Input -->
+          <div class="col-sm-3 mt-2">
+            <div class="js-form-message">
+              <label class="h6 small d-block text-uppercase">
+                Ville
+
+              </label>
+
+              <div class="js-focus-state input-group u-form">
+                <select class="custom-select" name="commune" [(ngModel)]="objet_market.ville">
+                  <option selected value="">Tous</option>
+                  <option selected *ngFor="let c of liste_communes" [ngValue]="c">{{c}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- End Input -->
+
+          <!-- Input -->
+          <div class="col-sm-3 mt-2">
+            <div class="js-form-message">
+              <label class="h6 small d-block text-uppercase">
+                Jour de marche
+
+              </label>
+
+              <div class="js-focus-state input-group u-form ">
+                <input class="form-control u-form__input" type="text" id="dp" [(ngModel)]="Today" name="name"
+                  ngbDatepicker #d="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+                    <i class="fas fa-calendar-alt fa-fw"></i>
+                  </button>
                 </div>
-                <!-- End Input -->
-
-                <!-- Input -->
-                <div class="col-sm-3 mt-2">
-                    <div class="js-form-message">
-                      <label class="h6 small d-block text-uppercase">
-                        Ville
-                        
-                      </label>
-      
-                      <div class="js-focus-state input-group u-form">
-                          <select class="custom-select" name="commune" [(ngModel)]="objet_market.ville">
-                              <option selected value="">Tous</option>
-                              <option selected *ngFor="let c of liste_communes" [ngValue]="c">{{c}}</option>
-                            </select>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Input -->
-
-                  <!-- Input -->  
-                <div class="col-sm-3 mt-2">
-                    <div class="js-form-message">
-                      <label class="h6 small d-block text-uppercase">
-                        Jour de marche
-                        
-                      </label>
-      
-                      <div class="js-focus-state input-group u-form " >
-                        <input class="form-control u-form__input" type="text" id="dp" [(ngModel)]="Today" name="name" ngbDatepicker #d="ngbDatepicker">
-                        <div class="input-group-append">
-                          <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
-                            <i class="fas fa-calendar-alt fa-fw"></i>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Input -->
-                  <!--div class="form-group">
+              </div>
+            </div>
+          </div>
+          <!-- End Input -->
+          <!--div class="form-group">
                     <div class="input-group">
                       <input class="form-control" placeholder="yyyy-mm-dd"
                              name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
@@ -169,96 +170,96 @@
                       </div>
                     </div>
                   </div-->
-                  <!-- Input -->
-                <div class="col-sm-3 mt-5">
-                    <div class="text-center ">
-                        <button type="submit" (click)="search_market()"  class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
-                      </div>
-                  </div>
-                  <!-- End Input -->
+          <!-- Input -->
+          <div class="col-sm-3 mt-5">
+            <div class="text-center ">
+              <button type="submit" (click)="search_market()" class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
             </div>
-          </form>
-      </div>
-    </div>
-    
-    <div class="container w-70" *ngIf="!warning_bool && !loading">
-        <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search mb-2">
-            <div class="input-group-prepend u-form__prepend">
-              <span class="input-group-text u-form__text">
-                <span class="fa fa-search u-form__text-inner"></span>
-              </span>
-            </div>
-            <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre">
-          </form>
-        <table class="table  table-hover" style="background-color:#ffffffe0; border-radius: 10px;">
-            <thead>
-              <tr>
-                <th>Marchés</th>
-                <th>Localisation</th>
-                <th>Jour d'ouverture</th>
-                <th>Produits</th>
-              </tr>
-            </thead>
-            <tbody *ngIf="!aff_bool" >
-              <tr *ngFor="let item of search_result | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
-                <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
-                <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.arrondissement | titlecase}} > {{item.commune | titlecase}}</small></td>
-                <td style="width:40vh"><small>
-                  ouvert tous les {{item.periode}} jours.<br>
-                  <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span></div>
-                  <div *ngIf="item.nextMarketDay !== rec_date">S'animera le : <strong> {{item.nextMarketDay.split('/').reverse().join('/') | date: 'EEEE dd' | slice:0:3}}.
-                                                                                       {{item.nextMarketDay.split('/').reverse().join('/') | date: 'dd'}}
-                                                                                       {{item.nextMarketDay.split('/').reverse().join('/') | date:'MMMM'  | slice:0:3 }}
-                                                                                       {{item.nextMarketDay.split('/').reverse().join('/') | date: 'yyyy'}}
-                                                                                      </strong></div>
-                   </small></td>
-                <td><small> {{ item.products.join(', ') }} </small> </td>
-              </tr>
-                         
-            </tbody>
-            <tbody *ngIf="aff_bool">
-              <tr *ngFor="let item of accueil_list | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
-                <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
-                <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.arrondissement | titlecase}} > {{item.commune | titlecase}}</small></td>
-                <td style="width:40vh"><small>
-                  ouvert tous les {{item.periode}} jours.<br>
-                  <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span></div>
-
-                   </small></td>
-                <td><small> {{ item.products.join(', ') }} </small> </td>
-              </tr>
-                         
-            </tbody>
-          </table>
-          <div class="paginate uk-text-center">
-            <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>        
-        </div>
-    </div>
-
-    <div class="row justify-content-center u-space-5-top" *ngIf="loading" style="margin-top: 15vh;">
-      <div id="testimonialsNavMain" class="js-slick-carousel js-slick-carousel u-slick u-content-centered-y p-4 mb-0 u-stroke-midnightblue load"
-               data-infinite="true"
-               data-autoplay="true"
-               data-speed="5000"
-               data-fade="true"
-               data-nav-for="#testimonialsNavPagination" style="margin-top:30%">
-                </div>
-              </div>
-
-
-    <div class="row justify-content-center mt-5 u-space-3-bottom" *ngIf="warning_bool" >
-        <div class="alert alert-danger" role="alert">
-            {{warning}}.
           </div>
-      
+          <!-- End Input -->
+        </div>
+      </form>
     </div>
-   
-    <div  *ngIf="step==1">
-       
+  </div>
+
+  <div class="container w-70" *ngIf="!warning_bool && !loading">
+    <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search mb-2">
+      <div class="input-group-prepend u-form__prepend">
+        <span class="input-group-text u-form__text">
+          <span class="fa fa-search u-form__text-inner"></span>
+        </span>
+      </div>
+      <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre">
+    </form>
+    <table class="table  table-hover" style="background-color:#ffffffe0; border-radius: 10px;">
+      <thead>
+        <tr>
+          <th>Marchés</th>
+          <th>Localisation</th>
+          <th>Jour d'ouverture</th>
+          <th>Produits</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="!aff_bool">
+        <tr *ngFor="let item of search_result | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
+          <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
+          <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.arrondissement | titlecase}} >
+              {{item.commune | titlecase}}</small></td>
+          <td style="width:40vh"><small>
+              ouvert tous les {{item.periode}} jours.<br>
+              <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span></div>
+              <div *ngIf="item.nextMarketDay !== rec_date">S'animera le : <strong>
+                  {{item.nextMarketDay.split('/').reverse().join('/') | date: 'EEEE dd' | slice:0:3}}.
+                  {{item.nextMarketDay.split('/').reverse().join('/') | date: 'dd'}}
+                  {{item.nextMarketDay.split('/').reverse().join('/') | date:'MMMM' | slice:0:3 }}
+                  {{item.nextMarketDay.split('/').reverse().join('/') | date: 'yyyy'}}
+                </strong></div>
+            </small></td>
+          <td><small> {{ item.products.join(', ') }} </small> </td>
+        </tr>
+
+      </tbody>
+      <tbody *ngIf="aff_bool">
+        <tr *ngFor="let item of accueil_list | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
+          <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
+          <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.arrondissement | titlecase}} >
+              {{item.commune | titlecase}}</small></td>
+          <td style="width:40vh"><small>
+              ouvert tous les {{item.periode}} jours.<br>
+              <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span></div>
+
+            </small></td>
+          <td><small> {{ item.products.join(', ') }} </small> </td>
+        </tr>
+
+      </tbody>
+    </table>
+    <div class="paginate uk-text-center">
+      <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
     </div>
-     
-    </main>
-    <!-- ========== END MAIN ========== -->
-      <div>
-        <app-footer></app-footer>
-      </div>          
+  </div>
+
+  <div class="row justify-content-center u-space-5-top" *ngIf="loading" style="margin-top: 15vh;">
+    <div id="testimonialsNavMain" class="js-slick-carousel js-slick-carousel u-slick u-content-centered-y p-4 mb-0 u-stroke-midnightblue load"
+      data-infinite="true" data-autoplay="true" data-speed="5000" data-fade="true" data-nav-for="#testimonialsNavPagination"
+      style="margin-top:30%">
+    </div>
+  </div>
+
+
+  <div class="row justify-content-center mt-5 u-space-3-bottom" *ngIf="warning_bool">
+    <div class="alert alert-danger" role="alert">
+      {{warning}}.
+    </div>
+
+  </div>
+
+  <div *ngIf="step==1">
+
+  </div>
+
+</main>
+<!-- ========== END MAIN ========== -->
+<div>
+  <app-footer></app-footer>
+</div>

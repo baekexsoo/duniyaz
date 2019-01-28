@@ -22,6 +22,7 @@ export class CulturesComponent implements OnInit {
 
   ngOnInit() {
     this.list_departement();
+    this.getAll();
   }
   list_departement() {
     return this.market.departement().subscribe(response => {

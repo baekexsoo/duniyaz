@@ -23,6 +23,7 @@ export class TransformateurComponent implements OnInit {
 
   ngOnInit() {
     this.list_departement();
+    this.getAll();
   }
 
   list_departement() {
