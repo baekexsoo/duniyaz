@@ -24,7 +24,7 @@ form_data = {
 
   ngOnInit() {
     this.list_departement();
-
+    this.exportateurs();
   }
 
   exportateurs() {

@@ -26,7 +26,7 @@ export class DistributeursComponent implements OnInit {
 
   ngOnInit() {
     this.list_departement();
-
+    this.distributeurs();
   }
 
   list_departement() {

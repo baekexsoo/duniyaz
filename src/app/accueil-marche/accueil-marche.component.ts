@@ -61,7 +61,7 @@ export class AccueilMarcheComponent implements OnInit {
     this.loading = true;
     this.dat = this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
     this.objet_market.date = this.dat ;
-    console.log(this.objet_market.departement);
+    console.log(JSON.stringify(this.objet_market) ) ;
     return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
       this.search_result = response;
       this.loading = false;
