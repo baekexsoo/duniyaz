@@ -19,7 +19,8 @@
           <!-- End Logo -->
             
             <div class="container">
-              <ul class="font_url pull-right menu-position d-none d-sm-block" id="nav">
+              <ul class="font_url menu-position  d-none d-sm-block" id="nav">
+                 
                 <li class="d-sm-inline-block list-inline-item mr-2 defile" routerLinkActive="active">
                   <a class="u-header__topbar-nav-link dec" routerLink="/accueil" style="text-decoration: none"> Marchés</a>
                
@@ -45,25 +46,50 @@
                       <a class="dropdown-item" href="#">Separated link</a-->
                     </div>
                   </li>
+                  
+              </ul>
+              <ul class="font_url menu-position d-sm-none .d-md-block" id="nav">
+                <li>
+                  <div class="dropleft">
+                    <a class="nav-link  togle" id="dropdownMenuButton" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-bars" style="font-size:7x"></i>
+                    </a>
+                    <div class="dropdown-menu mobile-menu-position" aria-labelledby="dropdownMenuButton">
+                      <ul class="list-group">
+                        <li class="list-group dropdown-item mobile-menu-position-font">Marchés</li>
+                        <li class="list-group dropdown-item mobile-menu-position-font">Produits agricoles</li>
+                        <li class="list-group dropdown-item mobile-menu-position-font">Programmes</li>
+                        <li class="list-group dropdown-item mobile-menu-position-font dropdown-toggle" id="dropdownMenuButton" data-hover="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                          Intervenants
+                        
+                        </li>
+                       
+                            <ul class=" dropdown-menu "  aria-labelledby="dropdownMenuButton" style="margin-right: -15px;">
+                                <li class="sub-menu dropdown-menu">ONG</li>
+                                <li class="sub-menu dropdown-menu">Exportateurs</li>
+                                <li class="dropdown-menu sub-menu">Distributeurs</li>
+                                <li class="dropdown-menu sub-menu">Transformateurs</li>
+                            </ul>
+            
+                      </ul>
+                    <!--
+                      <div class="collapse" id="collapseExample" >
+                          <div class="card card-body " style="border: none; color: #37b82c; background-color: #ffffff21 !important;">
+                            <ul class="list-group" style="margin-right: -15px;">
+                                <li class="list-group sub-menu">Ong</li>
+                                <li class="list-group sub-menu">Exportateurs</li>
+                                <li class="list-group sub-menu">Distributeurs</li>
+                                <li class="list-group sub-menu">Transformateurs</li>
+                            </ul>
+                          </div>
+                        </div>
+                    -->
+                    </div>
+                  </div>
+                </li>
               </ul>
               
-              <!--div class="dropdown  d-none d-sm-block" style="margin: 5% 50% -4%;">
-                <a class="nav-link dropdown-toggle togle" id="dropdownMenuButton" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-bars" size:7x></i>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#"> Marchés</a>
-                  <a class="dropdown-item" href="#"> Produits agricoles</a>
-                  <a class="dropdown-item" href="#"> Programmes</a>
-                  <a class="dropdown-item menu_css" href="#"> ro
-                    <ul class="submenu">
-                      <li>ong</li>
-                      <li>Exportateurs</li>
-                      <li>Distributeurs</li>
-                    </ul>
-                  </a>
-                </div>
-              </div-->
+             
             </div>
           </nav>
         <!-- End Nav -->
