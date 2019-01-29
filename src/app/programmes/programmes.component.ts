@@ -14,10 +14,8 @@ export class ProgrammesComponent implements OnInit {
   loading = false;
   warning: any;
   form_data = {
-    departement: '',
     zone: '',
     produit: '',
-    page: 1,
   };
   constructor(private programService: ProgrammeService, public market: MarketService) { }
 
@@ -29,7 +27,7 @@ export class ProgrammesComponent implements OnInit {
   
   programmes() {
   this.loading = true;
-    return this.programService.list_programmes(this.form_data.zone, this.form_data.produit, this.form_data.page).subscribe(response => {
+    return this.programService.list_programmes(this.form_data.zone, this.form_data.produit).subscribe(response => {
       this.list_programmes = response;
   this.loading = false;
 
@@ -45,12 +43,12 @@ export class ProgrammesComponent implements OnInit {
     });
   }
 
-  list_commune() {
+  /*list_commune() {
     this.warning = '';
     return this.market.commune(this.form_data.departement).subscribe( response => {
       this.liste_communes = response.ville_list;
       console.log(response);
     });
-  }
+  }*/
 
 }

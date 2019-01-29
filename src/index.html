@@ -94,11 +94,22 @@
     $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
   });
 </script>
+
 <script>
-  $(document).on('ready', function () {
-    // initialization of unfold component
-    $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
-  });
-</script>
+    $(document).on('ready', function () {
+      // initialization of unfold component
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
+    });
+  </script>
+  <!-- JS Implementing Plugins -->
+  <script src="./assets/js/components/hs.unfold.js"></script>
+  
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // initialization of unfold component
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
+    });
+  </script>
 </body>
 </html>
