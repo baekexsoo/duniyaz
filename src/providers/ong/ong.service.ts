@@ -14,8 +14,12 @@ export class OngService {
 
   constructor(public Api: Api) { }
 
-  liste(zone, produit, page): Observable<any> {
-    let url = 'dunya/ongs?zone=' + zone + '&produit=' + produit + '&page=' + page;
+  liste(): Observable<any> {
+    let url = 'dunya/ongs';
     return this.Api.get(url , httpOptions);
+  }
+  list_by_zone (zone) {
+    let url = 'dunya/ongs?zone=' + zone;
+    return this.Api.get(url, httpOptions);
   }
 }
