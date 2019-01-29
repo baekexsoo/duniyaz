@@ -1,3 +1,37 @@
+.mobile-menu-position{
+	right: 0%;
+    top: 45px;
+    z-index: 999;
+    margin-right: 0;
+    height: -webkit-fill-available;
+	background-color: #fff;
+	width: 250px;
+}
+
+.mobile-menu-position-font{
+	font-size: 15px;
+    font-weight: bold;
+    color: #37b82c !important;
+	margin: auto;
+	height: 50px;
+	padding-top: 15px;
+	border-bottom: 1px solid #4e4e4e;
+}
+
+.sub-menu{
+	height: 50px;
+	padding-top: 15px;
+	border-bottom: 1px solid #4e4e4e;
+}
+.mobile-menu-position-font:hover{
+	color: #045cff !important;
+}
+
+.mobile-menu-position-font:active{
+	color: #132d5c !important;
+}
+
+
 @media screen and (orientation:portrait){
     .btn_marg{
         margin-left: auto;

@@ -23,6 +23,7 @@ export class OngComponent implements OnInit {
 
   ngOnInit() {
     this.list_departement();
+    this.getAll();
   }
 
   list_departement() {
