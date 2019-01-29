@@ -14,10 +14,8 @@ export class ProgrammesComponent implements OnInit {
   loading = false;
   warning: any;
   form_data = {
-    departement: '',
     zone: '',
     produit: '',
-    page: 1,
   };
   constructor(private programService: ProgrammeService, public market: MarketService) { }
 
@@ -29,7 +27,7 @@ export class ProgrammesComponent implements OnInit {
   
   programmes() {
   this.loading = true;
-    return this.programService.list_programmes(this.form_data.zone, this.form_data.produit, this.form_data.page).subscribe(response => {
+    return this.programService.list_programmes(this.form_data.zone, this.form_data.produit).subscribe(response => {
       this.list_programmes = response;
   this.loading = false;
 
@@ -39,18 +37,26 @@ export class ProgrammesComponent implements OnInit {
 
   }
 
+  /**
+   * departement getAll function
+   * list of departement
+   * Author Christian
+   */
   list_departement() {
     return this.market.departement().subscribe(response => {
       this.liste_departement = response;
+      console.log(this.liste_departement);
+    }, error => {
+      console.log('Callback error : ' + error);
     });
   }
 
-  list_commune() {
+  /*list_commune() {
     this.warning = '';
     return this.market.commune(this.form_data.departement).subscribe( response => {
       this.liste_communes = response.ville_list;
       console.log(response);
     });
-  }
+  }*/
 
 }

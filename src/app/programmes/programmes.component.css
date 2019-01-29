@@ -1,3 +1,140 @@
+* {
+	box-sizing: border-box;
+}
+.second{
+   float: right;
+}
+.wrapper {
+	display: flex;
+	justify-content: center;
+    height: 471px;
+  /*  width: 487px;*/
+    margin: 22px auto;
+    border-radius: 7px 7px 7px 7px;
+    /* VIA CSS MATIC https://goo.gl/cIbnS */
+    -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+	
+	
+}
+
+.outer {
+	position: relative;
+	background: #fff;
+	height: 443px;
+	width: 650px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+}
+
+.sectors{
+    font-size: 12px
+}
+
+.content {
+	animation-delay: 0.3s;
+	position: absolute;
+	left: 1px;
+    z-index: 3;
+    top: 12px;
+	
+}
+
+h1 {
+    color: #111;
+    font-size: 0.9rem;
+}
+
+p {
+	width: 280px;
+	font-size: 12px;
+	line-height: 1.4;
+	color: #aaa;
+	margin: 20px 0;
+	
+}
+
+.bg {
+	display: inline-block;
+	color: #fff;
+	background: cornflowerblue;
+	padding: 5px 10px;
+	border-radius: 50px;
+	font-size: .7em;
+}
+.button {
+	width: fit-content;
+	height: fit-content;
+	margin-top: 10px;
+	
+	
+	
+}
+
+.button a {
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+    font-size: 11px;
+	background: #132d5c;    
+	color: #fff;
+	text-decoration: none;
+	padding: 10px 15px;
+	border: 1px solid #aaa;
+	font-weight: bold;
+	
+	
+}
+
+
+.button a:after{
+	content: "";
+	position: absolute;
+	top: 0;
+	right: -10px;
+	width: 0%;
+	background: #132d5c;
+	height: 100%;
+	z-index: -1;
+	transition: width 0.3s ease-in-out;
+	transform: skew(-25deg);
+	transform-origin: right;
+}
+
+.button a:hover:after {
+	width: 150%;
+	left: -10px;
+	transform-origin: left;
+	
+}
+
+.button a:hover {
+	color: #fff;
+	transition: all 0.5s ease;
+}
+
+
+.button a:nth-of-type(1) {
+	border-radius: 50px 0 0 50px;
+	border-right: none;
+}
+
+.button a:nth-of-type(2) {
+	border-radius: 0px 50px 50px 0;
+}
+
+.cart-icon {
+	padding-right: 8px;
+	
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
 .search{
     /*width: 35%;*/
     background-color: gainsboro;

@@ -17,9 +17,9 @@ export class ProgrammeService {
 
   constructor(public api: Api, private http: HttpClient) { }
 
-  list_programmes(zone, produit, page): Observable<any> {
+  list_programmes(zone, produit): Observable<any> {
 
-    return this.http.get(this.Base_url + zone + '&produit=' + produit + '&page=' + page, httpOptions);
+    return this.http.get(this.Base_url + zone + '&produit=' + produit, httpOptions);
 
 }
 
