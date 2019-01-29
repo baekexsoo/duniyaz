@@ -37,9 +37,17 @@ export class ProgrammesComponent implements OnInit {
 
   }
 
+  /**
+   * departement getAll function
+   * list of departement
+   * Author Christian
+   */
   list_departement() {
     return this.market.departement().subscribe(response => {
       this.liste_departement = response;
+      console.log(this.liste_departement);
+    }, error => {
+      console.log('Callback error : ' + error);
     });
   }
 
