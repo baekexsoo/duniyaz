@@ -95,15 +95,15 @@
                     <h1> <strong> {{ prog.programName }} </strong> <br/></h1>
                    
                     <p>
-                        <strong class="mb-2"> Prinicpal Objectif: </strong><br/> 
-                      {{ prog.principalObjectif }} 
+                        <strong > Prinicpal Objectif: </strong><br/> 
+                      {{ prog.principalObjectif  }} 
                     </p>
                     
                     <p>
-                        <strong class="mb-2"> Résultats escomptés: </strong><br/> 
-                        {{ prog.expectedResults }}    
+                        <strong > Résultats escomptés: </strong><br/> 
+                        {{ prog.expectedResults.join(' ') }}    
                     </p>
-                  <div class="sectors"> <strong class="mb-2">Secteurs cibles :</strong> <span>{{ prog.targetedSectors}}</span></div>
+                  <div class="sectors"> <strong class="mb-2">Secteurs cibles :</strong> <span> {{ prog.targetedSectors.join(' ')}}</span></div>
                     <div class="button">
                       <a>Durée d'exécution</a><a class="cart-btn" style="background: #fff;color: #111;"><i class="cart-icon ion-bag"></i>{{ prog.startDate }} à {{ prog.endDate }}</a>
                     </div>
