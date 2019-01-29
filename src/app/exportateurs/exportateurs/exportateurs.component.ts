@@ -29,14 +29,34 @@ form_data = {
 
   exportateurs() {
   this.loading = true;
-    return this.exportService.list_exportateurs(this.form_data.zone, this.form_data.produit, this.form_data.page).subscribe(response => {
+    return this.exportService.list_exportateurs().subscribe(response => {
       this.liste_exportateurs = response;
   this.loading = false;
-
       // console.log(this.liste_exportateurs);
-
     });
-
+  }
+  filtre_exportateur () {
+    this.loading = true;
+    if (this.form_data.zone !== '' && this.form_data.produit !== '' ) {
+      return this.exportService.list_filtre(this.form_data.zone, this.form_data.produit).subscribe( response => {
+        this.liste_exportateurs = response;
+        console.log(this.liste_exportateurs);
+        this.loading = false;
+      });
+    }
+    if (this.form_data.zone !== '') {
+      return this.exportService.list_by_zone(this.form_data.zone).subscribe( response =>{
+        this.liste_exportateurs = response;
+        console.log(this.liste_exportateurs);
+        this.loading = false;
+      });
+    }
+    if (this.form_data.produit !== '') {
+      return this.exportService.list_by_produit(this.form_data.produit).subscribe( response => {
+        this.liste_exportateurs = response;
+        this.loading = false;
+      });
+    }
   }
 
   list_departement() {
@@ -49,7 +69,6 @@ form_data = {
     this.warning = '';
     return this.market.commune(this.form_data.departement).subscribe( response => {
       this.liste_communes = response.ville_list;
-      console.log(response);
     });
   }
 }

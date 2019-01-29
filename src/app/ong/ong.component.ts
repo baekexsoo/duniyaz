@@ -42,11 +42,18 @@ export class OngComponent implements OnInit {
 
   getAll() {
     this.loading = true;
-    return this.ong.liste(this.objet_list.zone, this.objet_list.produit, this.objet_list.page).subscribe( response => {
+    return this.ong.liste().subscribe( response => {
       this.list = response;
       this.loading = false;
       console.log(this.list);
-    })
+    });
+  }
+  filtre_ong () {
+    this.loading = true;
+    return this.ong.list_by_zone(this.objet_list.zone).subscribe( reponse => {
+      this.list = reponse;
+      this.loading = false;
+    });
   }
 
 }
