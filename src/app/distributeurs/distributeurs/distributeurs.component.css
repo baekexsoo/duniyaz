@@ -7,6 +7,13 @@
 .w-70{
     width: 70%;
 }
+.email{
+    font-size: 14px;
+    margin-left: 12px;
+}
+.phone{
+    margin-left:12px;
+}
 .wrapper {
 	display: flex;
 	justify-content: center;
