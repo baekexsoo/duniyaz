@@ -29,7 +29,7 @@ form_data = {
 
   exportateurs() {
   this.loading = true;
-    return this.exportService.list_exportateurs().subscribe(response => {
+    return this.exportService.list_export_simulation().subscribe(response => {
       this.liste_exportateurs = response;
   this.loading = false;
       // console.log(this.liste_exportateurs);

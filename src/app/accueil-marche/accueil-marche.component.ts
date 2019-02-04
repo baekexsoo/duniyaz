@@ -108,6 +108,7 @@ export class AccueilMarcheComponent implements OnInit {
       }
        } );*/
   }
+
   list_accueil() {
     this.loading = true;
     if (this.Today.day < 10) {

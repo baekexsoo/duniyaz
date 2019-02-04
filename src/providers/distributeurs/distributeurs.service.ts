@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {  HttpHeaders, HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Api } from '../api/api';
+import { Dist } from 'src/app/mock_data/distributeurs';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -22,5 +23,10 @@ export class DistributeursService {
 
         return this.http.get(this.Base_url + zone + '&produit=' + produit + '&page=' + page, httpOptions)
 
+  }
+
+
+  liste_simulation_dist (): Observable<any> {
+    return of(Dist);
   }
 }

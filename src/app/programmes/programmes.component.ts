@@ -27,7 +27,7 @@ export class ProgrammesComponent implements OnInit {
   
   programmes() {
   this.loading = true;
-    return this.programService.list_programmes(this.form_data.zone, this.form_data.produit).subscribe(response => {
+    return this.programService.liste_simulation_prog().subscribe(response => {
       this.list_programmes = response;
   this.loading = false;
 
