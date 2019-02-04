@@ -36,6 +36,7 @@ export class AccueilMarcheComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.Today =  this.calendar.getToday();
     this.objet_market.date = this.Today.day + '/0' + this.Today.month + '/' + this.Today.year;
     console.log(this.objet_market.date);
@@ -47,6 +48,7 @@ export class AccueilMarcheComponent implements OnInit {
     this.list_departement();
     this.rec_date = this.objet_market.date;
     this.list_accueil();
+    this.data_simulation();
   }
   goto(n= 0) {
     this.step = n;
@@ -57,12 +59,21 @@ export class AccueilMarcheComponent implements OnInit {
   aff_tab() {
     this.step = 0;
   }
+  data_simulation () {
+    
+  }
   search_market() {
     this.loading = true;
     this.dat = this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
     this.objet_market.date = this.dat ;
     console.log(JSON.stringify(this.objet_market) ) ;
-    return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
+    return this.market.liste_simulation().subscribe( res => {
+      this.search_result = res;
+      this.loading = false;
+      this.aff_bool = false;
+      this.warning_bool = false;
+    });
+    /*return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
       this.search_result = response;
       this.loading = false;
       this.aff_bool = false;
@@ -80,16 +91,18 @@ export class AccueilMarcheComponent implements OnInit {
         this.warning_bool = true;
 
       }
-       } );
+       } );*/
   }
 
   list_accueil() {
     this.loading = true;
-    return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
-      this.accueil_list = response;
+    return this.market.liste_simulation().subscribe( res => {
+      this.accueil_list = res;
       this.loading = false;
       this.aff_bool = true;
-  });
+    });
+    // return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
+  // });
   }
   list_departement() {
     return this.market.departement().subscribe(response => {
@@ -110,7 +123,7 @@ export class AccueilMarcheComponent implements OnInit {
   list_commune() {
     return this.market.commune(this.objet_market.departement).subscribe(response => {
       this.liste_communes = response.ville_list;
-    })
+    });
   }
 
 }
