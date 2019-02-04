@@ -3,3 +3,31 @@
     background-color: gainsboro;
     height: 40px;
 }
+
+.w-70{
+    width: 70%;
+}
+.wrapper {
+	display: flex;
+	justify-content: center;
+    height: 221px;
+  /*  width: 487px;*/
+    margin: 22px auto;
+    border-radius: 7px 7px 7px 7px;
+    /* VIA CSS MATIC https://goo.gl/cIbnS */
+    -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+	box-shadow:0px 2px 6px 0px rgba(0, 0, 0, 0.15);
+	
+	
+}
+
+.outer {
+	position: relative;
+	background: #fff;
+	height: 205px;
+	width: 650px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+}

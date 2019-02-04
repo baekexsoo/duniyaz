@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {  HttpHeaders, HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Api } from '../api/api';
+import { Exportateurs } from 'src/app/mock_data/exportateurs';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -22,6 +23,11 @@ export class ExportService {
   list_exportateurs(): Observable<any> {
     let url = 'dunya/exportateurs';
     return this.api.get(url, httpOptions);
+  }
+
+  list_export_simulation(): Observable<any> {
+      return of(Exportateurs);
+  
   }
 
   /* fonction qui renvoie la liste en fonction de la zone et le produit (Romeo)  */
