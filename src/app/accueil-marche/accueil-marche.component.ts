@@ -82,6 +82,7 @@ export class AccueilMarcheComponent implements OnInit {
       }
        } );
   }
+
   list_accueil() {
     this.loading = true;
     return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
