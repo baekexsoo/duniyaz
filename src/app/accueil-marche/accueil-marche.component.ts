@@ -39,7 +39,7 @@ export class AccueilMarcheComponent implements OnInit {
 
     this.Today =  this.calendar.getToday();
     this.objet_market.date = this.Today.day + '/0' + this.Today.month + '/' + this.Today.year;
-    console.log(this.objet_market.date);
+    console.log(this.Today);
 
      this.dateString = '2019/01/15';
 
@@ -48,31 +48,46 @@ export class AccueilMarcheComponent implements OnInit {
     this.list_departement();
     this.rec_date = this.objet_market.date;
     this.list_accueil();
-    this.data_simulation();
   }
   goto(n= 0) {
-    this.step = n;
+    this.step = n;return this.market.liste_simulation().subscribe( res => {
+        this.accueil_list = res;
+        console.log(this.accueil_list);
+        this.loading = false;
+        this.aff_bool = true;
+      });
   }
   aff_maps() {
-    this.step = 1;
+    this.step = 1;return this.market.liste_simulation().subscribe( res => {
+        this.accueil_list = res;
+        console.log(this.accueil_list);
+        this.loading = false;
+        this.aff_bool = true;
+      });
   }
   aff_tab() {
     this.step = 0;
   }
-  data_simulation () {
-    
-  }
   search_market() {
     this.loading = true;
-    this.dat = this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
-    this.objet_market.date = this.dat ;
-    console.log(JSON.stringify(this.objet_market) ) ;
-    return this.market.liste_simulation().subscribe( res => {
-      this.search_result = res;
-      this.loading = false;
-      this.aff_bool = false;
-      this.warning_bool = false;
-    });
+    if (this.Today === null) {
+      return this.market.liste_simulation().subscribe(res => {
+        this.search_result = res;
+        this.loading = false;
+        this.aff_bool = false;
+        this.warning_bool = false;
+      });
+    } else {
+      this.dat = this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
+      this.objet_market.date = this.dat ;
+      console.log(JSON.stringify(this.objet_market) ) ;
+      return this.market.liste_simulation().subscribe( res => {
+        this.search_result = res;
+        this.loading = false;
+        this.aff_bool = false;
+        this.warning_bool = false;
+      });
+    }
     /*return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
       this.search_result = response;
       this.loading = false;
@@ -95,11 +110,23 @@ export class AccueilMarcheComponent implements OnInit {
   }
   list_accueil() {
     this.loading = true;
-    return this.market.liste_simulation().subscribe( res => {
-      this.accueil_list = res;
-      this.loading = false;
-      this.aff_bool = true;
-    });
+    if (this.Today.day < 10) {
+      this.dat = '0' + this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
+      this.rec_date = this.dat;
+      return this.market.liste_simulation().subscribe( res => {
+        this.accueil_list = res;
+        this.loading = false;
+        this.aff_bool = true;
+      });
+    } else {
+      this.dat = this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
+      this.rec_date = this.dat;
+      return this.market.liste_simulation().subscribe( res => {
+        this.accueil_list = res;
+        this.loading = false;
+        this.aff_bool = true;
+      });
+    }
     // return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
   // });
   }
@@ -120,7 +147,7 @@ export class AccueilMarcheComponent implements OnInit {
   }
 
   list_commune() {
-    return this.market.commune(this.objet_market.departement).subscribe(response => {
+    return this.market.commune(this.objet_market.departement).subscribe( response => {
       this.liste_communes = response.ville_list;
     });
   }
