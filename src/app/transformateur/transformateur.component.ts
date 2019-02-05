@@ -42,11 +42,13 @@ export class TransformateurComponent implements OnInit {
   getAll() {
     this.loading = true;
     console.log(this.objet_list);
-    return this.transformateur.liste(this.objet_list.zone, this.objet_list.produit, this.objet_list.page).subscribe(response => {
+    return this.transformateur.liste_simulation_trans().subscribe(response => {
       this.list = response;
       this.loading = false;
       console.log(this.list);
-    })
+    });
   }
+
+  
 
 }
