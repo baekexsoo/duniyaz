@@ -5,14 +5,14 @@
 
 <!-- ========== MAIN ========== -->
 <main id="content" role="main" style="min-height:-webkit-fill-available">
-  <!--div class="d-block d-sm-none">
+  <div class="d-block d-sm-none" *ngIf="var_res" >
     <p class="col align-self-end">
       <a class="btn btn-primary" style="margin: 5% 80% -4%;" data-toggle="collapse" href="#collapseExample" role="button"
-        aria-expanded="false" aria-controls="collapseExample">
+        aria-expanded="false" aria-controls="collapseExample" onclick="resherchFunction()">
         <i class="fas fa-search"></i>
       </a>
     </p>
-  </div-->
+  </div>
   <div class="container u-space-3-top--lg mb-5">
 
     <!-- Title -->
@@ -23,7 +23,7 @@
     <!-- End Title -->
 
     <div class="research-background">
-      <form class="js-validate mt-5 form-pad">
+      <form class="js-validate mt-5 form-pad" >
 
         <div class="row ml-5 mr-5 u-space-3-top--xs">
           <!-- Input -->
@@ -74,7 +74,7 @@
                 <input class="form-control u-form__input" type="text" id="dp" [(ngModel)]="Today" name="name"
                   ngbDatepicker #d="ngbDatepicker">
                 <div class="input-group-append">
-                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()"  type="button">
                     <i class="fas fa-calendar-alt fa-fw"></i>
                   </button>
                 </div>
@@ -168,13 +168,20 @@
 
   <div class="row justify-content-center" *ngIf="loading" style="margin-top: 70vh;">
     <div id="testimonialsNavMain" class="js-slick-carousel js-slick-carousel u-slick u-content-centered-y p-4 mb-0 u-stroke-midnightblue load"
-      data-infinite="true" data-autoplay="true" data-speed="5000" data-fade="true" data-nav-for="#testimonialsNavPagination"
-      >
+      data-infinite="true" data-autoplay="true" data-speed="5000" data-fade="true" data-nav-for="#testimonialsNavPagination">
     </div>
   </div>
+<script>
+function myFunction() {
+  var x = document.getElementById("b");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 
-
-</main>
+</script>
 <!-- ========== END MAIN ========== -->
 <div>
   <app-footer></app-footer>

@@ -20,6 +20,7 @@ export class AccueilMarcheComponent implements OnInit {
   liste_departement: any;
   liste_communes: any;
   text_table = [];
+  var_res = true;
   Today: any ;
   dte: any;
   text: any;
@@ -82,13 +83,11 @@ export class AccueilMarcheComponent implements OnInit {
           this.warning = 'Aucun marché pour votre recherche';
           this.loading = false;
           this.warning_bool = true;
-  
         }
         if (error.status === 500) {
           this.warning = 'Oops! il y a un problème';
           this.loading = false;
           this.warning_bool = true;
-  
         }
          });
     } else {
@@ -105,13 +104,11 @@ export class AccueilMarcheComponent implements OnInit {
           this.warning = 'Aucun marché pour votre recherche';
           this.loading = false;
           this.warning_bool = true;
-  
         }
         if (error.status === 500) {
           this.warning = 'Oops! il y a un problème';
           this.loading = false;
           this.warning_bool = true;
-  
         }
          });
     }
@@ -121,6 +118,14 @@ export class AccueilMarcheComponent implements OnInit {
       this.aff_bool = false;
       this.warning_bool = false;
     }, );*/
+  }
+
+  barre_rech_respn () {
+    if (this.var_res === false) {
+      this.var_res = true;
+    } else {
+      this.var_res = false;
+    }
   }
 
   list_accueil() {
