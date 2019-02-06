@@ -40,11 +40,11 @@ export class AccueilMarcheComponent implements OnInit {
 
     this.Today =  this.calendar.getToday();
     this.objet_market.date = this.Today.day + '/0' + this.Today.month + '/' + this.Today.year;
-    console.log(this.Today);
+//    console.log(this.Today);
 
      this.dateString = '2019/01/15';
 
-    this.list_accueil();
+    //this.list_accueil();
     this.goto(0);
     this.list_departement();
     this.rec_date = this.objet_market.date;
@@ -53,7 +53,7 @@ export class AccueilMarcheComponent implements OnInit {
   goto(n= 0) {
     this.step = n;return this.market.liste_simulation().subscribe( res => {
         this.accueil_list = res;
-        console.log(this.accueil_list);
+//        console.log(this.accueil_list);
         this.loading = false;
         this.aff_bool = true;
       });
@@ -61,7 +61,7 @@ export class AccueilMarcheComponent implements OnInit {
   aff_maps() {
     this.step = 1;return this.market.liste_simulation().subscribe( res => {
         this.accueil_list = res;
-        console.log(this.accueil_list);
+//        console.log(this.accueil_list);
         this.loading = false;
         this.aff_bool = true;
       });
@@ -93,7 +93,7 @@ export class AccueilMarcheComponent implements OnInit {
     } else {
       this.dat = this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
       this.objet_market.date = this.dat ;
-      console.log( ) ;
+//      console.log( ) ;
       return this.market.recherche(JSON.stringify(this.objet_market)).subscribe( res => {
         this.search_result = res;
         this.loading = false;
@@ -133,7 +133,13 @@ export class AccueilMarcheComponent implements OnInit {
     if (this.Today.day < 10) {
       this.dat = '0' + this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
       this.rec_date = this.dat;
-      return this.market.recherche(JSON.stringify(this.objet_market)).subscribe( res => {
+      var  obj = {
+        'date' : "",
+        'departement' : "",
+        'commune' : "" 
+      };
+       
+      return this.market.recherche(JSON.stringify(obj)).subscribe( res => {
         this.accueil_list = res;
         this.loading = false;
         this.aff_bool = true;
@@ -162,8 +168,9 @@ export class AccueilMarcheComponent implements OnInit {
         this.warning = 'Oops! il y a un problème';
         this.warning_bool = true;
       }
-      console.log(JSON.stringify(error.status));
-      console.log('Error:: ' + error); });
+//      console.log(JSON.stringify(error.status));
+//      console.log('Error:: ' + error); 
+      });
   }
 
   list_commune() {

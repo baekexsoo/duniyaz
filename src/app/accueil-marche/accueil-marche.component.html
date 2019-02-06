@@ -148,6 +148,13 @@
           <td style="width:40vh"><small>
               ouvert tous les {{item.periode}} jours.<br>
               <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span></div>
+            
+              <div *ngIf="item.nextMarketDay !== rec_date">S'animera le : <strong>
+                  {{item.nextMarketDay.split('/').reverse().join('/') | date: 'EEEE dd' | slice:0:3}}.
+                  {{item.nextMarketDay.split('/').reverse().join('/') | date: 'dd'}}
+                  {{item.nextMarketDay.split('/').reverse().join('/') | date:'MMMM' | slice:0:3 }}
+                  {{item.nextMarketDay.split('/').reverse().join('/') | date: 'yyyy'}}
+                </strong></div>
             </small></td>
           <td><small> {{ item.products.join(', ') }} </small> </td>
         </tr>
