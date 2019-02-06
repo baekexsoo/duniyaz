@@ -121,34 +121,14 @@
           <th>Produits</th>
         </tr>
       </thead>
-      <tbody *ngIf="!aff_bool">
+      <tbody>
         <tr *ngFor="let item of search_result | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
           <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
-          <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.arrondissement | titlecase}} >
-              {{item.commune | titlecase}}</small></td>
+          <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.commune | titlecase}} >
+            {{item.arrondissement | titlecase}}  </small></td>
           <td style="width:40vh"><small>
               ouvert tous les {{item.periode}} jours.<br>
               <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span></div>
-              <div *ngIf="item.nextMarketDay !== rec_date">S'animera le : <strong>
-                  {{item.nextMarketDay.split('/').reverse().join('/') | date: 'EEEE dd' | slice:0:3}}.
-                  {{item.nextMarketDay.split('/').reverse().join('/') | date: 'dd'}}
-                  {{item.nextMarketDay.split('/').reverse().join('/') | date:'MMMM' | slice:0:3 }}
-                  {{item.nextMarketDay.split('/').reverse().join('/') | date: 'yyyy'}}
-                </strong></div>
-            </small></td>
-          <td><small> {{ item.products.join(', ') }} </small> </td>
-        </tr>
-
-      </tbody>
-      <tbody *ngIf="aff_bool">
-        <tr *ngFor="let item of accueil_list | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
-          <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
-          <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.arrondissement | titlecase}} >
-              {{item.commune | titlecase}}</small></td>
-          <td style="width:40vh"><small>
-              ouvert tous les {{item.periode}} jours.<br>
-              <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span></div>
-            
               <div *ngIf="item.nextMarketDay !== rec_date">S'animera le : <strong>
                   {{item.nextMarketDay.split('/').reverse().join('/') | date: 'EEEE dd' | slice:0:3}}.
                   {{item.nextMarketDay.split('/').reverse().join('/') | date: 'dd'}}
@@ -164,6 +144,26 @@
     <div class="paginate uk-text-center" style="font-size:x-small">
       <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
     </div>
+     <!-- ========== MAIN ========== -->
+  <!--main id="content" role="main" *ngIf="warning_bool">
+    <!-- Hero Section 
+    <div class="d-flex align-items-center u-bg-img-hero min-height-100vh--lg">
+      <div class="container">
+        <div class="w-lg-60 w-xl-50">
+          <!-- Title 
+          <div class="mb-5">
+            <h1 class="text-primary font-weight-normal">Page not <span class="font-weight-bold">found</span></h1>
+            <p class="mb-0"> {{warning}}. </p>
+          </div>
+          <!-- End Title 
+
+          <a class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover" href="../home/index.html">Go Back</a>
+        </div>
+      </div>
+    </div>
+    <!-- End Hero Section -->
+  </main-->
+  <!-- ========== END MAIN ========== -->
 
     <div class="row justify-content-center mt-5 u-space-3-bottom" *ngIf="warning_bool">
       <div class="alert alert-danger" role="alert">
@@ -178,17 +178,6 @@
       data-infinite="true" data-autoplay="true" data-speed="5000" data-fade="true" data-nav-for="#testimonialsNavPagination">
     </div>
   </div>
-<script>
-function myFunction() {
-  var x = document.getElementById("b");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-
-</script>
 <!-- ========== END MAIN ========== -->
 <div>
   <app-footer></app-footer>
