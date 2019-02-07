@@ -5,7 +5,7 @@
 
 <!-- ========== MAIN ========== -->
 <main id="content" role="main" style="min-height:-webkit-fill-available">
-  <div class="d-block d-sm-none" *ngIf="var_res" >
+  <div class="d-block d-sm-none" *ngIf="var_res">
     <p class="col align-self-end">
       <a class="btn btn-primary" style="margin: 5% 80% -4%;" data-toggle="collapse" href="#collapseExample" role="button"
         aria-expanded="false" aria-controls="collapseExample" onclick="resherchFunction()">
@@ -23,7 +23,7 @@
     <!-- End Title -->
 
     <div class="research-background">
-      <form class="js-validate mt-5 form-pad" >
+      <form class="js-validate mt-5 form-pad">
 
         <div class="row ml-5 mr-5 u-space-3-top--xs">
           <!-- Input -->
@@ -74,7 +74,7 @@
                 <input class="form-control u-form__input" type="text" id="dp" [(ngModel)]="Today" name="name"
                   ngbDatepicker #d="ngbDatepicker">
                 <div class="input-group-append">
-                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()"  type="button">
+                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
                     <i class="fas fa-calendar-alt fa-fw"></i>
                   </button>
                 </div>
@@ -125,7 +125,7 @@
         <tr *ngFor="let item of search_result | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
           <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
           <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.commune | titlecase}} >
-            {{item.arrondissement | titlecase}}  </small></td>
+              {{item.arrondissement | titlecase}} </small></td>
           <td style="width:40vh"><small>
               ouvert tous les {{item.periode}} jours.<br>
               <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span></div>
@@ -144,41 +144,36 @@
     <div class="paginate uk-text-center" style="font-size:x-small">
       <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
     </div>
-     <!-- ========== MAIN ========== -->
-  <!--main id="content" role="main" *ngIf="warning_bool">
-    <!-- Hero Section 
-    <div class="d-flex align-items-center u-bg-img-hero min-height-100vh--lg">
-      <div class="container">
-        <div class="w-lg-60 w-xl-50">
-          <!-- Title 
-          <div class="mb-5">
-            <h1 class="text-primary font-weight-normal">Page not <span class="font-weight-bold">found</span></h1>
-            <p class="mb-0"> {{warning}}. </p>
-          </div>
-          <!-- End Title 
+    <!-- ========== MAIN ========== -->
 
-          <a class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover" href="../home/index.html">Go Back</a>
-        </div>
-      </div>
-    </div>
-    <!-- End Hero Section -->
-  </main-->
-  <!-- ========== END MAIN ========== -->
-
-    <div class="row justify-content-center mt-5 u-space-3-bottom" *ngIf="warning_bool">
-      <div class="alert alert-danger" role="alert">
-        {{warning}}.
-      </div>
-
-    </div>
+    <!-- ========== END MAIN ========== -->
   </div>
 
+  <div class="row justify-content-center" *ngIf="warning_bool">
+    <main id="content" role="main">
+      <!-- Hero Section -->
+      <div class="d-flex align-items-center mt-5 u-space-3-bottom">
+        <div class="container">
+          <div>
+            <!-- Title -->
+            <div class="mb-5">
+              <h1 class="text-primary font-weight-normal" style="font-size:1.625rem; text-align: center ">{{warning}}.</h1>
+              <p class="mb-0">  </p>
+            </div>
+            <!-- End Title -->
+          </div>
+        </div>
+      </div>
+      <!-- End Hero Section -->
+    </main>
+
+  </div>
   <div class="row justify-content-center" *ngIf="loading" style="margin-top: 70vh;">
     <div id="testimonialsNavMain" class="js-slick-carousel js-slick-carousel u-slick u-content-centered-y p-4 mb-0 u-stroke-midnightblue load"
       data-infinite="true" data-autoplay="true" data-speed="5000" data-fade="true" data-nav-for="#testimonialsNavPagination">
     </div>
   </div>
-<!-- ========== END MAIN ========== -->
-<div>
-  <app-footer></app-footer>
-</div>
+  <!-- ========== END MAIN ========== -->
+  <div>
+    <app-footer></app-footer>
+  </div>

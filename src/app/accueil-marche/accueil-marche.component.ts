@@ -47,6 +47,7 @@ export class AccueilMarcheComponent implements OnInit {
 
   search_market() {
     this.loading = true;
+    
     if (this.Today === null) {
       this.objet_market.date = '';
       return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(res => {
@@ -55,6 +56,7 @@ export class AccueilMarcheComponent implements OnInit {
         this.aff_bool = false;
         this.warning_bool = false;
       }, error => {
+        // console.log( error.status )
         if (error.status === 404) {
           this.warning = 'Aucun marché pour votre recherche';
           this.loading = false;
@@ -69,25 +71,27 @@ export class AccueilMarcheComponent implements OnInit {
     } else {
       this.dat = this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
       this.objet_market.date = this.dat ;
-//      console.log( ) ;
       return this.market.recherche(JSON.stringify(this.objet_market)).subscribe( res => {
         this.search_result = res;
         this.loading = false;
         this.aff_bool = false;
         this.warning_bool = false;
       }, error => {
+        
         if (error.status === 404) {
           this.warning = 'Aucun marché pour votre recherche';
           this.loading = false;
           this.warning_bool = true;
         }
         if (error.status === 500) {
+          console.log( error )
           this.warning = 'Oops! il y a un problème';
           this.loading = false;
           this.warning_bool = true;
         }
          });
     }
+    
     /*return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
       this.search_result = response;
       this.loading = false;
