@@ -114,7 +114,12 @@ span svg{
     position: absolute;
     right: 0%;
     top: 35%;
-    }
+	}
+
+	.container{
+		background-color: #132d5c;
+	}
+
  }
 
 /* Small devices (landscape phones, 576px and up)*/
@@ -124,7 +129,9 @@ span svg{
         position: absolute;
         right: 0%;
         top: 35%;
-        }
+		}
+		
+		
  }
 
  

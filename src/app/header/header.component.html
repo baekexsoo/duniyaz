@@ -1,4 +1,4 @@
-<header id="header" class="u-header u-header--abs-top-md u-header--show-hide-md"
+<header id="header" class="u-header u-header--abs-top-md u-header--show-hide-md menu"
           data-header-fix-moment="500"
           data-header-fix-effect="slide">
    
@@ -14,18 +14,18 @@
           <!-- Logo -->
           <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-top-space" href="../home/index.html" aria-label="DUNIYA">
             <img src="../../assets/svg/logos/logo.png" class="d-none d-lg-inline-block" style="margin-left: -15vh;"lt="Logo">
-            <img src="../../assets/svg/logos/favicon1.png" class="d-inline-block d-lg-none" alt="Logo">
+            <img src="../../assets/svg/logos/favicon1.png" class="d-inline-block d-lg-none" style="border-radius: 25px;" alt="Logo">
           </a>
           <!-- End Logo -->
             
             <div class="container">
-              <ul class="font_url menu-position" id="nav">
+              <ul class="font_url menu-position d-none d-sm-block" id="nav">
                  
                 <li class="d-sm-inline-block list-inline-item mr-2 defile" routerLinkActive="active">
                   <a class="u-header__topbar-nav-link dec" routerLink="/accueil" style="text-decoration: none"> Marchés</a>
                
                 </li>
-                <!--li class="d-sm-inline-block list-inline-item mr-2 defile" routerLinkActive="active">
+                <li class="d-sm-inline-block list-inline-item mr-2 defile" routerLinkActive="active">
                   <a class="u-header__topbar-nav-link dec" [routerLink]="['/culture']" style="text-decoration: none"> Produits agricoles</a>
                
                 </li>
@@ -45,15 +45,16 @@
                   </li>
                   
               </ul>
+
               <ul class="font_url menu-position d-sm-none .d-md-block" id="nav">
                 <li>
                   <div class="dropleft">
                     <a class="nav-link  togle" id="dropdownMenuButton" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-bars" style="font-size:7x"></i>
+                      <i class="fas fa-ellipsis-v" style="color:#fff"></i>
                     </a>
                     <div class="dropdown-menu mobile-menu-position" aria-labelledby="dropdownMenuButton">
                       <ul class="list-group">
-                        <li class="list-group dropdown-item mobile-menu-position-font">Marchés</li>
+                        <li class="list-group dropdown-item mobile-menu-position-font" routerLink="/accueil">Marchés</li>
                         <li class="list-group dropdown-item mobile-menu-position-font">Produits agricoles</li>
                         <li class="list-group dropdown-item mobile-menu-position-font">Programmes</li>
                         <li class="list-group dropdown-item mobile-menu-position-font dropdown-toggle" id="dropdownMenuButton" data-hover="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
@@ -63,12 +64,12 @@
                        
                             <ul class=" dropdown-menu "  aria-labelledby="dropdownMenuButton" style="margin-right: -15px;">
                                 <li class="sub-menu dropdown-menu">ONG</li>
-                                <li class="sub-menu dropdown-menu">Exportateurs</li>
+                                <li class="sub-menu dropdown-menu">Exportateur</li>
                                 <li class="dropdown-menu sub-menu">Distributeurs</li>
                                 <li class="dropdown-menu sub-menu">Transformateurs</li>
                             </ul>
             
-                      </ul-->
+                      </ul>
                     <!--
                       <div class="collapse" id="collapseExample" >
                           <div class="card card-body " style="border: none; color: #37b82c; background-color: #ffffff21 !important;">
@@ -81,9 +82,9 @@
                           </div>
                         </div-->
                     
-                    <!--/div>
+                    </div>
                   </div>
-                </li-->
+                </li>
               </ul>
               
              

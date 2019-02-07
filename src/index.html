@@ -7,7 +7,9 @@
   <meta name="author" content="RINTIO">
   <title>DuniyaData</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, 
+                      minimum-scale=1.0, maximum-scale=1.0, 
+                      user-scalable=no, target-densitydpi=device-dpi">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <!-- Google Fonts -->
   <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
@@ -36,7 +38,11 @@
       background: #132d5c;
     } 
   </style>
-  
+  <script>
+  $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+    </script>
 </head>
 <body>
 <app-root>
