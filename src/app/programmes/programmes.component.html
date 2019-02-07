@@ -88,16 +88,17 @@
           </form>
          
           <div class="row">
-            <div *ngFor="let prog of list_programmes | filter:search | paginate: { itemsPerPage: 7, currentPage: p }" class="col-md-6 col-sm-6 col-12">
+            <div *ngFor="let prog of list_programmes| filter:search | paginate: { itemsPerPage: 7, currentPage: p }" class="col-md-6 col-sm-6 col-12">
               <div class="wrapper col-md-10" >
                 <div class="outer col-md-12 " >
                   <div class="content animated fadeInLeft">
-                    <h1> <strong> {{ prog.programName }} </strong> <br/></h1>
+                     <h1> <strong> {{ prog.programName }} </strong> <br/></h1>
                    
                     <p>
                         <strong > Prinicpal Objectif: </strong><br/> 
                       {{ prog.principalObjectif  }} 
                     </p>
+                    <hr class="uk-divider-small">
                     
                     <p>
                         <strong > Résultats escomptés: </strong><br/> 

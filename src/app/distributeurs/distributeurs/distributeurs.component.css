@@ -3,12 +3,21 @@
     background-color: gainsboro;
     height: 40px;
 }
+.sectors{
+    margin-bottom:12px;
+}
+.fa-phone{
+    color: #c36a97;
+}
+.fa-envelope{
+    color: #c36a97;
+}
 
 .w-70{
     width: 70%;
 }
 .email{
-    font-size: 14px;
+    font-size: 17px;
     margin-left: 12px;
 }
 .phone{
@@ -17,7 +26,7 @@
 .wrapper {
 	display: flex;
 	justify-content: center;
-    height: 221px;
+    height: 163px;
   /*  width: 487px;*/
     margin: 22px auto;
     border-radius: 7px 7px 7px 7px;
@@ -32,7 +41,7 @@
 .outer {
 	position: relative;
 	background: #fff;
-	height: 205px;
+	height: 157px;
 	width: 650px;
 	overflow: hidden;
 	display: flex;
