@@ -99,6 +99,18 @@
   </div>
 
   <div class="container w-70" *ngIf="!warning_bool && !loading">
+  
+   <div class="paginate uk-text-center d-block d-sm-none">
+      <pagination-controls class="my-pagination"
+                      (pageChange)="p = $event"
+                      directionLinks="true"
+                      autoHide="true"
+                      responsive="true"
+                      screenReaderCurrentLabel="You're on page">
+          
+                      </pagination-controls>
+    </div>
+
     <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search mb-2">
       <div class="input-group-prepend u-form__prepend">
         <span class="input-group-text u-form__text">
@@ -108,21 +120,7 @@
       <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre">
     </form>
 
-      <div class="paginate uk-text-center d-block d-sm-none" style="font-size:x-small">
-      <pagination-controls class="my-pagination"
-                      (pageChange)="p = $event"
-                      directionLinks="true"
-                      autoHide="true"
-                      responsive="true"
-                      screenReaderCurrentLabel="You're on page">
-           <div>
-                <span>Marchés</span>
-            </div>
-                      </pagination-controls>
-    </div>
-
-
-    
+         
 
     <table class="table  table-hover col-md-11 col-sm-11 col-xs-12 mb-4" style="background-color:#ffffffe0; border-radius: 10px;">
       <thead>
@@ -250,7 +248,7 @@
         </form>
       </div>
       <div class="modal-footer mb-4 col-xs-12">
-        <button type="button" class="btn btn-secondary col-xs-6 fermer"  data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-secondary col-xs-6 fermer"  data-dismiss="modal">Annuler</button>
         <button type="button" class="btn btn-primary col-xs-6" (click)="search_market()" data-dismiss="modal" >  Rechercher</button>
       </div>
     </div>
