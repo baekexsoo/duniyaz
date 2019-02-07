@@ -5,22 +5,8 @@
 
 <!-- ========== MAIN ========== -->
 <main id="content" role="main" style="min-height:-webkit-fill-available">
-  <div class="d-block d-sm-none" *ngIf="var_res">
-    <p class="col align-self-end">
-      <a class="btn btn-primary" style="margin: 5% 80% -4%;" data-toggle="collapse" href="#collapseExample" role="button"
-        aria-expanded="false" aria-controls="collapseExample" onclick="resherchFunction()">
-        <i class="fas fa-search"></i>
-      </a>
-    </p>
-  </div>
+  
   <div class="container u-space-3-top--lg mb-5">
-
-    <!-- Title -->
-    <!--div class="mb-7">         
-          <button (click)="aff_tab()" >ssssssss</button>
-          <button (click)="aff_maps()" >sgdrghd</button>
-        </div-->
-    <!-- End Title -->
 
     <div class="research-background">
       <form class="js-validate mt-5 form-pad">
@@ -78,6 +64,14 @@
                     <i class="fas fa-calendar-alt fa-fw"></i>
                   </button>
                 </div>
+                <!--div class="d-none d-md-block d-lg-none">
+                  <p class="col align-self-end">
+                    <a class="btn btn-primary" style="margin: 5% 80% -4%;" data-toggle="collapse" href="#collapseExample" role="button"
+                      aria-expanded="false" aria-controls="collapseExample" onclick="resherchFunction()">
+                      <i class="fas fa-search"></i>
+                    </a>
+                  </p>
+                </div-->
               </div>
             </div>
           </div>
@@ -104,14 +98,14 @@
   </div>
 
   <div class="container w-70" *ngIf="!warning_bool && !loading">
-    <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search mb-2">
+    <!--form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search mb-2">
       <div class="input-group-prepend u-form__prepend">
         <span class="input-group-text u-form__text">
           <span class="fa fa-search u-form__text-inner"></span>
         </span>
       </div>
       <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre">
-    </form>
+    </form-->
     <table class="table  table-hover col-md-11 col-sm-11 col-xs-12" style="background-color:#ffffffe0; border-radius: 10px;">
       <thead>
         <tr>
