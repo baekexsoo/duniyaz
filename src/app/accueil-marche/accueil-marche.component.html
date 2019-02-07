@@ -5,22 +5,17 @@
 
 <!-- ========== MAIN ========== -->
 <main id="content" role="main" style="min-height:-webkit-fill-available">
-  <div class="d-block d-sm-none" *ngIf="var_res">
+  <!--div class="d-block d-sm-none" *ngIf="var_res">
     <p class="col align-self-end">
       <a class="btn btn-primary" style="margin: 5% 80% -4%;" data-toggle="collapse" href="#collapseExample" role="button"
         aria-expanded="false" aria-controls="collapseExample" onclick="resherchFunction()">
         <i class="fas fa-search"></i>
       </a>
     </p>
-  </div>
+  </div-->
   <div class="container u-space-3-top--lg mb-5">
 
-    <!-- Title -->
-    <!--div class="mb-7">         
-          <button (click)="aff_tab()" >ssssssss</button>
-          <button (click)="aff_maps()" >sgdrghd</button>
-        </div-->
-    <!-- End Title -->
+
 
     <div class="research-background">
       <form class="js-validate mt-5 form-pad d-none d-sm-block">
@@ -129,13 +124,13 @@
 
     
 
-    <table class="table  table-hover col-md-11 col-sm-11 col-xs-12" style="background-color:#ffffffe0; border-radius: 10px;">
+    <table class="table  table-hover col-md-11 col-sm-11 col-xs-12 mb-4" style="background-color:#ffffffe0; border-radius: 10px;">
       <thead>
         <tr>
-          <th>Marchés</th>
-          <th>Localisation</th>
-          <th>Jour d'ouverture</th>
-          <th>Produits</th>
+          <th scope="col">Marchés</th>
+          <th scope="col">Localisation</th>
+          <th scope="col">Jour d'ouverture</th>
+          <th scope="col">Produits</th>
         </tr>
       </thead>
       <tbody>
@@ -188,7 +183,10 @@
   </div>
 
             <div class="text-center col-xs-12 mt-5 d-block d-sm-none fixed-bottom ">
-              <button type="button" class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4 w-93"data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Recherche</button>
+             <button type="button" class="btn btn-primary searcher" data-dismiss="modal" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" >  <i class="fas fa-search" style="color:#fff"></i></button>
+              <!--button type="button" class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4 w-93" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+              <i class="fas fa-search" style="color:#fff"></i>
+              </button-->
             </div>
 
           <div class="modal fade hauteur" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -251,9 +249,9 @@
        
         </form>
       </div>
-      <div class="modal-footer mb-4">
-        <button type="button" class="btn btn-secondary"  data-dismiss="modal"><i class="fas fa-times" style="color:#fff"></i></button>
-        <button type="button" class="btn btn-primary" (click)="search_market()" data-dismiss="modal" >  <i class="fas fa-search" style="color:#fff"></i></button>
+      <div class="modal-footer mb-4 col-xs-12">
+        <button type="button" class="btn btn-secondary col-xs-6 fermer"  data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary col-xs-6" (click)="search_market()" data-dismiss="modal" >  Rechercher</button>
       </div>
     </div>
   </div>

@@ -31,6 +31,18 @@
         bottom: 0
     }
 
+  .searcher{
+    right: 0px;
+    float: right;
+    margin-right: 19px;
+    margin-bottom: 6px;
+  }
+
+  .fermer{
+    width: 48%;
+    margin-right: 23px;
+  }
+
     .hauteur{
         height:100%
     }
