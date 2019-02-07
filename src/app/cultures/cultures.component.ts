@@ -40,7 +40,7 @@ export class CulturesComponent implements OnInit {
 
   getAll() {
     this.loading = true;
-    return this.culture.liste().subscribe(response => {
+    return this.culture.liste_simulation_culture().subscribe(response => {
       this.list = response;
       this.loading = false;
     });

@@ -113,7 +113,13 @@ span svg{
 
 /* Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {   
-    
+    .navli{
+		color: #fff
+	}
+
+	.navlidrop{
+		background-color: #132d5c
+	}
     .menu-position{
 		/*
     position: absolute;
@@ -124,7 +130,13 @@ span svg{
     right: -90%;
     bottom: 25px;
     margin-bottom: -28px;
-    }
+    top: 35%;
+	}
+
+	.container{
+		background-color: #132d5c;
+	}
+
  }
 
 /* Small devices (landscape phones, 576px and up)*/
@@ -138,7 +150,10 @@ span svg{
 		right: -90%;
 		bottom: 25px;
 		margin-bottom: -28px;
-        }
+        top: 35%;
+		}
+		
+		
  }
 
  

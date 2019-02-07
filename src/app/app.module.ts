@@ -11,6 +11,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import localeFrExtra from '@angular/common/locales/extra/fr';
+import { AngularPaginatorModule } from 'angular-paginator';
+
 
 
 // import { FilterModule } from 'ng-filter';
@@ -113,6 +115,7 @@ const appRoutes: Routes = [
     HttpModule,
     NgbModule,
     Ng2SearchPipeModule,
+    AngularPaginatorModule,
     // FilterModule,
     RouterModule.forRoot(
       appRoutes,

@@ -1,4 +1,4 @@
-<header id="header" class="u-header u-header--abs-top-md u-header--show-hide-md"
+<header id="header" class="u-header u-header--abs-top-md u-header--show-hide-md menu"
           data-header-fix-moment="500"
           data-header-fix-effect="slide">
    
@@ -14,7 +14,7 @@
           <!-- Logo -->
           <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-top-space" href="../home/index.html" aria-label="DUNIYA">
             <img src="../../assets/svg/logos/logo.png" class="d-none d-lg-inline-block" style="margin-left: -15vh;"lt="Logo">
-            <img src="../../assets/svg/logos/favicon1.png" class="d-inline-block d-lg-none" alt="Logo">
+            <img src="../../assets/svg/logos/favicon1.png" class="d-inline-block d-lg-none" style="border-radius: 25px;" alt="Logo">
           </a>
           <!-- End Logo -->
             
@@ -48,28 +48,28 @@
               </ul>-->
 
               <button class="navbar-toggler menu-position d-sm-none .d-md-block" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span > <i class="fas fa-bars" style="font-size:7x"></i> </span>
+                <span > <i class="fas fa-ellipsis-v" style="font-size:7x; color: #fff"></i> </span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                   <li class="nav-item active">
-                    <a class="nav-link" routerLink="/accueil" >Marchés</a>
+                    <a class="nav-link navli" routerLink="/accueil" >Marchés</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/culture']">Produits agricoles</a>
+                    <a class="nav-link navli" [routerLink]="['/culture']">Produits agricoles</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/programmes']">Programmes</a>
+                    <a class="nav-link navli" [routerLink]="['/programmes']">Programmes</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle navli" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Intervenants
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" [routerLink]="['/ong']">ONG</a>
-                      <a class="dropdown-item" [routerLink]="['/exportateurs']">Exportateurs</a>
-                      <a class="dropdown-item" [routerLink]="['/distributeurs']">Distributeurs</a>
-                      <a class="dropdown-item" [routerLink]="['/transformateur']">Distributeurs</a>
+                    <div class="dropdown-menu navlidrop" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item navli" [routerLink]="['/ong']">ONG</a>
+                      <a class="dropdown-item navli" [routerLink]="['/exportateurs']">Exportateurs</a>
+                      <a class="dropdown-item navli" [routerLink]="['/distributeurs']">Distributeurs</a>
+                      <a class="dropdown-item navli" [routerLink]="['/transformateur']">Distributeurs</a>
                     </div>
                   </li>
                 </ul>
@@ -78,11 +78,11 @@
                 <li>
                   <div class="dropleft">
                     <a class="nav-link  togle" id="dropdownMenuButton" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-bars" style="font-size:7x"></i>
+                      <i class="fas fa-ellipsis-v" style="color:#fff"></i>
                     </a>
                     <div class="dropdown-menu mobile-menu-position" aria-labelledby="dropdownMenuButton">
                       <ul class="list-group">
-                        <li class="list-group dropdown-item mobile-menu-position-font">Marchés</li>
+                        <li class="list-group dropdown-item mobile-menu-position-font" routerLink="/accueil">Marchés</li>
                         <li class="list-group dropdown-item mobile-menu-position-font">Produits agricoles</li>
                         <li class="list-group dropdown-item mobile-menu-position-font">Programmes</li>
                         <li class="list-group dropdown-item mobile-menu-position-font dropdown-toggle" id="dropdownMenuButton" data-hover="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
