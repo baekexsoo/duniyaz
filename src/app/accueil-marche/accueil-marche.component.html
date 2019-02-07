@@ -5,14 +5,14 @@
 
 <!-- ========== MAIN ========== -->
 <main id="content" role="main" style="min-height:-webkit-fill-available">
-  <!--div class="d-block d-sm-none">
+  <div class="d-block d-sm-none" *ngIf="var_res">
     <p class="col align-self-end">
       <a class="btn btn-primary" style="margin: 5% 80% -4%;" data-toggle="collapse" href="#collapseExample" role="button"
-        aria-expanded="false" aria-controls="collapseExample">
+        aria-expanded="false" aria-controls="collapseExample" onclick="resherchFunction()">
         <i class="fas fa-search"></i>
       </a>
     </p>
-  </div-->
+  </div>
   <div class="container u-space-3-top--lg mb-5">
 
     <!-- Title -->
@@ -138,11 +138,11 @@
           <th>Produits</th>
         </tr>
       </thead>
-      <tbody *ngIf="!aff_bool">
-        <tr *ngFor="let item of search_result | filter:search | angularPaginator: { currentPage: currentPage }| paginate: { itemsPerPage: 7, currentPage: p }">
+      <tbody>
+        <tr *ngFor="let item of search_result | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
           <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
-          <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.arrondissement | titlecase}} >
-              {{item.commune | titlecase}}</small></td>
+          <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.commune | titlecase}} >
+              {{item.arrondissement | titlecase}} </small></td>
           <td style="width:40vh"><small>
               ouvert tous les {{item.periode}} jours.<br>
               <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span></div>
@@ -157,31 +157,34 @@
         </tr>
 
       </tbody>
-      <tbody *ngIf="aff_bool">
-        <tr *ngFor="let item of accueil_list | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
-          <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
-          <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.arrondissement | titlecase}} >
-              {{item.commune | titlecase}}</small></td>
-          <td style="width:40vh"><small>
-              ouvert tous les {{item.periode}} jours.<br>
-              <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span></div>
-
-            </small></td>
-          <td><small> {{ item.products.join(', ') }} </small> </td>
-        </tr>
-
-      </tbody>
     </table>
   
  <div class="paginate uk-text-center d-none d-sm-block" style="font-size:x-small">
       <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
     </div>
-    <div class="row justify-content-center mt-5 u-space-3-bottom" *ngIf="warning_bool">
-      <div class="alert alert-danger" role="alert">
-        {{warning}}.
-      </div>
+    <!-- ========== MAIN ========== -->
 
-    </div>
+    <!-- ========== END MAIN ========== -->
+  </div>
+
+  <div class="row justify-content-center" *ngIf="warning_bool">
+    <main id="content" role="main">
+      <!-- Hero Section -->
+      <div class="d-flex align-items-center mt-5 u-space-3-bottom">
+        <div class="container">
+          <div>
+            <!-- Title -->
+            <div class="mb-5">
+              <h1 class="text-primary font-weight-normal" style="font-size:1.625rem; text-align: center ">{{warning}}.</h1>
+              <p class="mb-0">  </p>
+            </div>
+            <!-- End Title -->
+          </div>
+        </div>
+      </div>
+      <!-- End Hero Section -->
+    </main>
+
   </div>
 
             <div class="text-center col-xs-12 mt-5 d-block d-sm-none fixed-bottom ">
@@ -259,8 +262,7 @@
 
   <div class="row justify-content-center u-space-5-top" *ngIf="loading" style="margin-top: 15vh;">
     <div id="testimonialsNavMain" class="js-slick-carousel js-slick-carousel u-slick u-content-centered-y p-4 mb-0 u-stroke-midnightblue load"
-      data-infinite="true" data-autoplay="true" data-speed="5000" data-fade="true" data-nav-for="#testimonialsNavPagination"
-      style="margin-top:30%">
+      data-infinite="true" data-autoplay="true" data-speed="5000" data-fade="true" data-nav-for="#testimonialsNavPagination">
     </div>
   </div>
 
