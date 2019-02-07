@@ -115,9 +115,15 @@ span svg{
 @media (max-width: 575.98px) {   
     
     .menu-position{
-    position: fixed;
+		/*
+    position: absolute;
     right: 0%;
-    top: 4%;
+	top: 25%;
+	*/
+	position: relative;
+    right: -90%;
+    bottom: 25px;
+    margin-bottom: -28px;
     }
  }
 
@@ -125,9 +131,13 @@ span svg{
 @media (min-width: 576px) and (max-width: 767.98px) {    
     
     .menu-position-mobile{
-        position: fixed;
+        /*position: absolute;
         right: 0%;
-        top: 4%;
+		top: 25%;*/
+		position: relative;
+		right: -90%;
+		bottom: 25px;
+		margin-bottom: -28px;
         }
  }
 

@@ -12,11 +12,11 @@ const httpOptions = {
 })
 export class CultureService {
 
-  list_url = 'http://api.dev.duniyadata.com/dunya/speculations?zone=';
 
-  constructor(private http: HttpClient) { }
+  constructor(private Api : Api) { }
 
-  liste(zone, produit, page): Observable<any> {
-    return this.http.get(this.list_url + zone + '&produit=' + produit + '&page=' + page, httpOptions);
+  liste(): Observable<any> {
+    let url = 'dunya/speculations';
+    return this.Api.get(url , httpOptions);
   }
 }

@@ -20,7 +20,7 @@
            
             <div class="row ml-5 mr-5">
                 <!-- Input -->
-                <div class="col-sm-3 col-xs-3 mt-2 ">
+                <div class="col-sm-4 col-xs-3 mt-2 ">
                   <div class="js-form-message">
                     <label class="h6 small d-block text-uppercase">
                       Département
@@ -42,7 +42,7 @@
                 <!-- End Input -->
 
                 <!-- Input -->
-                <div class="col-sm-3 mt-2">
+                <div class="col-sm-4 mt-2">
                     <div class="js-form-message">
                       <label class="h6 small d-block text-uppercase">
                         Ville
@@ -59,24 +59,10 @@
                   </div>
                   <!-- End Input -->
 
-                  <!-- Input -->  
-                  <div class="col-sm-3 mt-2">
-                    <div class="js-form-message">
-                      <label class="h6 small d-block text-uppercase">
-                       Produits
-                        
-                      </label>
-      
-                      <div class="js-focus-state input-group u-form " >
-                        <input class="form-control u-form__input" type="text" placeholder="Exemple: Sorgho" id="dp" [(ngModel)]="objet_list.produit" name="name">
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Input -->
                   <!-- Input -->
-                <div class="col-sm-3 mt-5">
+                <div class="col-sm-4 mt-5">
                     <div class="text-center ">
-                        <button type="submit" (click)="getAll()"  class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
+                        <button type="submit" (click)="filtre_ong()"  class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
                       </div>
                   </div>
                   <!-- End Input -->

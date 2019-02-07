@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {  HttpHeaders, HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Api } from '../api/api';
+import { Data } from 'src/app/data';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
@@ -30,6 +31,8 @@ export class MarketService {
     let url = 'dunya/markets/departement/';
     return this.Api.get(url + data, httpOptions);
   }
-
-}
   
+  liste_simulation (): Observable<any> {
+    return of(Data);
+  }
+}

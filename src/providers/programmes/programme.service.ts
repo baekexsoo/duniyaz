@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {  HttpHeaders, HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Api } from '../api/api';
+import { Programmes } from 'src/app/mock_data/programmes';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
@@ -17,10 +18,14 @@ export class ProgrammeService {
 
   constructor(public api: Api, private http: HttpClient) { }
 
-  list_programmes(zone, produit, page): Observable<any> {
+  list_programmes(zone, produit): Observable<any> {
 
-    return this.http.get(this.Base_url + zone + '&produit=' + produit + '&page=' + page, httpOptions);
+    return this.http.get(this.Base_url + zone + '&produit=' + produit, httpOptions);
 
+}
+
+liste_simulation_prog (): Observable<any> {
+  return of(Programmes);
 }
 
 }

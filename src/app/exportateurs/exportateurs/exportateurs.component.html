@@ -20,7 +20,7 @@
            
             <div class="row ml-5 mr-5">
                 <!-- Input -->
-                <div class="col-sm-3 col-xs-3 mt-2 ">
+                <div class="col-sm-4 col-xs-3 mt-2 ">
                   <div class="js-form-message">
                     <label class="h6 small d-block text-uppercase">
                       Département
@@ -41,7 +41,7 @@
                 </div>
                 <!-- End Input -->
 
-                <!-- Input -->
+                <!-- Input --
                 <div class="col-sm-3 mt-2">
                     <div class="js-form-message">
                       <label class="h6 small d-block text-uppercase">
@@ -60,7 +60,7 @@
                   <!-- End Input -->
 
                     <!-- Input -->
-                <div class="col-sm-3 mt-2">
+                <div class="col-sm-4 mt-2">
                     <div class="js-form-message">
                       <label class="h6 small d-block text-uppercase">
                         Produits
@@ -80,9 +80,9 @@
            
                   <!-- End Input -->
                   <!-- Input -->
-                <div class="col-sm-3 mt-5">
+                <div class="col-sm-4 mt-5">
                     <div class="text-center ">
-                        <button type="submit" (click)="exportateurs()"  class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
+                        <button type="submit" (click)="filtre_exportateur()"  class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
                       </div>
                   </div>
                   <!-- End Input -->
@@ -91,7 +91,7 @@
       </div>
     </div>
     <div class="u-space-3-bottom">
-    <div class="container" *ngIf="!loading">
+    <div class="container w-80" *ngIf="!loading">
         <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search mb-2">
             <div class="input-group-prepend u-form__prepend">
               <span class="input-group-text u-form__text">
@@ -114,11 +114,11 @@
             </thead>
             <tbody>
               <tr *ngFor="let export of liste_exportateurs  | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
-                <td style="width:30vh" ><small> {{ export.nomEntreprise }}  </small></td>
-                <td style="width:60vh"><small> {{ export.lieuImplantation }}  </small> </td>
+                <td style="width:30vh" ><small><strong> {{ export.nomEntreprise }}</strong>  </small></td>
+                <td style="width:45vh"><small> {{ export.lieuImplantation }}  </small> </td>
                 <td style="width:60vh"><small> {{ export.quantitExportee }}  </small> </td>
-                <td style="width:60vh"><small> {{ export.produitsexportes }}  </small> </td>
-                <td style="width:60vh"><small> {{ export.paysExportation }}  </small> </td>
+                <td style="width:65vh"><small> {{ export.produitsexportes }}  </small> </td>
+                <td style="width:65vh"><small> {{ export.paysExportation }}  </small> </td>
 
               </tr>
                          

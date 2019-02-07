@@ -45,7 +45,7 @@ export class DistributeursComponent implements OnInit {
 
   distributeurs() {
     this.loading = true;
-    return this.distributeursService.list_distributeurs(this.form_data.zone, this.form_data.produit, this.form_data.page)
+    return this.distributeursService.liste_simulation_dist()
     .subscribe(response => {
       this.liste_distributeurs = response;
     this.loading = false;
@@ -54,4 +54,5 @@ export class DistributeursComponent implements OnInit {
     });
 
   }
+
 }
