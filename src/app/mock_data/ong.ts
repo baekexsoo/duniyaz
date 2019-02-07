@@ -1,4 +1,4 @@
-export const Ong = [
+export const Ong =  [
     {
       "structure": "LDLD",
       "telephone": [
