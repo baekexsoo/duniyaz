@@ -10,8 +10,7 @@
 .research-background{
     background-color: #eaebefc7;
     border-radius: 100px;
-}
-
+}  
 
 
 /* Extra small devices (portrait phones, less than 576px)*/
@@ -29,6 +28,10 @@
         -webkit-transform: translateZ(0);
         z-index: 1000;
         bottom: 0
+    }
+
+    .my-pagination{
+        margin-left: -37px
     }
 
   .searcher{
@@ -55,6 +58,14 @@
     .form-pad{
         padding-top: 5%;
     }
+
+    .research-bar-show{
+        display: block;
+    }
+    
+    .research-bar-hide{
+        display: none;
+    }
  }
 
 /* Small devices (landscape phones, 576px and up)*/
@@ -72,6 +83,15 @@
     .form-pad{
         padding-top: 5%;
     }
+
+    .research-bar-show{
+        display: block;
+    }
+    
+    .research-bar-hide{
+        display: none;
+    }
+
  }
 
  .cent_log{

@@ -37,6 +37,9 @@
         margin-left: auto;
     }
 }
+.font_url li a {
+    color: black;
+} 
 .active{
     background-color: #efeef2;
     border-radius: 2.3rem;
@@ -105,14 +108,39 @@ span svg{
     right: 0%;
 }
 
-
+.menu-position-mobile{
+	position: fixed;
+	right: 0%;
+	top: 20%;
+	}
 
 /* Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {   
-    
+    .navli{
+		color: #fff
+	}
+
+	.navlidrop{
+		background-color: #132d5c
+	}
+	.font_url {
+		position: relative;
+		right: -70%;
+		bottom: 25px;
+		margin-bottom: -28px !important;
+    	top: 35%;
+		border-radius: 10%;
+	} 
     .menu-position{
+		/*
     position: absolute;
     right: 0%;
+	top: 25%;
+	*/
+	position: relative;
+    right: -90%;
+    bottom: 25px;
+    margin-bottom: -28px;
     top: 35%;
 	}
 
@@ -125,9 +153,14 @@ span svg{
 /* Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) and (max-width: 767.98px) {    
     
-    .menu-position{
-        position: absolute;
+    .menu-position-mobile{
+        /*position: absolute;
         right: 0%;
+		top: 25%;*/
+		position: relative;
+		right: -90%;
+		bottom: 25px;
+		margin-bottom: -28px;
         top: 35%;
 		}
 		
