@@ -73,6 +73,14 @@
                     <i class="fas fa-calendar-alt fa-fw"></i>
                   </button>
                 </div>
+                <!--div class="d-none d-md-block d-lg-none">
+                  <p class="col align-self-end">
+                    <a class="btn btn-primary" style="margin: 5% 80% -4%;" data-toggle="collapse" href="#collapseExample" role="button"
+                      aria-expanded="false" aria-controls="collapseExample" onclick="resherchFunction()">
+                      <i class="fas fa-search"></i>
+                    </a>
+                  </p>
+                </div-->
               </div>
             </div>
           </div>
@@ -99,8 +107,17 @@
   </div>
 
   <div class="container w-70" *ngIf="!warning_bool && !loading">
+    <form class="js-focus-state input-group input-group-lg u-form u-form--lg d-block d-sm-none d-sm-none d-md-block u-form--position u-form--no-brd search mb-2">
+      <div class="input-group-prepend u-form__prepend">
+        <span class="input-group-text u-form__text">
+          <span class="fa fa-search u-form__text-inner"></span>
+        </span>
+      </div>
+      <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre">
+
+    </form>
   
-   <div class="paginate uk-text-center d-block d-sm-none">
+      <div class="paginate uk-text-center d-block d-sm-none" style="font-size:x-small">
       <pagination-controls class="my-pagination"
                       (pageChange)="p = $event"
                       directionLinks="true"
@@ -123,6 +140,7 @@
          
 
     <table class="table  table-hover col-md-11 col-sm-11 col-xs-12 mb-4" style="background-color:#ffffffe0; border-radius: 10px;">
+
       <thead>
         <tr>
           <th scope="col">Marchés</th>

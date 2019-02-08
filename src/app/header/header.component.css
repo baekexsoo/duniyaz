@@ -37,6 +37,9 @@
         margin-left: auto;
     }
 }
+.font_url li a {
+    color: black;
+} 
 .active{
     background-color: #efeef2;
     border-radius: 2.3rem;
@@ -120,6 +123,14 @@ span svg{
 	.navlidrop{
 		background-color: #132d5c
 	}
+	.font_url {
+		position: relative;
+		right: -70%;
+		bottom: 25px;
+		margin-bottom: -28px !important;
+    	top: 35%;
+		border-radius: 10%;
+	} 
     .menu-position{
 		/*
     position: absolute;
