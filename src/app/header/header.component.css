@@ -37,13 +37,7 @@
         margin-left: auto;
     }
 }
-.font_url li a {
-    color: black;
-} 
-.active{
-    background-color: #efeef2;
-    border-radius: 2.3rem;
-}
+
 .btn_pro{
     margin-top: 1%;
     
@@ -81,6 +75,10 @@ span svg{
 .btn-primary {
     background-color: #3bc9a7;
     border-color: #3bc9a7;
+}.active{
+    background-color: #efeef2;
+	border-radius: 2.3rem;
+	color: #000000;
 }
 
 .dec{
@@ -125,11 +123,22 @@ span svg{
 	}
 	.font_url {
 		position: relative;
-		right: -70%;
+		right: -60%;
 		bottom: 25px;
 		margin-bottom: -28px !important;
     	top: 35%;
-		border-radius: 10%;
+	} 
+	.active{
+		background-color: #efeef2;
+		border-radius: 2.3rem;
+	}
+	.active1{
+		
+		color: #000000;
+	}
+	
+	.font_url li a {
+		color: white;
 	} 
     .menu-position{
 		/*
