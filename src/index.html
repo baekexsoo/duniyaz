@@ -28,7 +28,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css" />
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
+<link rel="stylesheet" href="assets/vendor/chartist/dist/chartist.min.css">
+<link rel="stylesheet" href="assets/vendor/chartist-js-tooltip/chartist-plugin-tooltip.css">
 
     <!-- CSS Front Template -->
   <link rel="stylesheet" href="../../assets/css/front.css">
@@ -63,6 +64,12 @@
   <script src="../../assets/vendor/fancybox/jquery.fancybox.min.js"></script>
   <script src="../../assets/vendor/typed.js/lib/typed.min.js"></script>
   <script src="../../assets/vendor/slick-carousel/slick/slick.js"></script>
+  <script src="assets/js/components/hs.progress-bar.js"></script>
+<script src="assets/js/components/hs.chartist-bar-chart.js"></script>
+<script src="assets/vendor/appear.js"></script>
+<script src="assets/vendor/chartist/dist/chartist.min.js"></script>
+<script src="assets/vendor/chartist-js-tooltip/chartist-plugin-tooltip.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
   <!-- JS Front -->
@@ -93,6 +100,20 @@
             autonomous: true
         })
     });
+</script>
+
+<!-- JS Plugins Init. -->
+<script>
+  $(document).on('ready', function () {
+    // initialization of horizontal progress bars
+    var horizontalProgressBars = $.HSCore.components.HSProgressBar.init('.js-hr-progress', {
+      direction: 'horizontal',
+      indicatorSelector: '.js-hr-progress-bar'
+    });
+
+    // initialization of chartist bar charts
+    $.HSCore.components.HSChartistBarChart.init('.js-bar-chart');
+  });
 </script>
   <script>
   $(document).on('ready', function () {
