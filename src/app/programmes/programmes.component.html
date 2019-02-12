@@ -1,8 +1,5 @@
 <app-header></app-header>
 
-
-
-
   <!-- ========== MAIN ========== -->
   <main id="content" role="main" style="min-height:-webkit-fill-available">
     <div class="container u-space-3-top--lg mb-5">
@@ -14,8 +11,7 @@
         </div-->
         <!-- End Title -->
 
-      <div style="
-      background-color: #eaebefc7; border-radius: 100px">
+      <div style="background-color: #eaebefc7; border-radius: 100px">
          <form class="js-validate mt-5">
            
             <div class="row ml-5 mr-5">
@@ -86,37 +82,28 @@
             </div>
             <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre">
           </form>
-         
-          <div class="row">
-            <div *ngFor="let prog of list_programmes| filter:search | paginate: { itemsPerPage: 7, currentPage: p }" class="col-md-6 col-sm-6 col-12">
-              <div class="wrapper col-md-10" >
-                <div class="outer col-md-12 " >
-                  <div class="content animated fadeInLeft">
-                     <h1> <strong> {{ prog.programName }} </strong> <br/></h1>
-                   
-                    <p>
-                        <strong > Prinicpal Objectif: </strong><br/> 
-                      {{ prog.principalObjectif  }} 
-                    </p>
-                    <hr class="uk-divider-small">
-                    
-                    <p>
-                        <strong > Résultats escomptés: </strong><br/> 
-                        {{ prog.expectedResults.join(' ') }}    
-                    </p>
-                  <div class="sectors"> <strong class="mb-2">Secteurs cibles :</strong> <span> {{ prog.targetedSectors.join(' ')}}</span></div>
-                    <div class="button">
-                      <a>Durée d'exécution</a><a class="cart-btn" style="background: #fff;color: #111;"><i class="cart-icon ion-bag"></i>{{ prog.startDate }} à {{ prog.endDate }}</a>
-                    </div>
-                  
-                    
-                  </div>
-                </div>
-             
-              </div>
-            </div>
-            </div>
           
+        <div class="row justify-content-center">
+        <div class="col-lg-7 order-lg-2 mb-9 mb-lg-3" style="border:ridge" *ngFor="let prog of list_programmes| filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
+          <div class="card-group d-block d-md-flex u-card--gutters-2-md">
+            <div class="card border-0 rounded shadow-sm mb-3">
+              <!-- Blog Grid -->
+              <article class="card-body d-flex align-items-start flex-column w-100 bg-white rounded">
+                <!-- Info -->
+                <h5 class="" style=" margin-top: 0% !important " >
+                  <a href="" style=" text-decoration: none;" > {{ prog.programName }} </a>
+                </h5>
+                <p style="margin: 0% "> <strong class="mb-2">Secteurs cibles :</strong> <span> {{ prog.targetedSectors}}</span></p>
+                <small class="d-block text-muted mb-2"> {{ prog.startDate}} - {{ prog.endDate }} </small>
+
+                <button type="button" class="btn btn-primary" style="padding:1%; font-size:65%; margin-left:auto">Details</button>
+                <!-- End Info -->
+              </article>
+              <!-- End Blog Grid -->
+            </div>
+            </div>
+            </div>
+            </div>
     
        
         
