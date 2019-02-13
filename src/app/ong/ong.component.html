@@ -5,7 +5,7 @@
 
   <!-- ========== MAIN ========== -->
   <main id="content" role="main" style="min-height:-webkit-fill-available">
-    <div class="container u-space-3-top--lg mb-5">
+    <div class="container u-space-3-top--lg mb-5  d-block d-xs-none">
 
        <!-- Title -->
        <!--div class="mb-7">         
@@ -14,12 +14,11 @@
         </div-->
         <!-- End Title -->
 
-      <div style="
-      background-color: #eaebefc7; border-radius: 100px">
+      <!--div style="background-color: #eaebefc7; border-radius: 100px">
          <form class="js-validate mt-5">
            
             <div class="row ml-5 mr-5">
-                <!-- Input -->
+                <!-- Input --
                 <div class="col-sm-4 col-xs-3 mt-2 ">
                   <div class="js-form-message">
                     <label class="h6 small d-block text-uppercase">
@@ -39,9 +38,9 @@
                       </div>
                   </div>
                 </div>
-                <!-- End Input -->
+                <!-- End Input --
 
-                <!-- Input -->
+                <!-- Input --
                 <div class="col-sm-4 mt-2">
                     <div class="js-form-message">
                       <label class="h6 small d-block text-uppercase">
@@ -59,18 +58,19 @@
                   </div>
                   <!-- End Input -->
 
-                  <!-- Input -->
+                  <!-- Input --
                 <div class="col-sm-4 mt-5">
                     <div class="text-center ">
                         <button type="submit" (click)="filtre_ong()"  class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
                       </div>
                   </div>
-                  <!-- End Input -->
+                  <!-- End Input --
             </div>
           </form>
-      </div>
+      </div-->
     </div>
     <div class="u-space-3-bottom">
+
 
     <div class="container" *ngIf="!loading">
         <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search mb-2">
@@ -82,6 +82,11 @@
             <input type="search" class="form-control u-form__input form" [(ngModel)]="search" name="search" placeholder="Filtre">
           </form>
 
+
+      <div class="paginate uk-text-center  d-block d-sm-none">
+            <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>        
+        </div>
+
  <div class="row justify-content-center">
   <div class="col-md-6 col-lg-4 mb-7 mb-lg-0" style="margin-top: 22px;" *ngFor="let export of list |filter: search | paginate: { itemsPerPage: 7, currentPage: p }">
     <article class="bg-white shadow-sm rounded">
@@ -89,8 +94,8 @@
         <div class="d-flex justify-content-between align-items-center mb-3">
           <small class="d-block text-muted nom"> {{ export.structure }}</small>
 
-          <a class="u-icon u-icon--sm u-icon-primary--air rounded-circle" href="javascript:;" data-toggle="tooltip" data-placement="top" title="Download overall report">
-            <i class="fas fa-map-marker-alt u-icon__inner " style="  margin-left: 0"></i>
+          <a class="u-icon u-icon--sm u-icon-primary--air rounded-circle"  data-toggle="tooltip" data-placement="top">
+            <i class="fas fa-map-marker-alt u-icon__inner " style="  margin-left: 0;color: #fff;"></i>
           </a>
           <span style="margin-left: -84px;color: #ffffff;" *ngIf="export.seat != '' ">{{ export.country }} - {{ export.seat }}</span>
         </div>
@@ -158,7 +163,7 @@
             </tbody>
            
           </table-->
-          <div class="paginate uk-text-center">
+          <div class="paginate uk-text-center d-block d-xs-none">
             <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>        
         </div>
     </div>
