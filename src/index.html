@@ -39,11 +39,7 @@
       background: #132d5c;
     } 
   </style>
-  <script>
-  $('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
-    </script>
+ 
 </head>
 <body>
 <app-root>
@@ -85,7 +81,8 @@
   <script src="../../assets/js/components/hs.slick-carousel.js"></script>
   <script src="../../assets/js/components/hs.show-animation.js"></script>
   <script src="../../assets/js/components/hs.go-to.js"></script>
-  <script src="assets/js/components/hs.unfold.js"></script><script>
+  <script src="assets/js/components/hs.unfold.js"></script>
+  <script>
     $(document).on('ready', function () {
       // initialization of unfold component
       $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
@@ -138,5 +135,10 @@
       $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
     });
   </script>
+   <script>
+  $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+</script>
 </body>
 </html>
