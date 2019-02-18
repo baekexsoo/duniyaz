@@ -42,7 +42,7 @@ export class OngComponent implements OnInit {
 
   getAll() {
     this.loading = true;
-    return this.ong.liste().subscribe( response => {
+    return this.ong.liste_simulation_ong().subscribe( response => {
       this.list = response;
       this.loading = false;
       console.log(this.list);

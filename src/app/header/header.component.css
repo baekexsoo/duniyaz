@@ -30,7 +30,13 @@
 .mobile-menu-position-font:active{
 	color: #132d5c !important;
 }
-
+.dec{
+	
+	color: #000000;
+}
+.font_url {
+	margin-left: 90% !important;
+} 
 
 @media screen and (orientation:portrait){
     .btn_marg{
@@ -38,7 +44,6 @@
     }
 }
 .active{
-    background-color: #efeef2;
     border-radius: 2.3rem;
 }
 .btn_pro{
@@ -47,7 +52,6 @@
  }
 
  .defile:hover{
-    background-color: #efeef2;
     border-radius: 2.3rem;
  }
  .btn_produ{
@@ -80,9 +84,6 @@ span svg{
     border-color: #3bc9a7;
 }
 
-.dec{
-    padding: 0%;
-}
 #nav {
 	padding: 0; margin: 0;
 	text-align: center; /* centrer le texte */
@@ -96,35 +97,72 @@ span svg{
     margin: 0 30px;
 }
 
-.font_url li a {
-    color: black;
-} 
-
 .menu-position{
     position: absolute;
     right: 0%;
 }
 
-
+.menu-position-mobile{
+	position: fixed;
+	right: 0%;
+	top: 20%;
+	}
 
 /* Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {   
-    
+    .navli{
+		color: #fff
+	}
+	.dec{
+		color: #fff
+	}
+
+	.navlidrop{
+		background-color: #132d5c
+	}
+	.font_url {
+		position: relative;
+		right: -60%;
+		bottom: 25px;
+		margin-left: 0% !important; 
+		margin-bottom: -28px !important;
+    	top: 35%;
+		border-radius: 10%;
+	} 
     .menu-position{
+		/*
     position: absolute;
     right: 0%;
+	top: 25%;
+	*/
+	position: relative;
+    right: -90%;
+    bottom: 25px;
+    margin-bottom: -28px;
     top: 35%;
-    }
+	}
+
+	.container{
+		background-color: #132d5c;
+	}
+
  }
 
 /* Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) and (max-width: 767.98px) {    
     
-    .menu-position{
-        position: absolute;
+    .menu-position-mobile{
+        /*position: absolute;
         right: 0%;
+		top: 25%;*/
+		position: relative;
+		right: -90%;
+		bottom: 25px;
+		margin-bottom: -28px;
         top: 35%;
-        }
+		}
+		
+		
  }
 
  

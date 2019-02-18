@@ -10,14 +10,44 @@
 .research-background{
     background-color: #eaebefc7;
     border-radius: 100px;
-}
-
+}  
 
 
 /* Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {   
     .w-70{
         width: 100%;
+    }
+    .w-93{
+        width:93%;
+    }
+
+    .btn-position{
+        position: fixed;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        z-index: 1000;
+        bottom: 0
+    }
+
+    .my-pagination{
+        margin-left: -37px
+    }
+
+  .searcher{
+    right: 0px;
+    float: right;
+    margin-right: 19px;
+    margin-bottom: 6px;
+  }
+
+  .fermer{
+    width: 48%;
+    margin-right: 23px;
+  }
+
+    .hauteur{
+        height:100%
     }
 
     .research-background{
@@ -27,6 +57,14 @@
 
     .form-pad{
         padding-top: 5%;
+    }
+
+    .research-bar-show{
+        display: block;
+    }
+    
+    .research-bar-hide{
+        display: none;
     }
  }
 
@@ -45,6 +83,15 @@
     .form-pad{
         padding-top: 5%;
     }
+
+    .research-bar-show{
+        display: block;
+    }
+    
+    .research-bar-hide{
+        display: none;
+    }
+
  }
 
  .cent_log{

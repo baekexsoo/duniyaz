@@ -79,16 +79,70 @@
                 <span class="fa fa-search u-form__text-inner"></span>
               </span>
             </div>
-            <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre">
+            <input type="search" class="form-control u-form__input form" [(ngModel)]="search" name="search" placeholder="Filtre">
           </form>
-          <table class="table  table-hover" style="background-color:#ffffffe0; border-radius: 10px;">
+
+ <div class="row justify-content-center">
+  <div class="col-md-6 col-lg-4 mb-7 mb-lg-0" style="margin-top: 22px;" *ngFor="let export of list |filter: search | paginate: { itemsPerPage: 7, currentPage: p }">
+    <article class="bg-white shadow-sm rounded">
+      <header class="p-6" style="background-color:#15315a;">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <small class="d-block text-muted nom"> {{ export.structure }}</small>
+
+          <a class="u-icon u-icon--sm u-icon-primary--air rounded-circle" href="javascript:;" data-toggle="tooltip" data-placement="top" title="Download overall report">
+            <i class="fas fa-map-marker-alt u-icon__inner " style="  margin-left: 0"></i>
+          </a>
+          <span style="margin-left: -84px;color: #ffffff;" *ngIf="export.seat != '' ">{{ export.country }} - {{ export.seat }}</span>
+        </div>
+
+        
+      </header>
+
+      <hr class="my-0">
+
+      <div class="p-6 body-card">
+    
+        <div class="row mb-7">
+         
+           <div class="col-12 mt-4">
+            <div class="small text-muted">
+             <i class="fas fa-phone fa-fw"></i>Téléphone: <strong class="text-secondary">    {{ export['telephone']}} </strong>
+            </div>
+          </div>
+
+            <div class="col-12 mt-4">
+            <div class="small text-muted">
+             <i class="fas fa-envelope fa-fw"></i>e-mail: <strong class="text-secondary">{{export.email}}</strong>
+            </div>
+          </div>
+         
+             <div class="col-12 mt-4">
+            <div class="small text-muted">
+             <i class="fas fa-globe fa-fw"></i>Site web: <strong class="text-secondary">{{export.website}}</strong>
+            </div> 
+          </div>
+
+        </div>
+
+        <div></div>
+      </div>
+    </article>
+  </div>
+
+
+</div>
+
+
+
+
+          <!--table class="table  table-hover" style="background-color:#ffffffe0; border-radius: 10px;">
             <thead>
               <tr>
                 <th>Nom de la Structure</th>
                 <th class="uk-text-center" >Pays</th>
                 <th>Localisation</th>
                 <th class="uk-text-center" >Direction générale</th>
-                <!--th>Resistance de la variété</th-->
+                <!--th>Resistance de la variété</th--
               </tr>
             </thead>
             <tbody>
@@ -97,13 +151,13 @@
                 <td style="width:50vh" class="uk-text-center" ><small> {{ export.country }}  </small> </td>
                 <td style="width:50vh"><small> {{ export['telephone']}}, {{export.email}}, {{export.website}} </small> </td>
                 <td style="width:50vh" class="uk-text-center" ><small> {{ export.seat }} </small> </td>
-                <!--td style="width:40vh"><small> {{ export.resistance }}  </small> </td-->
+                <!--td style="width:40vh"><small> {{ export.resistance }}  </small> </td--
 
               </tr>
                          
             </tbody>
            
-          </table>
+          </table-->
           <div class="paginate uk-text-center">
             <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>        
         </div>
