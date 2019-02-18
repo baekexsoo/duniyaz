@@ -12,6 +12,9 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import localeFrExtra from '@angular/common/locales/extra/fr';
 import { AngularPaginatorModule } from 'angular-paginator';
+import * as $ from 'jquery';
+
+
 
 
 
