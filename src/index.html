@@ -39,11 +39,7 @@
       background: #132d5c;
     } 
   </style>
-  <script>
-  $('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
-    </script>
+
 </head>
 <body>
 <app-root>
@@ -64,14 +60,13 @@
   <script src="../../assets/vendor/fancybox/jquery.fancybox.min.js"></script>
   <script src="../../assets/vendor/typed.js/lib/typed.min.js"></script>
   <script src="../../assets/vendor/slick-carousel/slick/slick.js"></script>
-  <script src="assets/js/components/hs.progress-bar.js"></script>
-<script src="assets/js/components/hs.chartist-bar-chart.js"></script>
+  <!--script src="assets/js/components/hs.progress-bar.js"></script>
+<script src="assets/js/components/hs.chartist-bar-chart.js"></script-->
 <script src="assets/vendor/appear.js"></script>
 <script src="assets/vendor/chartist/dist/chartist.min.js"></script>
 <script src="assets/vendor/chartist-js-tooltip/chartist-plugin-tooltip.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+ 
   <!-- JS Front -->
   <script src="../../assets/js/hs.core.js"></script>
   <script src="assets/vendor/custombox/dist/custombox.min.js"></script>
@@ -138,5 +133,10 @@
       $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
     });
   </script>
+    <script>
+  $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+    </script>
 </body>
 </html>

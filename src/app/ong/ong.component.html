@@ -90,7 +90,7 @@
  <div class="row justify-content-center">
   <div class="col-md-6 col-lg-4 mb-7 mb-lg-0" style="margin-top: 22px;" *ngFor="let export of list |filter: search | paginate: { itemsPerPage: 7, currentPage: p }">
     <article class="bg-white shadow-sm rounded">
-      <header class="p-6" style="background-color:#15315a;">
+      <header class="p-6" style="background-color:#15315a; height:44px;">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <small class="d-block text-muted nom"> {{ export.structure }}</small>
 
@@ -123,7 +123,7 @@
          
              <div class="col-12 mt-4">
             <div class="small text-muted">
-             <i class="fas fa-globe fa-fw"></i>Site web: <strong class="text-secondary">{{export.website}}</strong>
+             <i class="fas fa-globe fa-fw"></i>Site web: <strong class="text-secondary"><a target="_blank" href=" {{ export.website }} ">{{export.website}}</a></strong>
             </div> 
           </div>
 
@@ -163,7 +163,7 @@
             </tbody>
            
           </table-->
-          <div class="paginate uk-text-center d-block d-xs-none">
+          <div class="paginate uk-text-center d-none d-sm-block">
             <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>        
         </div>
     </div>

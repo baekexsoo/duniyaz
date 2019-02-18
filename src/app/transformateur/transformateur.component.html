@@ -94,14 +94,43 @@
             </div>
             <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre">
           </form>
-          <table class="table  table-hover" style="background-color:#ffffffe0; border-radius: 10px;">
+
+
+
+   <!--div class="row">
+            <div *ngFor="let export of list | paginate: { itemsPerPage: 7, currentPage: p }" class="col-md-4 col-sm-4 col-xs-12 col-12">
+              <div class="wrapper col-md-10" >
+                <div class="outer col-md-12 " >
+                  <div class="content animated fadeInLeft">
+                    <div class="d-inline" style="padding-top: 0px;padding-left: 5px;padding-right: 2px;"> {{ export.nomEntreprise }} <br/></div>
+                   
+                <button type="button" class="d-inline btn btn-primary">
+                <span class="badge badge-light"><i class="fas fa-map-marker-alt fa-fw"></i></span>   {{ export.lieuImplantation }}
+                </button>
+                    
+                   
+                  <div class="sectors"> <span class="email"> {{ export.masseTransformation }} </span></div>
+                    <div class="button">
+                      <a><strong class="mb-2"> </strong> </a><a class="cart-btn phone" style="background: #fff;color: #111;"><i class="cart-icon ion-bag"></i> <strong>  {{ export.paysExportation }}  </strong> </a>
+                    </div>
+                  
+                    
+                  </div>
+                </div>
+             
+              </div>
+            </div>
+            </div>
+          
+
+          <!--table class="table  table-hover" style="background-color:#ffffffe0; border-radius: 10px;">
             <thead>
               <tr>
                 <th>Nom</th>
                 <th>Lieu d'implantation</th>
                 <th>Quantité transformée</th>
                 <th>Domaine</th>
-                <!--th>Pays d'exportation</th-->
+                <!--th>Pays d'exportation</th--
 
 
               </tr>
@@ -112,13 +141,13 @@
                 <td style="width:50vh; padding-left: 10vh;"><small> {{ export.lieuImplantation }}  </small> </td>
                 <td style="width:50vh" class="uk-text-center" ><small> {{ export.masseTransformation }}  </small> </td>
                 <td style="width:50vh" class="uk-text-center" ><small> {{ export.domaineTransformation }}  </small> </td>
-                <!--td style="width:40vh"><small> {{ export.paysExportation }}  </small> </td-->
+                <!--td style="width:40vh"><small> {{ export.paysExportation }}  </small> </td--
 
               </tr>
                          
             </tbody>
            
-          </table>
+          </table-->
           <div class="paginate uk-text-center">
             <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>        
         </div>
