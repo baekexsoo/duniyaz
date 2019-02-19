@@ -118,6 +118,7 @@
             <div class="col-12 mt-4">
             <div class="small text-muted">
              <i class="fas fa-envelope fa-fw"></i>e-mail: <strong class="text-secondary">{{export.email}}</strong>
+             <strong *ngIf="!export.email" class="text-secondary"> indisponible </strong>
             </div>
           </div>
          

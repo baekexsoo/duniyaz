@@ -39,7 +39,9 @@
                 
                      <hr style="width: 138%;">
                    
-                  <div class="sectors"> <i class="far fa-envelope"></i> <span class="email"> {{ dist.email }}</span></div>
+                  <div class="sectors"> <i class="far fa-envelope"></i> <span class="email"> {{ dist.email }}</span>
+                  <span *ngIf="!dist.email" class="email"> e-mail indisponible </span>
+                  </div>
                     <div class="button">
                       <a><strong class="mb-2"><i class="fas fa-phone fa-fw"></i> </strong> </a><a class="cart-btn phone" style="background: #fff;color: #111;font-size:15px"><i class="cart-icon ion-bag"></i> <strong>  {{ dist.telephone }} </strong> </a>
                     </div>
