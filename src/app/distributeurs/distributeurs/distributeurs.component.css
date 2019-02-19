@@ -17,13 +17,14 @@
     width: 70%;
 }
 .email{
-    font-size: 17px;
+    font-size: 15px;
     margin-left: 12px;
 }
 .phone{
     margin-left:12px;
 }
 .wrapper {
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
 	display: flex;
 	justify-content: center;
     height: 163px;
@@ -39,6 +40,7 @@
 }
 
 .outer {
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
 	position: relative;
 	background: #fff;
 	height: 157px;

@@ -87,7 +87,7 @@
             <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>        
         </div>
 
- <div class="row justify-content-center">
+ <div class="row">
   <div class="col-md-6 col-lg-4 mb-7 mb-lg-0" style="margin-top: 22px;" *ngFor="let export of list |filter: search | paginate: { itemsPerPage: 7, currentPage: p }">
     <article class="bg-white shadow-sm rounded">
       <header class="p-6" style="background-color:#15315a; height:44px;">
@@ -97,7 +97,7 @@
           <a class="u-icon u-icon--sm u-icon-primary--air rounded-circle"  data-toggle="tooltip" data-placement="top">
             <i class="fas fa-map-marker-alt u-icon__inner " style="  margin-left: 0;color: #fff;"></i>
           </a>
-          <span style="margin-left: -84px;color: #ffffff;" *ngIf="export.seat != '' ">{{ export.country }} - {{ export.seat }}</span>
+          <span style="margin-left: -84px;color: #ffffff;" *ngIf="export.seat != '' "> {{ export.seat }} - {{ export.country }} </span>
         </div>
 
         

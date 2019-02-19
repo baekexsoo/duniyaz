@@ -95,34 +95,42 @@
             <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre">
           </form>
 
+<div class="row">
+  <div class="col-md-6 col-lg-4 mb-5 mb-lg-0  border-0 rounded shadow-smd" *ngFor="let export of list | paginate: { itemsPerPage: 7, currentPage: p }">
+    <article>
+      <!--img class="img-fluid w-100 rounded" src="../assets/img/480x320/img16.jpg" alt="Image Description"-->
+      <div class="bg-white p-5">
+     <ul class="list-inline mb-0">
+        <li class="list-inline-item g-mb-10">
+        <strong class="d-block text-secondary mb-1">  {{ export.nomEntreprise }} </strong>
 
+        </li>
+      
+        <li class="list-inline-item g-mb-10">
 
-   <!--div class="row">
-            <div *ngFor="let export of list | paginate: { itemsPerPage: 7, currentPage: p }" class="col-md-4 col-sm-4 col-xs-12 col-12">
-              <div class="wrapper col-md-10" >
-                <div class="outer col-md-12 " >
-                  <div class="content animated fadeInLeft">
-                    <div class="d-inline" style="padding-top: 0px;padding-left: 5px;padding-right: 2px;"> {{ export.nomEntreprise }} <br/></div>
-                   
-                <button type="button" class="d-inline btn btn-primary">
-                <span class="badge badge-light"><i class="fas fa-map-marker-alt fa-fw"></i></span>   {{ export.lieuImplantation }}
-                </button>
-                    
-                   
-                  <div class="sectors"> <span class="email"> {{ export.masseTransformation }} </span></div>
-                    <div class="button">
-                      <a><strong class="mb-2"> </strong> </a><a class="cart-btn phone" style="background: #fff;color: #111;"><i class="cart-icon ion-bag"></i> <strong>  {{ export.paysExportation }}  </strong> </a>
-                    </div>
-                  
-                    
-                  </div>
-                </div>
-             
-              </div>
-            </div>
-            </div>
-          
+         
+      <a *ngIf="export.lieuImplantation" class="u-label u-label--sm u-label--primary" > 
+       <i class="fas fa-map-marker-alt mr-1" ></i>    
+      {{ export.lieuImplantation }}</a>
 
+             <a *ngIf="!export.lieuImplantation" class="u-label u-label--sm u-label--danger" >
+        <i class="fas fa-map-marker-alt mr-1" ></i>          
+           Lieu Inconnu </a>
+        </li>
+       
+
+      </ul>
+        <h3 *ngIf="export.domaineTransformation" class="h6 mb-0 mt-2">
+          <a>{{ export.domaineTransformation }}</a>
+        </h3>
+          <h3 *ngIf="!export.domaineTransformation" class="h6 mb-0 mt-2">
+          <a>Données non disponible</a>
+        </h3>
+      </div>
+    </article>
+  </div>
+
+</div>
           <!--table class="table  table-hover" style="background-color:#ffffffe0; border-radius: 10px;">
             <thead>
               <tr>
@@ -148,8 +156,10 @@
             </tbody>
            
           </table-->
-          <div class="paginate uk-text-center">
+          <div class="row justify-content-center">
+          <div class="paginate uk-text-center d-none d-sm-block">
             <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>        
+        </div>
         </div>
     </div>
     </div>

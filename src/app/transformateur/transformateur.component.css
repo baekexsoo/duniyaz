@@ -28,27 +28,7 @@
 .phone{
     margin-left:12px;
 }
-.wrapper {
-	display: flex;
-	justify-content: center;
-    height: 163px;
-  /*  width: 487px;*/
-    margin: 22px auto;
-    border-radius: 7px 7px 7px 7px;
-    /* VIA CSS MATIC https://goo.gl/cIbnS */
-    -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-	box-shadow:0px 2px 6px 0px rgba(0, 0, 0, 0.15);
-	
-	
-}
 
-.outer {
-	position: relative;
-	background: #fff;
-	height: 157px;
-	width: 650px;
-	overflow: hidden;
-	display: flex;
-	align-items: center;
+.shadow-smd{
+   
 }
