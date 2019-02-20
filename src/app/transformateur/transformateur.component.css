@@ -30,5 +30,19 @@
 }
 
 .shadow-smd{
-   
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.15);
+    margin-left: 11px;
+    max-width: 32.33333%;
 }
+.lieu{
+    float: right;
+}
+
+
+/* Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {   
+    .shadow-smd{
+       
+        max-width: 100%;
+    }
+	}

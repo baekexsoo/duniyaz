@@ -17,7 +17,8 @@ export class TransformateurComponent implements OnInit {
     zone: '',
     produit: '',
     page: 1
-  }
+  };
+  lirePlus = false;
 
   constructor( private transformateur: TransformeService, public market: MarketService) { }
 
@@ -30,6 +31,11 @@ export class TransformateurComponent implements OnInit {
     return this.market.departement().subscribe(response => {
       this.liste_departement = response;
     });
+  }
+
+  readMore() {
+    this.lirePlus = true;
+    console.log(this.lirePlus);
   }
   list_commune() {
     // this.warning = '';

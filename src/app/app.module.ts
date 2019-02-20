@@ -55,6 +55,7 @@ import { from } from 'rxjs';
 import { OngComponent } from './ong/ong.component';
 import { OngService } from '../providers/ong/ong.service';
 import { ProgrammesComponent } from './programmes/programmes.component';
+import { DetailProgramComponent } from './detail-program/detail-program.component';
 
 const appRoutes: Routes = [
 
@@ -69,6 +70,7 @@ const appRoutes: Routes = [
   { path: 'ong', component: OngComponent },
   { path: 'transformateur', component: TransformateurComponent },
   { path: 'programmes', component: ProgrammesComponent },
+  { path: 'detail-programme', component: DetailProgramComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent},
   { path: 'exportateurs', component: ExportateursComponent},
@@ -107,7 +109,8 @@ const appRoutes: Routes = [
     DistributeursComponent,
     CulturesComponent,
     OngComponent,
-    ProgrammesComponent
+    ProgrammesComponent,
+    DetailProgramComponent
   ],
   imports: [
     FormsModule,

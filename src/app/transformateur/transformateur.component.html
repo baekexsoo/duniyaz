@@ -14,12 +14,12 @@
         </div-->
         <!-- End Title -->
 
-      <div style="
+      <!--div style="
       background-color: #eaebefc7; border-radius: 100px">
          <form class="js-validate mt-5">
            
             <div class="row ml-5 mr-5">
-                <!-- Input -->
+                <!-- Input --
                 <div class="col-sm-3 col-xs-3 mt-2 ">
                   <div class="js-form-message">
                     <label class="h6 small d-block text-uppercase">
@@ -42,7 +42,7 @@
                 </div>
                 <!-- End Input -->
 
-                <!-- Input -->
+                <!-- Input --
                 <div class="col-sm-3 mt-2">
                     <div class="js-form-message">
                       <label class="h6 small d-block text-uppercase">
@@ -59,7 +59,7 @@
                     </div>
                   </div>
                   <!-- End Input -->
-                  <!-- Input -->  
+                  <!-- Input --
                   <div class="col-sm-3 mt-2">
                     <div class="js-form-message">
                       <label class="h6 small d-block text-uppercase">
@@ -73,17 +73,18 @@
                     </div>
                   </div>
                   <!-- End Input -->
-                  <!-- Input -->
+                  <!-- Input --
                 <div class="col-sm-3 mt-5">
                     <div class="text-center ">
                         <button type="submit" (click)="getAll()"  class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
                       </div>
                   </div>
-                  <!-- End Input -->
+                  <!-- End Input --
             </div>
           </form>
-      </div>
+      </div-->
     </div>
+
     <div class="u-space-3-bottom">
     <div class="container" *ngIf="!loading" >
         <form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search mb-2">
@@ -95,18 +96,12 @@
             <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre">
           </form>
 
-<div class="row">
-  <div class="col-md-6 col-lg-4 mb-5 mb-lg-0  border-0 rounded shadow-smd" *ngFor="let export of list | paginate: { itemsPerPage: 7, currentPage: p }">
+<div class="row ">
+  <div class="col-md-6 col-lg-4 mb-5  border-0 rounded shadow-smd" *ngFor="let export of list | paginate: { itemsPerPage: 7, currentPage: p }">
     <article>
-      <!--img class="img-fluid w-100 rounded" src="../assets/img/480x320/img16.jpg" alt="Image Description"-->
-      <div class="bg-white p-5">
-     <ul class="list-inline mb-0">
-        <li class="list-inline-item g-mb-10">
-        <strong class="d-block text-secondary mb-1">  {{ export.nomEntreprise }} </strong>
-
-        </li>
-      
-        <li class="list-inline-item g-mb-10">
+  <ul class="list-inline mb-0">
+       
+        <li class="list-inline-item g-mb-10 lieu">
 
          
       <a *ngIf="export.lieuImplantation" class="u-label u-label--sm u-label--primary" > 
@@ -117,11 +112,25 @@
         <i class="fas fa-map-marker-alt mr-1" ></i>          
            Lieu Inconnu </a>
         </li>
+
+        </ul>
        
+       
+      <!--img class="img-fluid w-100 rounded" src="../assets/img/480x320/img16.jpg" alt="Image Description"-->
+      <div class="bg-white p-5">
+     <ul class="list-inline mb-0">
+        <li class="list-inline-item g-mb-10">
+        <strong class="d-block text-secondary mb-1">  {{ export.nomEntreprise }} </strong>
+
+        </li>
+      
 
       </ul>
         <h3 *ngIf="export.domaineTransformation" class="h6 mb-0 mt-2">
-          <a>{{ export.domaineTransformation }}</a>
+          <a>{{ export.domaineTransformation}} </a>
+          <!--a *ngIf="lirePlus">{{ export.domaineTransformation }}</a><br>
+          <a class="btn mt-3 " style="min-width:3.6875rem;color:#437acc" *ngIf="!lirePlus" click="readMore()">Lire plus</a-->
+
         </h3>
           <h3 *ngIf="!export.domaineTransformation" class="h6 mb-0 mt-2">
           <a>Données non disponible</a>
