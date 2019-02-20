@@ -118,6 +118,7 @@ export class AccueilMarcheComponent implements OnInit {
         'departement' : "",
         'commune' : "" 
       };
+      this.objet_market.date = '';
       return this.market.recherche(JSON.stringify(obj)).subscribe( res => {
         this.search_result = res;
         this.loading = false;
@@ -126,6 +127,8 @@ export class AccueilMarcheComponent implements OnInit {
     } else {
       this.dat = this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
       this.rec_date = this.dat;
+      console.log(this.Today.day)
+      this.objet_market.date = '';
       return this.market.recherche(JSON.stringify(this.objet_market)).subscribe( res => {
         this.search_result = res;
         this.loading = false;

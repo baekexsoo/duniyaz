@@ -3,3 +3,32 @@
     background-color: gainsboro;
     height: 40px;
 }
+.search{
+    /*width: 35%;*/
+    background-color: gainsboro;
+    height: 40px;
+}
+.sectors{
+    margin-bottom:12px;
+}
+.fa-phone{
+    color: #c36a97;
+}
+.fa-envelope{
+    color: #c36a97;
+}
+
+.w-70{
+    width: 70%;
+}
+.email{
+    font-size: 17px;
+    margin-left: 12px;
+}
+.phone{
+    margin-left:12px;
+}
+
+.shadow-smd{
+   
+}

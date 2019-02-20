@@ -94,14 +94,51 @@
             </div>
             <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre">
           </form>
-          <table class="table  table-hover" style="background-color:#ffffffe0; border-radius: 10px;">
+
+<div class="row">
+  <div class="col-md-6 col-lg-4 mb-5 mb-lg-0  border-0 rounded shadow-smd" *ngFor="let export of list | paginate: { itemsPerPage: 7, currentPage: p }">
+    <article>
+      <!--img class="img-fluid w-100 rounded" src="../assets/img/480x320/img16.jpg" alt="Image Description"-->
+      <div class="bg-white p-5">
+     <ul class="list-inline mb-0">
+        <li class="list-inline-item g-mb-10">
+        <strong class="d-block text-secondary mb-1">  {{ export.nomEntreprise }} </strong>
+
+        </li>
+      
+        <li class="list-inline-item g-mb-10">
+
+         
+      <a *ngIf="export.lieuImplantation" class="u-label u-label--sm u-label--primary" > 
+       <i class="fas fa-map-marker-alt mr-1" ></i>    
+      {{ export.lieuImplantation }}</a>
+
+             <a *ngIf="!export.lieuImplantation" class="u-label u-label--sm u-label--danger" >
+        <i class="fas fa-map-marker-alt mr-1" ></i>          
+           Lieu Inconnu </a>
+        </li>
+       
+
+      </ul>
+        <h3 *ngIf="export.domaineTransformation" class="h6 mb-0 mt-2">
+          <a>{{ export.domaineTransformation }}</a>
+        </h3>
+          <h3 *ngIf="!export.domaineTransformation" class="h6 mb-0 mt-2">
+          <a>Données non disponible</a>
+        </h3>
+      </div>
+    </article>
+  </div>
+
+</div>
+          <!--table class="table  table-hover" style="background-color:#ffffffe0; border-radius: 10px;">
             <thead>
               <tr>
                 <th>Nom</th>
                 <th>Lieu d'implantation</th>
                 <th>Quantité transformée</th>
                 <th>Domaine</th>
-                <!--th>Pays d'exportation</th-->
+                <!--th>Pays d'exportation</th--
 
 
               </tr>
@@ -112,15 +149,17 @@
                 <td style="width:50vh; padding-left: 10vh;"><small> {{ export.lieuImplantation }}  </small> </td>
                 <td style="width:50vh" class="uk-text-center" ><small> {{ export.masseTransformation }}  </small> </td>
                 <td style="width:50vh" class="uk-text-center" ><small> {{ export.domaineTransformation }}  </small> </td>
-                <!--td style="width:40vh"><small> {{ export.paysExportation }}  </small> </td-->
+                <!--td style="width:40vh"><small> {{ export.paysExportation }}  </small> </td--
 
               </tr>
                          
             </tbody>
            
-          </table>
-          <div class="paginate uk-text-center">
+          </table-->
+          <div class="row justify-content-center">
+          <div class="paginate uk-text-center d-none d-sm-block">
             <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>        
+        </div>
         </div>
     </div>
     </div>
