@@ -33,11 +33,7 @@
     <!-- CSS Front Template -->
   <link rel="stylesheet" href="../../assets/css/front.css">
   <link rel="stylesheet" href="../../assets/css/custom-front.css">
-  <style>
-    .my-pagination /deep/ .ngx-pagination .current {
-      background: #132d5c;
-    } 
-  </style>
+  
 </head>
 <body>
 <app-root>
@@ -132,7 +128,12 @@
       $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
     });
   </script>
-    <script>
+  <style>
+    .my-pagination /deep/ .ngx-pagination .current {
+      background: #132d5c;
+    } 
+  </style>
+  <script>
   $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
