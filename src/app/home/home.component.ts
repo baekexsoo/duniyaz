@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
   
-  con(){
+ /* con(){
 
       this.loader = true ; //c'est ici qu'on impose au loader de s'afficher 
       this.warning = ""; // Pour réinitialiser un warning !!!! IMPORTANT 
@@ -54,6 +54,6 @@ export class HomeComponent implements OnInit {
                   this.loader = false;
 
               })
-  }
+  }*/
 
 }
