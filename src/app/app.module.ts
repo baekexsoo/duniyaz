@@ -66,7 +66,7 @@ const appRoutes: Routes = [
     { path: 'visualisation', component: DatavizComponent},
   ], canActivate: [AuthGuard]
 },
-  { path: 'accueil', component: AccueilMarcheComponent },
+  { path: 'marchés', component: AccueilMarcheComponent },
   { path: 'ong', component: OngComponent },
   { path: 'transformateur', component: TransformateurComponent },
   { path: 'programmes', component: ProgrammesComponent },
