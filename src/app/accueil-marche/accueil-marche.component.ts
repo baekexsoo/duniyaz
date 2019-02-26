@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MarketService } from 'src/providers/market/market.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
@@ -6,6 +6,7 @@ import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-accueil-marche',
   templateUrl: './accueil-marche.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./accueil-marche.component.css']
 })
 export class AccueilMarcheComponent implements OnInit {

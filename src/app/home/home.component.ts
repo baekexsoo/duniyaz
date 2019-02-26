@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import {UtilisateurService} from '../../providers/utilisateur/utilisateur.service';
 import {Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {

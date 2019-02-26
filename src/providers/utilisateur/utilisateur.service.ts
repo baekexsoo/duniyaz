@@ -48,9 +48,9 @@ export class UtilisateurService {
     return this.Api.put(endpoint,{}, httpOptions);
 
 }
-  welcome(mail):Observable<any>{
+ /* welcome(mail):Observable<any>{
     return this.myhttp.get(this.url_bases.url_accueil + mail);
-  }
+  }*/
 
   modif_token(email : string){
    let url = 'utilisateur/utilisateurs/generate_token?mail=';
