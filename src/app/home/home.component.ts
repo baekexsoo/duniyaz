@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, ChangeDetectionStrategy } from '@angular/core';
-//import {UtilisateurService} from '../../providers/utilisateur/utilisateur.service';
+import {UtilisateurService} from '../../providers/utilisateur/utilisateur.service';
 import {Router } from '@angular/router';
 @Component({
   selector: 'app-home',

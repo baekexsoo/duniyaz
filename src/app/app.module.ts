@@ -72,7 +72,7 @@ const appRoutes: Routes = [
 //  { path: 'programmes', component: ProgrammesComponent },
 //  { path: 'detail-programme', component: DetailProgramComponent },
 //  { path: 'signin', component: SigninComponent },
-//  { path: 'home', component: HomeComponent},
+  { path: 'home', component: HomeComponent},
 //  { path: 'exportateurs', component: ExportateursComponent},
 //  { path: 'distributeurs', component: DistributeursComponent},
 //  { path: 'culture', component: CulturesComponent},
