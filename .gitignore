@@ -1,5 +1,4 @@
-/dist
-/nbproject
-/.vscode
-/.idea
-/node_modules
+/dist/
+/nbproject/
+/.vscode/
+/.idea/
