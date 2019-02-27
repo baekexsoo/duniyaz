@@ -42,20 +42,20 @@ import { AuthGuard } from './auth/auth.guard';
 import { DatavizComponent } from './dataviz/dataviz.component';
 import { AccueilMarcheComponent } from './accueil-marche/accueil-marche.component';
 import { MarketService } from '../providers/market/market.service';
-import { TransformateurComponent } from './transformateur/transformateur.component';
-import { TransformeService } from 'src/providers/transforme/transforme.service';
-import { ExportService } from '../providers/exportateurs/export.service';
-import { DistributeursService } from '../providers/distributeurs/distributeurs.service';
-import { ProgrammeService } from '../providers/programmes/programme.service';
-import { ExportateursComponent } from './exportateurs/exportateurs/exportateurs.component';
-import { DistributeursComponent } from './distributeurs/distributeurs/distributeurs.component';
-import { CulturesComponent } from './cultures/cultures.component';
-import { CultureService } from '../providers/culture/culture.service';
+//import { TransformateurComponent } from './transformateur/transformateur.component';
+//import { TransformeService } from 'src/providers/transforme/transforme.service';
+//import { ExportService } from '../providers/exportateurs/export.service';
+//import { DistributeursService } from '../providers/distributeurs/distributeurs.service';
+//import { ProgrammeService } from '../providers/programmes/programme.service';
+//import { ExportateursComponent } from './exportateurs/exportateurs/exportateurs.component';
+//import { DistributeursComponent } from './distributeurs/distributeurs/distributeurs.component';
+//import { CulturesComponent } from './cultures/cultures.component';
+//import { CultureService } from '../providers/culture/culture.service';
 import { from } from 'rxjs';
-import { OngComponent } from './ong/ong.component';
-import { OngService } from '../providers/ong/ong.service';
-import { ProgrammesComponent } from './programmes/programmes.component';
-import { DetailProgramComponent } from './detail-program/detail-program.component';
+//import { OngComponent } from './ong/ong.component';
+//import { OngService } from '../providers/ong/ong.service';
+//import { ProgrammesComponent } from './programmes/programmes.component';
+//import { DetailProgramComponent } from './detail-program/detail-program.component';
 
 const appRoutes: Routes = [
 
@@ -67,22 +67,22 @@ const appRoutes: Routes = [
   ], canActivate: [AuthGuard]
 },
   { path: 'marchés', component: AccueilMarcheComponent },
-  { path: 'ong', component: OngComponent },
-  { path: 'transformateur', component: TransformateurComponent },
-  { path: 'programmes', component: ProgrammesComponent },
-  { path: 'detail-programme', component: DetailProgramComponent },
-  { path: 'signin', component: SigninComponent },
-  { path: 'home', component: HomeComponent},
-  { path: 'exportateurs', component: ExportateursComponent},
-  { path: 'distributeurs', component: DistributeursComponent},
-  { path: 'culture', component: CulturesComponent},
-  { path: '', redirectTo: 'accueil', pathMatch: 'full'},
-  { path: 'signin/form/sms', component: SmsCreatComponent},
-  { path: 'update/activate/:ref?', component: UpdatePwdComponent},
-  { path: 'restauration', component: RestaurationComponent},
-  { path: 'h', component: SpaceUserComponent},
-  { path: 'error', component: NotFoundComponent},
-  { path: 'prediction', component: SelectionSolComponent},
+//  { path: 'ong', component: OngComponent },
+//  { path: 'transformateur', component: TransformateurComponent },
+//  { path: 'programmes', component: ProgrammesComponent },
+//  { path: 'detail-programme', component: DetailProgramComponent },
+//  { path: 'signin', component: SigninComponent },
+//  { path: 'home', component: HomeComponent},
+//  { path: 'exportateurs', component: ExportateursComponent},
+//  { path: 'distributeurs', component: DistributeursComponent},
+//  { path: 'culture', component: CulturesComponent},
+//  { path: '', redirectTo: 'accueil', pathMatch: 'full'},
+//  { path: 'signin/form/sms', component: SmsCreatComponent},
+//  { path: 'update/activate/:ref?', component: UpdatePwdComponent},
+//  { path: 'restauration', component: RestaurationComponent},
+//  { path: 'h', component: SpaceUserComponent},
+//  { path: 'error', component: NotFoundComponent},
+//  { path: 'prediction', component: SelectionSolComponent},
   { path: '**', redirectTo: 'accueil', pathMatch: 'full'},
 ];
 
@@ -104,13 +104,13 @@ const appRoutes: Routes = [
     SelectionSolComponent,
     DatavizComponent,
     AccueilMarcheComponent,
-    TransformateurComponent,
-    ExportateursComponent,
-    DistributeursComponent,
-    CulturesComponent,
-    OngComponent,
-    ProgrammesComponent,
-    DetailProgramComponent
+//    TransformateurComponent,
+//    ExportateursComponent,
+//    DistributeursComponent,
+//    CulturesComponent,
+//    OngComponent,
+//    ProgrammesComponent,
+//    DetailProgramComponent
   ],
   imports: [
     FormsModule,
@@ -130,17 +130,17 @@ const appRoutes: Routes = [
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr' },
-  UtilisateurService,
+//  UtilisateurService,
   Api,
   WindowRefService,
   AuthGuard,
   MarketService,
-  TransformeService,
-  ExportService,
-  DistributeursService,
-  CultureService,
-  ProgrammeService,
-  OngService
+//  TransformeService,
+//  ExportService,
+//  DistributeursService,
+//  CultureService,
+//  ProgrammeService,
+//  OngService
   ],
   bootstrap: [AppComponent]
 })

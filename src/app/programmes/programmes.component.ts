@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProgrammeService } from '../../providers/programmes/programme.service';
 import { MarketService } from '../../providers/market/market.service';
-import { DataPasseService } from 'src/providers/data-passe.service';
+//import { DataPasseService } from 'src/providers/data-passe.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
