@@ -321,7 +321,7 @@ html>body #menu li ul ul {
 }
 
 #menu li:hover {
-	background-image: url('./../../assets/img/1920x1080/1.jpg');
+	background-image: url('http://cdn.ressources.rintio.com/duniya/assets/img/1920x1080/1.jpg');
 	background-repeat: repeat-x;
 }
 
@@ -329,6 +329,6 @@ html>body #menu li ul ul {
 	margin-right: 20px;
     padding-left: 9px;
     padding-right: 16px;
-	background: url("./../../assets/img/1920x1080/2.jpg") no-repeat scroll right center transparent;
+	background: url("http://cdn.ressources.rintio.com/duniya/assets/img/1920x1080/2.jpg") no-repeat scroll right center transparent;
 	font-size: 14px;
 }

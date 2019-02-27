@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {UtilisateurService} from '../../providers/utilisateur/utilisateur.service';
+//import {UtilisateurService} from '../../providers/utilisateur/utilisateur.service';
 import { ActivatedRoute,Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   data_mail: any;
   rec_session: any;
   donne: any;
-  constructor( private route: ActivatedRoute,public profil: UtilisateurService, private router: Router) {
+  constructor( private route: ActivatedRoute, private router: Router) {
     this.rec_session = sessionStorage.compte;
   //  this.bienve();
    }
