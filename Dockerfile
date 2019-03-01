@@ -16,10 +16,10 @@ WORKDIR /ng-app
 
 COPY . .
 
-RUN npm install TypeScript@>=3.1.1 
+RUN npm install typescript@">=3.1.1 <3.3.0"
 
 ## Build the angular app in production mode and store the artifacts in dist folder
-RUN $(npm bin)/ng  serve 
+RUN $(npm bin)/ng  serve -o --host 0.0.0.0 --disableHostCheck true
 
 
 ### STAGE 2: Setup ###
