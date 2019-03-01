@@ -21,7 +21,7 @@ RUN npm install typescript@">=3.1.1 <3.3.0"
 ## Build the angular app in production mode and store the artifacts in dist folder
 RUN $(npm bin)/ng  serve  --host 0.0.0.0 --disableHostCheck true
 
-
+EXPOSE 4200
 ### STAGE 2: Setup ###
 
 #FROM nginx:1.13.3-alpine
