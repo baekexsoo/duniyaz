@@ -30,7 +30,7 @@
               </label>
 
               <div class="js-focus-state input-group u-form">
-                <select class="custom-select" name="commune" [(ngModel)]="objet_market.departement" (change)="list_commune()">
+                <select class="custom-select" name="departement" [(ngModel)]="objet_market.departement" (change)="list_commune()">
                   <option selected value="">Tous</option>
                   <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
                 </select>
