@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MarketService } from 'src/providers/market/market.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
@@ -6,7 +6,7 @@ import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-accueil-marche',
   templateUrl: './accueil-marche.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+ // changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./accueil-marche.component.css']
 })
 export class AccueilMarcheComponent implements OnInit {
@@ -36,13 +36,14 @@ export class AccueilMarcheComponent implements OnInit {
 
   constructor(public market: MarketService, private router: Router, private calendar: NgbCalendar) {
   }
+  
 
   ngOnInit() {
 
     this.Today =  this.calendar.getToday();
     this.objet_market.date = this.Today.day + '/0' + this.Today.month + '/' + this.Today.year;
     this.list_departement();
-    this.rec_date = this.objet_market.date;
+    this.rec_date = this.objet_market.date;     // 
     this.list_accueil();
   }
 
@@ -142,6 +143,7 @@ export class AccueilMarcheComponent implements OnInit {
   list_departement() {
     return this.market.departement().subscribe(response => {
       this.liste_departement = response;
+//      console.log(this.liste_departement);
     }, error => {
       if (error.status === 404) {
         this.warning = 'Aucun marché pour votre recherche';
