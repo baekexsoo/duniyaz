@@ -1,27 +1,96 @@
-# Agrodunyia
+# Project Title
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+Duniyadata, a  web project which allows you to search for a trip and compare prices
+## Getting Started
 
-## Development server
+In order to contribute to this project, please contact a rintio project In chief
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Prerequisites
 
-## Code scaffolding
+Before working on , ensure that you have git, angular, and npm installed on your machine
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+Give examples
+```
 
-## Build
+### Installing
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+A step by step series of examples that tell you how to get a development env running
 
-## Running unit tests
+Say what the step will be
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+Give the example
+```
 
-## Running end-to-end tests
+And repeat
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+until finished
+```
 
-## Further help
+End with an example of getting some data out of the system or using it for a little demo
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Running the tests
+
+Explain how to run the automated tests for this system
+
+### Break down into end to end tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+### And coding style tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+## Deployment
+
+
+* get access to server with your credential 
+* git clone repository on branch master : git clone http://gitlab.rintio.com/agroduniya/duniya.git
+* cd  repository folder on root place .
+* Edit api.ts in  src/providers/api/api.ts  with your favorite editor 
+* change  api request url  according to your API server environnement 
+* Build Dockfile according to your purposes
+* Run Docker container 
+* Acces app to http://SERVER_IP:EXPOSED_PORT
+* Enjoy
+
+
+## Built With
+
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+
+## Authors
+
+* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
