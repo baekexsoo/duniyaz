@@ -14,13 +14,13 @@
           <!-- Logo -->
           <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-top-space" href="../home/index.html" aria-label="DUNIYA" style="width: 4.375rem">
             <img src="../assets/svg/logos/logo.png" class="d-none d-lg-inline-block" style="margin-left: -15vh; height: 70px;"lt="Logo">
-            <img src="../assets/svg/logos/logo-mobile.png" class="d-inline-block d-lg-none" alt="Logo" >
+            <img src="../assets/svg/logos/logo-mobile.png" class="d-inline-block d-lg-none" style="height: 58px" alt="Logo" >
           </a>
           <!-- End Logo -->
             
             <div class="container" style="width: auto;margin-right: 0%">
                
-              <ul class="navmenu" id="nav">
+              <ul class="navmenu d-none d-lg-inline-block" id="nav">
                  
                 <li class="d-sm-inline-block list-inline-item" >
                   <a class="u-header__topbar-nav-link dec navli" routerLink="/marches" style="text-decoration: none;"> Marchés</a>
@@ -46,11 +46,20 @@
                   </li>
                   
               </ul>
-
-              <!--button class="navbar-toggler menu-position d-sm-none .d-md-block" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span > <i class="fas fa-ellipsis-v" style="font-size:7x; color: #fff"></i> </span>
+              
+                <!--div class="dropdown">
+                  <button class="dropbtn">Dropdown</button>
+                  <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                  </div>
+                </div-->
+              <div class="d-block d-sm-none dropdown">
+              <button class="dropbtn" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span > <i class="fa fa-bars" style="font-size:7x; color: #fff; font-size: 2rem"></i> </span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <div class="dropdown-content" style="margin-left:-175%; height: 555px">
                 <ul class="navbar-nav">
                   <li class="nav-item active">
                     <a class="nav-link navli" routerLink="/accueil" >Marchés</a>
@@ -61,19 +70,22 @@
                   <li class="nav-item">
                     <a class="nav-link navli" [routerLink]="['/programmes']">Programmes</a>
                   </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle navli" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Intervenants
-                    </a>
-                    <div class="dropdown-menu navlidrop" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item navli" [routerLink]="['/ong']">ONG</a>
-                      <a class="dropdown-item navli" [routerLink]="['/exportateurs']">Exportateurs</a>
-                      <a class="dropdown-item navli" [routerLink]="['/distributeurs']">Distributeurs</a>
-                      <a class="dropdown-item navli" [routerLink]="['/transformateur']">Distributeurs</a>
-                    </div>
+                  <li class="nav-item">
+                    <a class="nav-link navli" [routerLink]="['/ong']">ONG</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link navli" [routerLink]="['/exportateurs']">Exportateurs</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navli" [routerLink]="['/distributeurs']">Distributeurs</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navli" [routerLink]="['/transformateur']">Transformateurs</a>
+                  </li>
+
                 </ul>
-              </div-->
+              </div>
+            </div>
               <!--<ul class="font_url menu-position d-sm-none .d-md-block" id="nav">
                 <li>
                   <div class="dropleft">
