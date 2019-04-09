@@ -17,7 +17,20 @@
      top: 12px;
      
  }
- 
+ .btn_details{
+    color: #f6f9fc;
+    background-color: #132d5c;
+    border-color: #132d5c;
+ }
+ .u-icon-light--air {
+    font-size: x-large;
+    line-height: 2.7;
+    text-align: center;
+    height: 63px;
+    width: 165px;
+    color: #000;
+    background: rgba(47, 47, 47, 0.1);
+}
  h1 {
      color: #111;
      font-size: 0.9rem;
