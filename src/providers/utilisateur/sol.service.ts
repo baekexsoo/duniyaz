@@ -18,6 +18,7 @@ export class SolService {
 
   sol_url = 'http://192.168.9.16:7050/prediction/previsions';
   agr_url = 'http://192.168.9.16:7051/engrais/modeleEngraiss';
+  url_eng_id ='http://192.168.9.16:7051/engrais/modeleEngraiss/'; 
   url_img = 'http://192.168.9.16:7050/prediction/previsions/file/'
   url_prediction = 'http://192.168.9.16:7050/prediction/previsions';
 
@@ -26,7 +27,9 @@ export class SolService {
   get_sol():Observable<any>{
     return this.http.get(this.sol_url,httpOptions);
   }
-
+  engr_id(id){
+    return this.http.get(this.url_eng_id + id, httpOptions)
+  }
   get_ang():Observable<any>{
     return this.http.get(this.agr_url,httpOptions);
   }

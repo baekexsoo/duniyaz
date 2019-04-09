@@ -50,7 +50,7 @@ export class UpdatePwdComponent implements OnInit {
 
   finale(){
     if (this.tokens === null || this.tokens === undefined){
-      this.udapte_pass();
+   //   this.udapte_pass();
     }
     else{
       if (this.nouveau !== this.confirme){
@@ -70,7 +70,7 @@ export class UpdatePwdComponent implements OnInit {
     this.charg = false;
   }
 
-  token(){
+  /*token(){
     return this.modif.welcome(this.email_token).subscribe(
       response =>{
         this.rece_pass = response.password;   
@@ -108,8 +108,8 @@ export class UpdatePwdComponent implements OnInit {
           }
         }
     }    )
-  }
-  udapte_pass(){
+  }*/
+ /* udapte_pass(){
     this.charg = true;
     
     if (this.ancien === "" || this.nouveau === "") {
@@ -127,5 +127,5 @@ export class UpdatePwdComponent implements OnInit {
     }
     this.charg = false;
     
-  }           
+  }   */        
 }

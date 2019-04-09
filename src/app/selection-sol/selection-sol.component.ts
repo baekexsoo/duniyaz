@@ -5,6 +5,7 @@ import { Commune } from '../entities/commune';
 import { Sols } from '../entities/sols';
 import {PredictionService} from '../../providers/prediction/prediction.service';
 import {DataAnalys} from '../../providers/mock/prediction';
+import { ActivatedRouteSnapshot, ActivatedRoute } from '@angular/router';
 import { format } from 'url';
 import { removeAllListeners, removeListener } from 'cluster';
 import { removeDebugNodeFromIndex } from '@angular/core/src/debug/debug_node';
@@ -65,6 +66,11 @@ export class SelectionSolComponent implements OnInit {
         tauxK: number;
         tauxB: number;
         tauxS: number;
+        tauxN1: number;
+        tauxP1: number;
+        tauxK1: number;
+        tauxB1: number;
+        tauxS1: number;
  type_engrais: '';
  caracte_sol: any;
  data_img: any;
@@ -73,12 +79,12 @@ export class SelectionSolComponent implements OnInit {
  engr_ajou2: any;
  supp: any
  animat_pred= false
- nom_engrais: any
+ name_engrais: any
  erreur_alert = false
- constructor( public sol: SolService, public Prediction: PredictionService) {}
+ constructor(private route: ActivatedRoute, public sol: SolService, public Prediction: PredictionService) {}
 
   ngOnInit() {
-      this.goto(2);
+      this.goto(0);
       this.retrieveDepartements();
       this.selectedDepartement = new Departement();
       this.list_engr();
@@ -89,17 +95,19 @@ export class SelectionSolComponent implements OnInit {
   fonc_preditio() {
     console.log(JSON.stringify(this.prediction));
  }
-  fon_ajou() {
-
-   if (this.donne_engrais.dose > 0) {
-    // console.log(this.donne_engrais);
+  fon_ajou(i) {
     this.prediction.input.listDoseEngrais.push({dose: this.donne_engrais.dose, idModele:this.donne_engrais.idModele});
     this.donne_engrais.dose = null;
     this.donne_engrais.idModele = undefined;
     console.log(this.prediction.input.listDoseEngrais);
-   }
-   this.animat_pred = true
 
+   if (this.prediction.input.listDoseEngrais[0]['dose'] === null){
+   
+   this.prediction.input.listDoseEngrais.shift()
+   console.log(this.prediction.input.listDoseEngrais);
+
+   }
+    this.animat_pred = true
   }
 
   fon_sup_ajou(i) {
@@ -150,6 +158,16 @@ export class SelectionSolComponent implements OnInit {
     this.type_sol = true;
  }
 
+ nom_engrais(){
+  return this.sol.engr_id(this.type_engrais).subscribe(
+    response =>{
+    this.name_engrais = response;
+    this.donne_engrais.idModele = this.name_engrais.nom;
+    console.log(this.name_engrais.nom)
+  }
+  )
+ }
+
   list_engr() {
     return this.sol.get_ang().subscribe(
       response => {
@@ -157,12 +175,17 @@ export class SelectionSolComponent implements OnInit {
         console.log(this.donne_engrais.idModele);
         for (var i = 0; i < this.data_engrais.length; i++) {
           if (this.data_engrais[i]['id'] === this.type_engrais) {
-            this.donne_engrais.idModele = this.type_engrais;
+            this.nom_engrais();
             this.tauxN = this.data_engrais[i]['tauxN']*this.donne_engrais.dose;
+            this.tauxN1 =parseFloat(this.tauxN.toFixed(2)) 
             this.tauxK = this.data_engrais[i]['tauxK']*this.donne_engrais.dose;
+            this.tauxK1 =parseFloat(this.tauxK.toFixed(2))
             this.tauxP = this.data_engrais[i]['tauxP']*this.donne_engrais.dose;
+            this.tauxP1 =parseFloat(this.tauxP.toFixed(2))
             this.tauxS = this.data_engrais[i]['tauxS']*this.donne_engrais.dose;
+            this.tauxS1 =parseFloat(this.tauxS.toFixed(2))
             this.tauxB = this.data_engrais[i]['tauxB']*this.donne_engrais.dose;
+            this.tauxB1 =parseFloat(this.tauxB.toFixed(2))
           }
         }
         }
@@ -176,17 +199,18 @@ loadresult = false ;
     
 predict() {
   if(this.prediction.input.listDoseEngrais[0]["dose"] === null){
-    this.prediction.input.listDoseEngrais.shift()
+    /*this.prediction.input.listDoseEngrais.shift()
     this.loadresult = true;
     console.log(JSON.stringify(this.prediction))
     this.Prediction.prediction(this.prediction).subscribe(
      response => {
-      if(this.result.prediction === 500 || this.result.prediction === 0){
+      if(this.result.prediction === 0){
         this.erreur_alert = true
       }else{
          this.result.prediction = Math.round(response.prediction);
         // this.result.prediction = parseFloat(this.result.prediction.toPrecision(2));
          this.loadresult = false;
+         console.log(this.result.prediction)
         }
      },
      error => {
@@ -194,15 +218,19 @@ predict() {
         
      }
     );
-    
+    */
   }else{
   console.log(JSON.stringify(this.prediction))
     this.loadresult = true;
     this.Prediction.prediction(this.prediction).subscribe(
      response => {
+       if (response.prediction === 0){
+        this.erreur_alert = true;
+       }
          this.result.prediction = Math.round(response.prediction);
         // this.result.prediction = parseFloat(this.result.prediction.toPrecision(2));
          this.loadresult = false;
+         console.log(this.result.prediction)
      },
      error => {
          this.loadresult = false;

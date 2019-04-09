@@ -24,16 +24,16 @@ profi_data: any;
 
   ngOnInit() {
     this.objet.email = sessionStorage.compte;
-    this.rec_id();
+   // this.rec_id();
   }
-  rec_id(){
+ /* rec_id(){
     return this.profil.welcome(this.objet.email).subscribe(
       response => {
         this.objet.id = response.id;
         console.log(this.objet.id);
       }
     )
-  }
+  }*/
 
   update(){
     this.loader = true;

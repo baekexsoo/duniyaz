@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {UtilisateurService} from '../../providers/utilisateur/utilisateur.service';
+//import {UtilisateurService} from '../../providers/utilisateur/utilisateur.service';
 import { ActivatedRoute,Router } from '@angular/router';
 
 @Component({
@@ -12,9 +12,9 @@ export class HeaderComponent implements OnInit {
   data_mail: any;
   rec_session: any;
   donne: any;
-  constructor( private route: ActivatedRoute,public profil: UtilisateurService,private router: Router) {
+  constructor( private route: ActivatedRoute, private router: Router) {
     this.rec_session = sessionStorage.compte;
-    this.bienve();
+  //  this.bienve();
    }
 
   ngOnInit() {
@@ -24,17 +24,17 @@ export class HeaderComponent implements OnInit {
   }
    
 
-  bienve(){
+ /* bienve(){
     return this.profil.welcome(this.rec_session).subscribe( Response =>{
         this.data_mail = Response.nom;
         console.log(this.data_mail);
     })
-  }
+  }*/
 
-  logout() {
+/*  logout() {
       
        sessionStorage.removeItem('duniya');
        sessionStorage.removeItem('compte');
        this.router.navigate(['/home']);
-  }
+  }*/
 }

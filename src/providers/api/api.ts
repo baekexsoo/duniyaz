@@ -7,10 +7,10 @@ import {Constant} from '../../app/api';
  */
 @Injectable()
 export class Api {
-     url: string = 'http://192.168.9.16:7080';
+     url: string = '';
      
-     _serveur = "http://192.168.9.16";
-     _port : string = "7080";
+     _serveur = "https://192.168.9.28:8245/dunya/1.0";
+     _port : string = "";
     
     constructor(public http: HttpClient) {
       this.url = this._serveur + ":"+this._port;
