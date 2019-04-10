@@ -22,7 +22,7 @@ export class CulturesComponent implements OnInit {
 
   ngOnInit() {
     this.list_departement();
-    // this.getAll();
+    this.getAll();
   }
   list_departement() {
     return this.market.departement().subscribe(response => {
@@ -38,12 +38,12 @@ export class CulturesComponent implements OnInit {
   }
 
 
-  /*getAll() {
+  getAll() {
     this.loading = true;
-    return this.culture.liste_simulation_culture().subscribe(response => {
+    return this.culture.liste().subscribe(response => {
       this.list = response;
       this.loading = false;
     });
-  }*/
+  }
 
 }

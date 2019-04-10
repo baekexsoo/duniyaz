@@ -12,13 +12,14 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class CultureService {
+  Base_url = 'http://api.dev.duniyadata.com/dunya/speculations';
 
 
-  constructor(private Api : Api) { }
+  constructor(private Api : Api, private http: HttpClient) { }
 
   liste(): Observable<any> {
-    let url = 'dunya/speculations';
-    return this.Api.get(url , httpOptions);
+    // let url = 'dunya/speculations';
+    return this.http.get(this.Base_url , httpOptions);
   }
 
   /*liste_simulation_culture (): Observable<any> {
