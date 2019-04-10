@@ -14,11 +14,9 @@ export class Api {
     
     constructor(public http: HttpClient) {
       this.url = this._serveur + ":"+this._port;
+      if(this._port==="") this.url = this._serveur;
   }
 
-  Setport (port : string){
-      this.url = this._serveur + ":"+port;
-  }
   get(endpoint: string, params?: any, reqOpts?: any):Observable<any> {
     if (!reqOpts) {
       reqOpts = {
