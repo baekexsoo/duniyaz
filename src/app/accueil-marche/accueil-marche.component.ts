@@ -143,7 +143,7 @@ export class AccueilMarcheComponent implements OnInit {
   list_departement() {
     return this.market.departement().subscribe(response => {
       this.liste_departement = response;
-//      console.log(this.liste_departement);
+     console.log(this.liste_departement);
     }, error => {
       if (error.status === 404) {
         this.warning = 'Aucun marché pour votre recherche';

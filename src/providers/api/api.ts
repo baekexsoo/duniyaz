@@ -15,6 +15,7 @@ export class Api {
     constructor(public http: HttpClient) {
       this.url = this._serveur + ":"+this._port;
       if(this._port==="") this.url = this._serveur;
+      console.log(this.url);
   }
 
   get(endpoint: string, params?: any, reqOpts?: any):Observable<any> {
