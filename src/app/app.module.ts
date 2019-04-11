@@ -16,8 +16,6 @@ import { AngularPaginatorModule } from 'angular-paginator';
 
 
 
-
-
 // import { FilterModule } from 'ng-filter';
 // import { LocalStorage, SessionStorage } from '';
 import { AppComponent } from './app.component';
@@ -52,6 +50,8 @@ import { MarketService } from '../providers/market/market.service';
 //import { CulturesComponent } from './cultures/cultures.component';
 //import { CultureService } from '../providers/culture/culture.service';
 import { from } from 'rxjs';
+import { ExportateursComponent } from './exportateurs/exportateurs.component';
+import { TransformateursComponent } from './transformateurs/transformateurs.component';
 //import { OngComponent } from './ong/ong.component';
 //import { OngService } from '../providers/ong/ong.service';
 //import { ProgrammesComponent } from './programmes/programmes.component';
@@ -104,6 +104,8 @@ const appRoutes: Routes = [
     SelectionSolComponent,
     DatavizComponent,
     AccueilMarcheComponent,
+    ExportateursComponent,
+    TransformateursComponent,
 //    TransformateurComponent,
 //    ExportateursComponent,
 //    DistributeursComponent,
