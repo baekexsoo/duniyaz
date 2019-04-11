@@ -24,6 +24,7 @@ export class OngComponent implements OnInit {
   ngOnInit() {
     this.list_departement();
     //this.getAll();
+    this.filtre_ong();
   }
 
   list_departement() {

@@ -6,6 +6,7 @@ import { Api } from '../api/api';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
+    'Authorization': 'Bearer 31c79287-65c4-3609-91f4-ffbd1240a873',
   })
 };
 @Injectable({
@@ -20,8 +21,8 @@ export class OngService {
     return this.Api.get(url , httpOptions);
   }
   list_by_zone (zone) {
-    let url = 'dunya/ongs?zone=' + zone;
-    return this.Api.get(url, httpOptions);
+    let url = 'ongs?zone=' + zone;
+    return this.Api.get(url,'', httpOptions);
   }
   /*liste_simulation_ong (): Observable<any> {
     return of(Ong);

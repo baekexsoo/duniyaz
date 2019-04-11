@@ -86,7 +86,6 @@ export class AccueilMarcheComponent implements OnInit {
           this.warning_bool = true;
         }
         if (error.status === 500) {
-          console.log( error )
           this.warning = 'Oops! il y a un problème';
           this.loading = false;
           this.warning_bool = true;
@@ -129,7 +128,6 @@ export class AccueilMarcheComponent implements OnInit {
     } else {
       this.dat = this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
       this.rec_date = this.dat;
-      console.log(this.Today.day)
       this.objet_market.date = '';
       return this.market.recherche(JSON.stringify(this.objet_market)).subscribe( res => {
         this.search_result = res;
@@ -143,7 +141,7 @@ export class AccueilMarcheComponent implements OnInit {
   list_departement() {
     return this.market.departement().subscribe(response => {
       this.liste_departement = response;
-//      console.log(this.liste_departement);
+     console.log(this.liste_departement);
     }, error => {
       if (error.status === 404) {
         this.warning = 'Aucun marché pour votre recherche';

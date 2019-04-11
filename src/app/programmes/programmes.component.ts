@@ -34,18 +34,14 @@ export class ProgrammesComponent implements OnInit {
 
   programmes() {
   this.loading = true;
-    return this.programService.liste_simulation_prog().subscribe(response => {
+    return this.programService.list_programmes(this.form_data.zone, this.form_data.produit).subscribe(response => {
       this.list_programmes = response;
       this.loading = false;
-
-      console.log(this.list_programmes);
-
     });
 
   }
 
   detail_program(program_object) {
-    console.log(program_object);
     this.data_passe.changeProgram(program_object);
     this.router.navigate(['/detail-programme']);
   }
@@ -58,7 +54,6 @@ export class ProgrammesComponent implements OnInit {
   list_departement() {
     return this.market.departement().subscribe(response => {
       this.liste_departement = response;
-      console.log(this.liste_departement);
     }, error => {
       console.log('Callback error : ' + error);
     });

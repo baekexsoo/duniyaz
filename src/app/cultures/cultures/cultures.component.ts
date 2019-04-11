@@ -33,7 +33,6 @@ export class CulturesComponent implements OnInit {
     // this.warning = '';
     return this.market.commune(this.objet_list.departement).subscribe( response => {
       this.liste_communes = response.ville_list;
-      console.log(response);
     });
   }
 

@@ -6,6 +6,7 @@ import { Api } from '../api/api';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
+    'Authorization': 'Bearer 31c79287-65c4-3609-91f4-ffbd1240a873',
   })
 };
 @Injectable({
@@ -18,8 +19,8 @@ export class CultureService {
   constructor(private Api : Api, private http: HttpClient) { }
 
   liste(): Observable<any> {
-    // let url = 'dunya/speculations';
-    return this.http.get(this.Base_url , httpOptions);
+    let url = 'speculations';
+    return this.Api.get(url , '', httpOptions);
   }
 
   /*liste_simulation_culture (): Observable<any> {

@@ -39,7 +39,6 @@ export class DistributeursComponent implements OnInit {
     this.warning = '';
     return this.market.commune(this.form_data.departement).subscribe( response => {
       this.liste_communes = response.ville_list;
-      console.log(response);
     });
   }
 
@@ -49,7 +48,7 @@ export class DistributeursComponent implements OnInit {
     .subscribe(response => {
       this.liste_distributeurs = response;
     this.loading = false;
-      console.log(this.liste_distributeurs);
+
 
     });
 

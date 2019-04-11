@@ -19,7 +19,7 @@ export class PredictionService {
 
   serviceport = "7050";
   constructor(public Api : Api) { 
-      this.Api.Setport(this.serviceport)
+     // this.Api.Setport(this.serviceport)
   }
   
   

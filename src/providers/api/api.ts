@@ -9,16 +9,15 @@ import {Constant} from '../../app/api';
 export class Api {
      url: string = '';
      
-     _serveur = "https://api.dev.rintio.com/dunya/1.0";
+     _serveur = "http://api.dev.rintio.com/dunya.api/1.0";
      _port : string = "";
     
     constructor(public http: HttpClient) {
       this.url = this._serveur + ":"+this._port;
+      if(this._port==="") this.url = this._serveur;
+      console.log(this.url);
   }
 
-  Setport (port : string){
-      this.url = this._serveur + ":"+port;
-  }
   get(endpoint: string, params?: any, reqOpts?: any):Observable<any> {
     if (!reqOpts) {
       reqOpts = {
