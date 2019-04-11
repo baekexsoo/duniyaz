@@ -9,7 +9,7 @@ import {Constant} from '../../app/api';
 export class Api {
      url: string = '';
      
-     _serveur = "https://192.168.9.28:8245/dunya/1.0";
+     _serveur = "https://api.dev.rintio.com/dunya/1.0";
      _port : string = "";
     
     constructor(public http: HttpClient) {
