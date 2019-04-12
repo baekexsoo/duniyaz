@@ -7,6 +7,7 @@ import { Exportateurs } from 'src/app/mock_data/exportateurs';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
+    'Authorization': 'Bearer 31c79287-65c4-3609-91f4-ffbd1240a873',
   })
 };
 
@@ -22,7 +23,8 @@ export class ExportService {
 
   list_exportateurs(): Observable<any> {
     let url = 'dunya/exportateurs';
-    return this.api.get(url, httpOptions);
+    let url_bas = 'http://api.dev.duniyadata.com/dunya/exportateurs'; 
+    return this.http.get(url_bas, httpOptions);
   }
 
   list_export_simulation(): Observable<any> {

@@ -14,6 +14,8 @@ import localeFrExtra from '@angular/common/locales/extra/fr';
 import { AngularPaginatorModule } from 'angular-paginator';
 // import * as $ from 'jquery';
 
+
+
 // import { FilterModule } from 'ng-filter';
 // import { LocalStorage, SessionStorage } from '';
 import { AppComponent } from './app.component';
@@ -38,12 +40,10 @@ import { AuthGuard } from './auth/auth.guard';
 import { DatavizComponent } from './dataviz/dataviz.component';
 import { AccueilMarcheComponent } from './accueil-marche/accueil-marche.component';
 import { MarketService } from '../providers/market/market.service';
-import { from } from 'rxjs';
 import { OngComponent } from './ong/ong.component';
 import { CulturesComponent } from './cultures/cultures/cultures.component';
 import { ProgrammesComponent } from './programmes/programmes.component';
 import { DetailProgramComponent } from './detail-program/detail-program.component';
-//import { TransformateurComponent } from './transformateur/transformateur.component';
 //import { TransformeService } from 'src/providers/transforme/transforme.service';
 //import { ExportService } from '../providers/exportateurs/export.service';
 import { DistributeursService } from '../providers/distributeurs/distributeurs.service';
@@ -55,6 +55,12 @@ import { CultureService } from '../providers/culture/culture.service';
 
 
 import { OngService } from '../providers/ong/ong.service';
+//import { CultureService } from '../providers/culture/culture.service';
+import { from } from 'rxjs';
+import { ExportateursComponent } from './exportateurs/exportateurs.component';
+import { TransformateursComponent } from './transformateurs/transformateurs.component';
+//import { OngComponent } from './ong/ong.component';
+//import { OngService } from '../providers/ong/ong.service';
 //import { ProgrammesComponent } from './programmes/programmes.component';
 //import { DetailProgramComponent } from './detail-program/detail-program.component';
 
@@ -69,12 +75,12 @@ const appRoutes: Routes = [
 },
   { path: 'marches', component: AccueilMarcheComponent },
   { path: 'ong', component: OngComponent },
-//  { path: 'transformateur', component: TransformateurComponent },
+  { path: 'transformateur', component: TransformateursComponent },
   { path: 'programmes', component: ProgrammesComponent },
   { path: 'detail-programme', component: DetailProgramComponent },
 //  { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent},
-//  { path: 'exportateurs', component: ExportateursComponent},
+  { path: 'exportateurs', component: ExportateursComponent},
   { path: 'distributeurs', component: DistributeursComponent},
   { path: 'culture', component: CulturesComponent},
 //  { path: '', redirectTo: 'accueil', pathMatch: 'full'},
@@ -109,8 +115,8 @@ const appRoutes: Routes = [
     CulturesComponent,
     ProgrammesComponent,
     DetailProgramComponent,
-//    TransformateurComponent,
-//    ExportateursComponent,
+    ExportateursComponent,
+    TransformateursComponent,
     DistributeursComponent,
 //    CulturesComponent,
 //    OngComponent,
