@@ -22,9 +22,8 @@ export class ExportService {
   constructor( public api: Api, private http: HttpClient) { }
 
   list_exportateurs(): Observable<any> {
-    let url = 'dunya/exportateurs';
-    let url_bas = 'http://api.dev.duniyadata.com/dunya/exportateurs'; 
-    return this.http.get(url_bas, httpOptions);
+    let url = 'exportateurs';
+    return this.api.get(url, httpOptions);
   }
 
   list_export_simulation(): Observable<any> {

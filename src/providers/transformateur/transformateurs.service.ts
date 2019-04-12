@@ -22,7 +22,7 @@ export class TransformateursService {
 
   list(): Observable <any> {
     let url = 'transformateurs'
-    let url_test = 'http://api.dev.duniyadata.com/dunya/transformateurs';
-    return this.http.get(url_test, httpOptions); 
+
+    return this.Api.get(url, httpOptions); 
   }
 }

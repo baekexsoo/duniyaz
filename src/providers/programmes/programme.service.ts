@@ -20,8 +20,8 @@ export class ProgrammeService {
   constructor(public api: Api, private http: HttpClient) { }
 
   list_programmes(zone,produit): Observable<any> {
-    let url ='programmes?zone=';
-    return this.api.get(url, '' , httpOptions);
+    let url ='programmes';
+    return this.api.get(url , httpOptions);
 
 }
 
