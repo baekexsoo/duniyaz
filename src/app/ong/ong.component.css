@@ -26,3 +26,15 @@
 .form{
     border: 1px solid #d4d7dd;
 }
+
+.pos_titr {
+    margin-left:85%;
+}
+
+@media (max-width: 575.98px) {   
+  
+    .pos_titr {
+        display: -webkit-box;
+        margin-left: 0%;
+    }
+    }

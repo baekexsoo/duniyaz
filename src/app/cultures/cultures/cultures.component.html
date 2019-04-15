@@ -86,8 +86,14 @@
     </div-->
   </div>
   <div class="u-space-3-bottom">
+    
     <div class="container w-70" *ngIf="!loading">
 
+        <div class="container position-relativez-index-2 pos_titr">
+            <div class="mx-auto">
+              <h1 class="h4 text-primary" style="font-size: 1.7rem;">Produits agricoles</h1>
+            </div>
+          </div>
       <div class="row align-items-md-center u-space-2">
         <div class="col-lg-12 mb-12 mb-lg-0">
           <form class="js-focus-state input-group u-form">
@@ -97,7 +103,7 @@
               </span>
             </div>
             <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search"
-              placeholder="Produit" aria-label="Search Front">
+              placeholder="Filtre par produits" aria-label="Search Front">
           </form>
         </div>
       </div>

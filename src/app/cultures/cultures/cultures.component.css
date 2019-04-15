@@ -13,13 +13,18 @@
 }
 
 
-
+.pos_titr {
+    margin-left:75%;
+}
 /* Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {   
     .w-70{
         width: 100%;
     }
-
+    .pos_titr {
+        display: -webkit-box;
+        margin-left: 0%;
+    }
     .research-background{
         background-color: #eaebefc7;
         border-radius: 5px;

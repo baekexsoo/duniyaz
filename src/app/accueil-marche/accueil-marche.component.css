@@ -3,6 +3,9 @@
     background-color: gainsboro;
     height: 40px;
 }
+.pos_titr {
+    margin-left:85%;
+}
 .w-70{
     width: 70%;
 }
@@ -17,6 +20,10 @@
 @media (max-width: 575.98px) {   
     .w-70{
         width: 100%;
+    }
+    .pos_titr {
+        display: -webkit-box;
+        margin-left: 0%;
     }
     .w-93{
         width:93%;

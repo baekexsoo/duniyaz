@@ -14,8 +14,15 @@
         margin-top: 100px;
         margin-left: -50%;
     }
+    .pos_titr {
+        display: -webkit-box;
+        margin-left: 0%;
+    }
  }
  
+.pos_titr {
+    margin-left:85%;
+}
  .content {
      animation-delay: 0.3s;
      position: absolute;

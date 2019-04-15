@@ -23,6 +23,10 @@
 .phone{
     margin-left:12px;
 }
+
+.pos_titr {
+    margin-left:85%;
+}
 .wrapper {
     font-family: "Poppins", Helvetica, Arial, sans-serif;
 	display: flex;
@@ -38,7 +42,13 @@
 	
 	
 }
-
+@media (max-width: 575.98px) {   
+    
+    .pos_titr {
+        display: -webkit-box;
+        margin-left: 0%;
+    }
+    }
 .outer {
     font-family: "Poppins", Helvetica, Arial, sans-serif;
 	position: relative;
