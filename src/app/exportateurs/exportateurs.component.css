@@ -1,3 +1,8 @@
+
+.pos_titr {
+    margin-left:79%;
+}
+
 @media (max-width: 575.98px) {   
     .pos_titr {
         display: -webkit-box;
@@ -5,7 +10,3 @@
     }
     }
 
-
-.pos_titr {
-    margin-left:85%;
-}
