@@ -4,74 +4,6 @@
 <main id="content" role="main" style="min-height:-webkit-fill-available">
   <div class="container u-space-3-top--lg mb-5">
 
-    <!-- Title -->
-    <!--div class="mb-7">         
-          <button (click)="aff_tab()" >ssssssss</button>
-          <button (click)="aff_maps()" >sgdrghd</button>
-        </div-->
-    <!-- End Title -->
-
-    <!--div style="
-      background-color: #eaebefc7; border-radius: 100px">
-         <form class="js-validate mt-5">
-           
-            <div class="row ml-5 mr-5">
-                <!-- Input -->
-
-    <!-- End Input -->
-
-    <!-- Input --
-                <div class="col-sm-4 col-xs-3 mt-2 ">
-                  <div class="js-form-message">
-                    <label class="h6 small d-block text-uppercase">
-                      Département
-                      
-                    </label>
-    
-                    <div class="js-focus-state input-group u-form">
-                        <select class="custom-select" name="commune" [(ngModel)]="form_data.departement" (change)="list_commune()">
-                          <option selected value="">Tous</option>
-                          <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
-                          </select>
-                    </div>
-                    <div class="col-12">
-                        <span class="small text-danger">{{warning}}</span><br/>
-                        
-                      </div>
-                  </div>
-                </div>
-                  <!-- End Input -->
-
-    <!-- Input --
-                <div class="col-sm-4 mt-2">
-                    <div class="js-form-message">
-                      <label class="h6 small d-block text-uppercase">
-                        Produits
-                        
-                      </label>
-      
-                      <div class="js-focus-state input-group u-form">
-                          <input type="text" class="form-control u-form__input" placeholder="Exemple : Sorgho" id="produit" name="produit" [(ngModel)]="form_data.produit">
-                              
-                            
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Input -->
-
-    <!-- Input -->
-
-    <!-- End Input -->
-    <!-- Input --
-                <div class="col-sm-3 mt-5">
-                    <div class="text-center ">
-                        <button type="submit" (click)="programmes()"  class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
-                      </div>
-                  </div>
-                  <!-- End Input --
-            </div>
-          </form>
-      </div-->
   </div>
 
   <div class="u-space-3-bottom">
@@ -102,7 +34,7 @@
                     <span>{{prog.startDate}} - {{prog.endDate}} </span>
                   </span>
                 </div>
-                <div class="media-body">
+                <div class="media-body name">
                   <h4 class="text-black font-weight-bold">{{ prog.programName }}</h4>
                   <p class="u-text-light mb-0" style="color: #000; font-weight: bolder">Objectif principal : <span
                       style="color: rgba(35, 34, 34, 0.7);"> {{ prog.principalObjectif  }}</span>
@@ -123,36 +55,6 @@
         </div>
       </div>
 
-
-      <!--div class="row">
-            <div *ngFor="let prog of list_programmes| filter:search | paginate: { itemsPerPage: 7, currentPage: p }" class="col-md-6 col-sm-6 col-12">
-              <div class="wrapper col-md-10" >
-                <div class="outer col-md-12 " >
-                  <div class="content animated fadeInLeft">
-                     <h1> <strong> {{ prog.programName }} </strong> <br/></h1>
-                   
-                    <p>
-                        <strong > Prinicpal Objectif: </strong><br/> 
-                      {{ prog.principalObjectif  }} 
-                    </p>
-                    <hr class="uk-divider-small">
-                    
-                    <p>
-                        <strong > Résultats escomptés: </strong><br/> 
-                        {{ prog.expectedResults.join(' ') }}    
-                    </p>
-                  <div class="sectors"> <strong class="mb-2">Secteurs cibles :</strong> <span> {{ prog.targetedSectors.join(' ')}}</span></div>
-                    <div class="button">
-                      <a>Durée d'exécution</a><a class="cart-btn" style="background: #fff;color: #111;"><i class="cart-icon ion-bag"></i>{{ prog.startDate }} à {{ prog.endDate }}</a>
-                    </div>
-                  
-                    
-                  </div>
-                </div>
-             
-              </div>
-            </div>
-            </div-->
 
 
 

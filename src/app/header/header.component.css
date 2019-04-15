@@ -7,7 +7,9 @@
 	background-color: #fff;
 	width: 250px;
 }
-
+.menu_bureau {
+	margin-right: -90%;
+}
 .marchés{
 	margin-left:371%;
 }
@@ -168,6 +170,10 @@ span svg{
 @media (max-width: 575.98px) {   
     .navli{
 		color: #fff
+	}
+	.menu_mobil {
+		margin-right: 16%;
+		width: 0%;
 	}
 	.dec{
 		color: #fff
