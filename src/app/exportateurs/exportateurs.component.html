@@ -37,7 +37,7 @@
             <th>Entreprise</th>
             <th>Pays</th>
             <th>Quantité</th>
-            <th>Produits exportés </th>
+            <th class="aff_chm">Produits exportés </th>
             <!--th>Resistance de la variété</th-->
           </tr>
         </thead>
@@ -46,7 +46,7 @@
             <td style="width:40vh"><small> {{ e.nomEntreprise }} </small></td>
             <td style="width:50vh"><small> {{ e.paysExportation }} </small> </td>
             <td style="width:50vh"><small> {{ e.quantitExportee }} </small> </td>
-            <td style="width:50vh" class="uk-text-center"><small> {{ e.produitsexportes }}</small> </td>
+            <td style="width:50vh" class="uk-text-center aff_chm"><small> {{ e.produitsexportes }}</small> </td>
             <!--td style="width:40vh"><small> {{ export.resistance }}  </small> </td-->
 
           </tr>
@@ -71,6 +71,13 @@
 
 </main>
 <!-- ========== END MAIN ========== -->
-<div>
+
+<div class="text-center col-xs-12 mt-5 d-block d-sm-none fixed-bottom ">
+  <button type="button" class="btn btn-primary searcher" style="margin-left: 19rem;" data-dismiss="modal" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" >  <i class="fas fa-search" style="color:#fff"></i></button>
+   <!--button type="button" class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4 w-93" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+   <i class="fas fa-search" style="color:#fff"></i>
+   </button-->
+ </div>
+<div class="d-none d-sm-block">
   <app-footer></app-footer>
 </div>

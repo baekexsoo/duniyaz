@@ -5,7 +5,7 @@
 
 <!-- ========== MAIN ========== -->
 <main id="content" role="main" style="min-height:-webkit-fill-available">
-  <div class="container  w-70 u-space-3-top--lg mb-5 " *ngIf="!loading">
+  <div class="container  w-100 u-space-3-top--lg mb-5 " *ngIf="!loading">
 
     <!--div class="row" *ngFor="let dist of liste_distributeurs | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
                                     <div class="col-sm-4" cols="4">
@@ -195,6 +195,13 @@
 
 </main>
 <!-- ========== END MAIN ========== -->
-<div>
+
+<div class="text-center col-xs-12 mt-5 d-block d-sm-none fixed-bottom ">
+  <button type="button" class="btn btn-primary searcher" style="margin-left: 19rem;" data-dismiss="modal" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" >  <i class="fas fa-search" style="color:#fff"></i></button>
+   <!--button type="button" class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4 w-93" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+   <i class="fas fa-search" style="color:#fff"></i>
+   </button-->
+ </div>
+<div class="d-none d-sm-block">
   <app-footer></app-footer>
 </div>

@@ -8,5 +8,8 @@
         display: -webkit-box;
         margin-left: 0%;
     }
+    .aff_chm {
+        display: none;
+    }
     }
 
