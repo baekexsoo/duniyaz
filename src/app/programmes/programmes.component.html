@@ -3,7 +3,7 @@
 <!-- ========== MAIN ========== -->
 <main id="content" role="main" style="min-height:-webkit-fill-available">
   <div class="container u-space-3-top--lg mb-5">
-    <div class="container position-relativez-index-2 pos_titr">
+    <div class="container position-relativez-index-2 pos_titr mb-4">
       <div class="mx-auto">
         <h1 class="h4 text-primary" style="font-size: 1.7rem;">Programmes</h1>
       </div>
@@ -13,7 +13,7 @@
   <div class="u-space-3-bottom">
     <div class="container" *ngIf="!loading">
 
-      <div class="row align-items-md-center u-space-2">
+      <div class="row align-items-md-center u-space-2 d-none d-sm-block">
         <div class="col-lg-12 mb-12 mb-lg-0">
           <form class="js-focus-state input-group u-form">
             <div class="input-group-prepend u-form__prepend">
@@ -70,6 +70,38 @@
       </div>
     </div>
   </div>
+  <div class="modal fade hauteur" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nouvelle Recherche</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+      <div class="row align-items-md-center u-space-2">
+          <div class="col-lg-12 mb-12 mb-lg-0">
+            <form class="js-focus-state input-group u-form">
+              <div class="input-group-prepend u-form__prepend">
+                <span class="input-group-text u-form__text">
+                  <span class="fa fa-search"></span>
+                </span>
+              </div>
+              <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre par projets" aria-label="Search Front">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer mb-4 col-xs-12 justify-content-center">
+        <button type="button" class="btn btn-primary col-xs-12 fermer" data-dismiss="modal">
+          Valider</button>
+      </div>
+    </div>
+  </div>
+</div>
   <div class="row justify-content-center u-space-5-top" *ngIf="loading" style="margin-top: 15vh;">
     <div id="testimonialsNavMain"
       class="js-slick-carousel js-slick-carousel u-slick u-content-centered-y p-4 mb-0 u-stroke-midnightblue load"
@@ -89,6 +121,6 @@
    <i class="fas fa-search" style="color:#fff"></i>
    </button-->
  </div>
-<div>
+<div class="d-none d-sm-block">
   <app-footer></app-footer>
 </div>
