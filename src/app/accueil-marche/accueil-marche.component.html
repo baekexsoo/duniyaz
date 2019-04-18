@@ -80,7 +80,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-sm-3 mt-5">
             <div class="text-center ">
               <button type="submit" (click)="search_market()"
@@ -127,8 +126,13 @@
       <tbody>
         <tr *ngFor="let item of search_result | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
           <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
-          <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.commune | titlecase}} >
-              {{item.arrondissement | titlecase}} </small></td>
+          <td style="width:45vh">
+              <small>{{item.departement | titlecase}} > {{item.commune | titlecase}} >
+                  {{item.arrondissement | titlecase}} </small>
+              <a target="_blank" class="u-icon u-icon--xs u-icon-brd-secondary" href="https://www.google.com/maps/@{{item.location.lat}},{{item.location.lon}},10z">
+                <span class="fas fa-location-arrow u-icon__inner"></span>
+              </a>
+           </td>
           <td style="width:40vh"><small>
               ouvert tous les {{item.periode}} jours.<br>
               <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span>
@@ -187,7 +191,7 @@
             <div class="d-flex justify-content-between align-items-center mb-3">
               <small class="d-block text-white nom"> {{ item.name }}</small>
 
-              <a class="u-icon u-icon--sm u-icon-primary--air rounded-circle" data-toggle="tooltip"
+              <a href="https://www.google.com/maps/@{{item.location.lat}},{{item.location.lon}},10z" class="u-icon u-icon--sm u-icon-primary--air rounded-circle" data-toggle="tooltip"
                 data-placement="top">
                 <i class="fas fa-map-marker-alt u-icon__inner " style="  margin-left: 0;color: #fff;"></i>
               </a>
