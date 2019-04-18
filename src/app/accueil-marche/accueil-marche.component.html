@@ -30,9 +30,11 @@
               </label>
 
               <div class="js-focus-state input-group u-form">
-                <select class="custom-select" name="departement" [(ngModel)]="objet_market.departement" (change)="list_commune()">
+                <select class="custom-select" name="departement" [(ngModel)]="objet_market.departement"
+                  (change)="list_commune()">
                   <option selected value="">Tous</option>
-                  <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
+                  <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}
+                  </option>
                 </select>
               </div>
             </div>
@@ -66,7 +68,7 @@
               </label>
 
               <div class="js-focus-state input-group u-form ">
-              
+
                 <input class="form-control u-form__input" type="text" id="dp" [(ngModel)]="Today" name="name"
                   ngbDatepicker #d="ngbDatepicker">
                 <div class="input-group-append">
@@ -74,31 +76,15 @@
                     <i class="fas fa-calendar-alt fa-fw"></i>
                   </button>
                 </div>
-                <!--div class="d-none d-md-block d-lg-none">
-                  <p class="col align-self-end">
-                    <a class="btn btn-primary" style="margin: 5% 80% -4%;" data-toggle="collapse" href="#collapseExample" role="button"
-                      aria-expanded="false" aria-controls="collapseExample" onclick="resherchFunction()">
-                      <i class="fas fa-search"></i>
-                    </a>
-                  </p>
-                </div-->
+
               </div>
             </div>
           </div>
-          <!-- End Input -->
-          <!--div class="form-group">
-                    <div class="input-group">
-                      <input class="form-control" placeholder="yyyy-mm-dd"
-                             name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-                      <div class="input-group-append">
-                        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
-                      </div>
-                    </div>
-                  </div-->
-          <!-- Input -->
+
           <div class="col-sm-3 mt-5">
             <div class="text-center ">
-              <button type="submit" (click)="search_market()" class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
+              <button type="submit" (click)="search_market()"
+                class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
             </div>
           </div>
           <!-- End Input -->
@@ -106,33 +92,29 @@
       </form>
     </div>
   </div>
-
-  <div class="container w-70" *ngIf="!warning_bool && !loading">
-   
-  
-      <div class="paginate uk-text-center d-block d-sm-none justify-content-center" >
-      <pagination-controls class="my-pagination"
-                      (pageChange)="p = $event"
-                      directionLinks="true"
-                      autoHide="true"
-                      responsive="true"
-                      screenReaderCurrentLabel="You're on page">
-          
-                      </pagination-controls>
+  <div class="container w-70 mb-3">
+    <div class="btn-group flow " role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary" (click)="goto(0)"><i class="d-none d-sm-block fa fa-list"></i><i
+          class="d-block d-sm-none d-md-none fa fa-table"></i></button>
+      <button type="button" class="btn btn-secondary" (click)="goto(1)"><i class="fa fa-map-marker"></i></button>
     </div>
+  </div>
 
-    <!--form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search mb-2">
-      <div class="input-group-prepend u-form__prepend">
-        <span class="input-group-text u-form__text">
-          <span class="fa fa-search u-form__text-inner"></span>
-        </span>
-      </div>
-      <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre">
-    </form-->
+  <div class="paginate uk-text-center d-block d-sm-none justify-content-center">
+    <pagination-controls class="my-pagination" (pageChange)="p = $event" directionLinks="true" autoHide="true"
+      responsive="true" screenReaderCurrentLabel="You're on page">
 
-         
-    
-    <table class="table  table-hover col-md-11 col-sm-11 col-xs-12 mb-4" style="background-color:#ffffffe0; border-radius: 10px;">
+    </pagination-controls>
+  </div>
+
+
+
+  <div class="container w-70 d-none d-sm-block" *ngIf="(!warning_bool && !loading) && step==0">
+
+
+
+    <table class="table  table-hover col-md-11 col-sm-11 col-xs-12 mb-4"
+      style="background-color:#ffffffe0; border-radius: 10px;">
 
       <thead>
         <tr>
@@ -149,7 +131,8 @@
               {{item.arrondissement | titlecase}} </small></td>
           <td style="width:40vh"><small>
               ouvert tous les {{item.periode}} jours.<br>
-              <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span></div>
+              <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span>
+              </div>
               <div *ngIf="item.nextMarketDay !== rec_date">S'animera le : <strong>
                   {{item.nextMarketDay.split('/').reverse().join('/') | date: 'EEEE dd' | slice:0:3}}.
                   {{item.nextMarketDay.split('/').reverse().join('/') | date: 'dd'}}
@@ -162,12 +145,12 @@
 
       </tbody>
     </table>
-  
-      <div class="row justify-content-center">
-          <div class="paginate uk-text-center d-none d-sm-block">
-            <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>        
-        </div>
-        </div>
+
+    <div class="row justify-content-center">
+      <div class="paginate uk-text-center d-none d-sm-block">
+        <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
     <!-- ========== MAIN ========== -->
 
     <!-- ========== END MAIN ========== -->
@@ -181,8 +164,9 @@
           <div>
             <!-- Title -->
             <div class="mb-5">
-              <h1 class="text-primary font-weight-normal" style="font-size:1.625rem; text-align: center ">{{warning}}.</h1>
-              <p class="mb-0">  </p>
+              <h1 class="text-primary font-weight-normal" style="font-size:1.625rem; text-align: center ">{{warning}}.
+              </h1>
+              <p class="mb-0"> </p>
             </div>
             <!-- End Title -->
           </div>
@@ -193,91 +177,168 @@
 
   </div>
 
-            <div class="text-center col-xs-12 mt-5 d-block d-sm-none fixed-bottom ">
-             <button type="button" class="btn btn-primary searcher" data-dismiss="modal" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" >  <i class="fas fa-search" style="color:#fff"></i></button>
-              <!--button type="button" class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4 w-93" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+
+  <div class="container w-70 d-block d-sm-none d-md-none" *ngIf="step==0">
+    <div class="row">
+      <div class="col-md-6 col-lg-4 mb-lg-0" style="margin-top: 22px;"
+        *ngFor="let item of search_result |filter: search | paginate: { itemsPerPage: 7, currentPage: p }">
+        <article class="bg-white shadow-sm rounded">
+          <header class="pl-4" style="background-color:#15315a; height:44px;">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <small class="d-block text-white nom"> {{ item.name }}</small>
+
+              <a class="u-icon u-icon--sm u-icon-primary--air rounded-circle" data-toggle="tooltip"
+                data-placement="top">
+                <i class="fas fa-map-marker-alt u-icon__inner " style="  margin-left: 0;color: #fff;"></i>
+              </a>
+            </div>
+
+
+          </header>
+
+          <hr class="my-0">
+
+          <div class="p-3 body-card">
+
+            <div class="row">
+
+              <div class="col-12">
+                <div class="small">
+                  Localisation: <strong class="text-secondary  text-muted">
+                    {{item.departement | titlecase}} > {{item.commune | titlecase}} >
+                    {{item.arrondissement | titlecase}} </strong>
+                </div>
+              </div>
+
+              <div class="col-12 mt-4">
+                <div class="small">
+                  <strong class="text-secondary">Ouvert tous les {{item.periode}} jours.</strong>
+
+                  <div *ngIf="item.nextMarketDay === rec_date" class=" mt-4">
+                    <strong class="text-secondary mt-4"><span class="badge badge-success">actuellement
+                        animé</span></strong>
+                  </div>
+                  <div *ngIf="item.nextMarketDay !== rec_date" class="mt-4">
+                    s'animera le <strong>
+                      {{item.nextMarketDay.split('/').reverse().join('/') | date: 'EEEE dd' | slice:0:3}}.
+                      {{item.nextMarketDay.split('/').reverse().join('/') | date: 'dd'}}
+                      {{item.nextMarketDay.split('/').reverse().join('/') | date:'MMMM' | slice:0:3 }}
+                      {{item.nextMarketDay.split('/').reverse().join('/') | date: 'yyyy'}}
+                    </strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 mt-4">
+                <div class="small">
+                  Produits: <strong class="text-secondary text-muted"><a target="_blank" href="">
+                      {{ item.products.join(', ') }} </a></strong>
+                </div>
+              </div>
+
+            </div>
+
+            <div></div>
+          </div>
+        </article>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="text-center col-xs-12 mt-5 d-block d-sm-none fixed-bottom ">
+    <button type="button" class="btn btn-primary searcher" data-dismiss="modal" data-toggle="modal"
+      data-target="#exampleModal" data-whatever="@mdo"> <i class="fas fa-search" style="color:#fff"></i></button>
+    <!--button type="button" class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4 w-93" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
               <i class="fas fa-search" style="color:#fff"></i>
               </button-->
-            </div>
+  </div>
 
-          <div class="modal fade hauteur" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Nouvelle Recherche</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
+  <div class="modal fade hauteur" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Nouvelle Recherche</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
             <!-- Input -->
-          <div class="col-xs-12 mt-2 ">
-            <div class="js-form-message">
-              <label for="recipient-name" class="col-form-label">Département:</label>
+            <div class="col-xs-12 mt-2 ">
+              <div class="js-form-message">
+                <label for="recipient-name" class="col-form-label">Département:</label>
 
-              <div class="js-focus-state input-group u-form">
-                <select class="custom-select" name="departement_mob" [(ngModel)]="objet_market.departement" (change)="list_commune()">
-                  <option selected value="">Tous</option>
-                  <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <!-- End Input -->
-          
-          <!-- Input -->
-          <div class="col-xs-12 mt-2">
-            <div class="js-form-message">
-              <label for="recipient-name" class="col-form-label">Ville:</label>
-
-              <div class="js-focus-state input-group u-form">
-                <select class="custom-select" name="commune_mob" [(ngModel)]="objet_market.ville">
-                  <option selected value="">Tous</option>
-                  <option selected *ngFor="let c of liste_communes" [ngValue]="c">{{c}}</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <!-- End Input -->
-
-            <div class="col-xs-12 mt-4">
-            <div class="js-form-message">
-                      <label for="recipient-name" class="col-form-label">Jour du marché:</label>
-
-
-              <div class="js-focus-state input-group u-form ">
-                <input class="form-control u-form__input" type="text" id="dpa" [(ngModel)]="Today" name="name_mob"
-                  ngbDatepicker #d="ngbDatepicker">
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
-                    <i class="fas fa-calendar-alt fa-fw"></i>
-                  </button>
+                <div class="js-focus-state input-group u-form">
+                  <select class="custom-select" name="departement_mob" [(ngModel)]="objet_market.departement"
+                    (change)="list_commune()">
+                    <option selected value="">Tous</option>
+                    <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}
+                    </option>
+                  </select>
                 </div>
               </div>
             </div>
-          </div>
-       
-        </form>
-      </div>
-      <div class="modal-footer mb-4 col-xs-12">
-        <button type="button" class="btn btn-secondary col-xs-6 fermer"  data-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-primary col-xs-6" (click)="search_market()" data-dismiss="modal" >  Rechercher</button>
+            <!-- End Input -->
+
+            <!-- Input -->
+            <div class="col-xs-12 mt-2">
+              <div class="js-form-message">
+                <label for="recipient-name" class="col-form-label">Ville:</label>
+
+                <div class="js-focus-state input-group u-form">
+                  <select class="custom-select" name="commune_mob" [(ngModel)]="objet_market.ville">
+                    <option selected value="">Tous</option>
+                    <option selected *ngFor="let c of liste_communes" [ngValue]="c">{{c}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- End Input -->
+
+            <div class="col-xs-12 mt-4">
+              <div class="js-form-message">
+                <label for="recipient-name" class="col-form-label">Jour du marché:</label>
+
+
+                <div class="js-focus-state input-group u-form ">
+                  <input class="form-control u-form__input" type="text" id="dpa" [(ngModel)]="Today" name="name_mob"
+                    ngbDatepicker #d="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+                      <i class="fas fa-calendar-alt fa-fw"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer mb-4 col-xs-12">
+          <button type="button" class="btn btn-secondary col-xs-6 fermer" data-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-primary col-xs-6" (click)="search_market()" data-dismiss="modal">
+            Rechercher</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-          
+
 
   <div class="row justify-content-center u-space-5-top" *ngIf="loading" style="margin-top: 15vh;">
-    <div id="testimonialsNavMain" class="js-slick-carousel js-slick-carousel u-slick u-content-centered-y p-4 mb-0 u-stroke-midnightblue load"
-      data-infinite="true" data-autoplay="true" data-speed="5000" data-fade="true" data-nav-for="#testimonialsNavPagination">
+    <div id="testimonialsNavMain"
+      class="js-slick-carousel js-slick-carousel u-slick u-content-centered-y p-4 mb-0 u-stroke-midnightblue load"
+      data-infinite="true" data-autoplay="true" data-speed="5000" data-fade="true"
+      data-nav-for="#testimonialsNavPagination">
     </div>
   </div>
 
 
 </main>
 <!-- ========== END MAIN ========== -->
-<div class="d-none d-sm-block" >
+<div class="d-none d-sm-block">
   <app-footer></app-footer>
 </div>

@@ -15,6 +15,7 @@ export class AccueilMarcheComponent implements OnInit {
   accueil_list: any;
   rec_date: any;
   dat: any;
+  step= 0;
   loading = false;
   aff_bool = false;
   warning_bool = false;
@@ -39,7 +40,7 @@ export class AccueilMarcheComponent implements OnInit {
   
 
   ngOnInit() {
-
+    this.goto(0);
     this.Today =  this.calendar.getToday();
     this.objet_market.date = this.Today.day + '/0' + this.Today.month + '/' + this.Today.year;
     this.list_departement();
@@ -47,6 +48,9 @@ export class AccueilMarcheComponent implements OnInit {
     this.list_accueil();
   }
 
+  goto(n=0) {
+    this.step = n;
+  }
   search_market() {
     this.loading = true;
     
