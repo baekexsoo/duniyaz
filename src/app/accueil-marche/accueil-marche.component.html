@@ -85,17 +85,7 @@
               </div>
             </div>
           </div>
-          <!-- End Input -->
-          <!--div class="form-group">
-                    <div class="input-group">
-                      <input class="form-control" placeholder="yyyy-mm-dd"
-                             name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-                      <div class="input-group-append">
-                        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
-                      </div>
-                    </div>
-                  </div-->
-          <!-- Input -->
+         
           <div class="col-sm-3 mt-5">
             <div class="text-center ">
               <button type="submit" (click)="search_market()" class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
@@ -121,16 +111,7 @@
                       </pagination-controls>
     </div>
 
-    <!--form class="js-focus-state input-group input-group-lg u-form u-form--lg u-form--position u-form--no-brd search mb-2">
-      <div class="input-group-prepend u-form__prepend">
-        <span class="input-group-text u-form__text">
-          <span class="fa fa-search u-form__text-inner"></span>
-        </span>
-      </div>
-      <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre">
-    </form-->
-
-         
+  
     
     <table class="table  table-hover col-md-11 col-sm-11 col-xs-12 mb-4" style="background-color:#ffffffe0; border-radius: 10px;">
 
@@ -145,8 +126,13 @@
       <tbody>
         <tr *ngFor="let item of search_result | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
           <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
-          <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.commune | titlecase}} >
-              {{item.arrondissement | titlecase}} </small></td>
+          <td style="width:45vh">
+              <small>{{item.departement | titlecase}} > {{item.commune | titlecase}} >
+                  {{item.arrondissement | titlecase}} </small>
+              <a target="_blank" class="u-icon u-icon--xs u-icon-brd-secondary" href="https://www.google.com/maps/@{{item.location.lat}},{{item.location.lon}},10z">
+                <span class="fas fa-location-arrow u-icon__inner"></span>
+              </a>
+           </td>
           <td style="width:40vh"><small>
               ouvert tous les {{item.periode}} jours.<br>
               <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span></div>
