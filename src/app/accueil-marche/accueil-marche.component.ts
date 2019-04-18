@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MarketService } from 'src/providers/market/market.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
+import {  icon, latLng, marker, polyline, tileLayer } from 'leaflet';
+import * as L from 'leaflet';
 
 @Component({
   selector: 'app-accueil-marche',
@@ -15,6 +17,7 @@ export class AccueilMarcheComponent implements OnInit {
   accueil_list: any;
   rec_date: any;
   dat: any;
+  map:any;
   loading = false;
   aff_bool = false;
   warning_bool = false;
@@ -26,7 +29,18 @@ export class AccueilMarcheComponent implements OnInit {
   dte: any;
   text: any;
   rec: any;
+  step= 0;
   warning = '';
+
+  options = {
+    layers: [
+      tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      })
+    ],
+    zoom: 7,
+    center: latLng([ 46.879966, -121.726909 ])
+  };
   objet_market = {
           date: this.dte,
           departement: '',
@@ -39,14 +53,18 @@ export class AccueilMarcheComponent implements OnInit {
   
 
   ngOnInit() {
-
+    this.goto(0);
     this.Today =  this.calendar.getToday();
     this.objet_market.date = this.Today.day + '/0' + this.Today.month + '/' + this.Today.year;
     this.list_departement();
     this.rec_date = this.objet_market.date;     // 
     this.list_accueil();
+   
   }
 
+  goto(n=0) {
+    this.step = n;
+  }
   search_market() {
     this.loading = true;
     
@@ -141,7 +159,6 @@ export class AccueilMarcheComponent implements OnInit {
   list_departement() {
     return this.market.departement().subscribe(response => {
       this.liste_departement = response;
-     console.log(this.liste_departement);
     }, error => {
       if (error.status === 404) {
         this.warning = 'Aucun marché pour votre recherche';

@@ -20,7 +20,7 @@
             
             <div class="container menu_mobil" style="">
                
-              <ul class="navmenu d-none d-lg-inline-block" style="margin-left: 35%;" id="nav">
+              <ul class="navmenu d-none d-lg-inline-block" style="margin-left: 16%;" id="nav">
                  
                 <li class="d-sm-inline-block list-inline-item" routerLinkActive="active">
                   <a class="u-header__topbar-nav-link dec navli" routerLink="/marches" style="text-decoration: none;"> Marchés</a>
@@ -32,6 +32,10 @@
                 </li>
                 <li class="d-sm-inline-block list-inline-item mr-2 defile" routerLinkActive="active">
                   <a class="u-header__topbar-nav-link dec" [routerLink]="['/programmes']" style="text-decoration: none"> Programmes</a>
+               
+                </li>
+                <li class="d-sm-inline-block list-inline-item mr-2 defile" routerLinkActive="active">
+                  <a class="u-header__topbar-nav-link dec" [routerLink]="['/producteurs']" style="text-decoration: none"> Union producteur</a>
                
                 </li>
                 <li class="nav-item dropdown defile" routerLinkActive="active"   [routerLinkActiveOptions]="{ exact: true }">  
@@ -72,6 +76,9 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link navli" [routerLink]="['/ong']">ONG</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navli" [routerLink]="['/producteurs']">Union  producteur</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link navli" [routerLink]="['/exportateurs']">Exportateurs</a>

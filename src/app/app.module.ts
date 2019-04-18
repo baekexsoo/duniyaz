@@ -12,6 +12,8 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import localeFrExtra from '@angular/common/locales/extra/fr';
 import { AngularPaginatorModule } from 'angular-paginator';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import {icon, Marker} from 'leaflet';
 // import * as $ from 'jquery';
 
 
@@ -59,6 +61,7 @@ import { OngService } from '../providers/ong/ong.service';
 import { from } from 'rxjs';
 import { ExportateursComponent } from './exportateurs/exportateurs.component';
 import { TransformateursComponent } from './transformateurs/transformateurs.component';
+import { UnionProducteurComponent } from './union-producteur/union-producteur.component';
 //import { OngComponent } from './ong/ong.component';
 //import { OngService } from '../providers/ong/ong.service';
 //import { ProgrammesComponent } from './programmes/programmes.component';
@@ -83,6 +86,7 @@ const appRoutes: Routes = [
   { path: 'exportateurs', component: ExportateursComponent},
   { path: 'distributeurs', component: DistributeursComponent},
   { path: 'culture', component: CulturesComponent},
+  { path: 'producteurs', component: UnionProducteurComponent },
 //  { path: '', redirectTo: 'accueil', pathMatch: 'full'},
 //  { path: 'signin/form/sms', component: SmsCreatComponent},
 //  { path: 'update/activate/:ref?', component: UpdatePwdComponent},
@@ -118,6 +122,7 @@ const appRoutes: Routes = [
     ExportateursComponent,
     TransformateursComponent,
     DistributeursComponent,
+    UnionProducteurComponent,
 //    CulturesComponent,
 //    OngComponent,
 //    ProgrammesComponent,
@@ -133,6 +138,7 @@ const appRoutes: Routes = [
     NgbModule,
     Ng2SearchPipeModule,
     AngularPaginatorModule,
+    LeafletModule.forRoot(),
     // FilterModule,
     RouterModule.forRoot(
       appRoutes,

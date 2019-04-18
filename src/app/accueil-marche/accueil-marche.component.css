@@ -3,6 +3,7 @@
     background-color: gainsboro;
     height: 40px;
 }
+#map { height:100vh }
 .pos_titr {
     margin-left:85%;
 }
@@ -20,6 +21,9 @@
 @media (max-width: 575.98px) {   
     .w-70{
         width: 100%;
+    }
+    .flow {
+        margin-left: 35%;
     }
     .pos_titr {
         display: -webkit-box;
@@ -80,7 +84,7 @@
     .w-70{
         width: 100%;
     }
-
+    
     .research-background{
         background-color: #eaebefc7;
         border-radius: 5px;
