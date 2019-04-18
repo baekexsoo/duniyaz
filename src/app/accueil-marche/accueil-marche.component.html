@@ -120,8 +120,13 @@
       <tbody>
         <tr *ngFor="let item of search_result | filter:search | paginate: { itemsPerPage: 7, currentPage: p }">
           <td style="width:15vh"><small> {{item.name | titlecase}}</small></td>
-          <td style="width:45vh"><small>{{item.departement | titlecase}} > {{item.commune | titlecase}} >
-              {{item.arrondissement | titlecase}} </small></td>
+          <td style="width:45vh">
+              <small>{{item.departement | titlecase}} > {{item.commune | titlecase}} >
+                  {{item.arrondissement | titlecase}} </small>
+              <a target="_blank" class="u-icon u-icon--xs u-icon-brd-secondary" href="https://www.google.com/maps/@{{item.location.lat}},{{item.location.lon}},10z">
+                <span class="fas fa-location-arrow u-icon__inner"></span>
+              </a>
+           </td>
           <td style="width:40vh"><small>
               ouvert tous les {{item.periode}} jours.<br>
               <div *ngIf="item.nextMarketDay === rec_date"><span class="badge badge-success">actuellement animé</span>
@@ -227,6 +232,7 @@
                 Produits: <strong class="text-secondary text-muted"><a target="_blank"
                     href=""> {{ item.products.join(', ') }} </a></strong>
               </div>
+
             </div>
 
           </div>
@@ -236,6 +242,8 @@
       </article>
     </div>
 
+    </div>
+  </div>
 
   </div>
 </div>
@@ -330,7 +338,6 @@
 
 </main>
 <!-- ========== END MAIN ========== -->
-
 <div class="text-center col-xs-12 mt-5 d-block d-sm-none fixed-bottom ">
   <button type="button" class="btn btn-primary searcher" style="margin-left: 19rem;" data-dismiss="modal"
     data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"> <i class="fas fa-search"
@@ -340,5 +347,3 @@
    </button-->
 </div>
 <div class="d-none d-sm-block">
-  <app-footer></app-footer>
-</div>

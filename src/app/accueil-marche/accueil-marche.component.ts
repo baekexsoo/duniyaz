@@ -139,6 +139,7 @@ export class AccueilMarcheComponent implements OnInit {
       };
       this.objet_market.date = '';
       return this.market.recherche(JSON.stringify(obj)).subscribe( res => {
+        //console.log(res)
         this.search_result = res;
         this.loading = false;
         this.aff_bool = true;
@@ -148,6 +149,7 @@ export class AccueilMarcheComponent implements OnInit {
       this.rec_date = this.dat;
       this.objet_market.date = '';
       return this.market.recherche(JSON.stringify(this.objet_market)).subscribe( res => {
+       // console.log(res)
         this.search_result = res;
         this.loading = false;
         this.aff_bool = true;

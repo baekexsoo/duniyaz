@@ -32,7 +32,9 @@
     .w-93{
         width:93%;
     }
-
+    .flow {
+        margin-left: 35%;
+    }
     .btn-position{
         position: fixed;
         transform: translateZ(0);
