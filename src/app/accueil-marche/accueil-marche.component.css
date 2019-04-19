@@ -11,6 +11,11 @@
     width: 70%;
 }
 
+.map {
+    height: 600px;
+    padding: 0;
+  }
+
 .research-background{
     background-color: #eaebefc7;
     border-radius: 100px;

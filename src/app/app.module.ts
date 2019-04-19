@@ -13,7 +13,6 @@ import localeFr from '@angular/common/locales/fr';
 import localeFrExtra from '@angular/common/locales/extra/fr';
 import { AngularPaginatorModule } from 'angular-paginator';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import {icon, Marker} from 'leaflet';
 // import * as $ from 'jquery';
 
 
@@ -140,6 +139,7 @@ const appRoutes: Routes = [
     AngularPaginatorModule,
     LeafletModule.forRoot(),
     // FilterModule,
+    LeafletModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
