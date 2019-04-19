@@ -12,6 +12,7 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import localeFrExtra from '@angular/common/locales/extra/fr';
 import { AngularPaginatorModule } from 'angular-paginator';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 // import * as $ from 'jquery';
 
 
@@ -125,6 +126,7 @@ const appRoutes: Routes = [
     Ng2SearchPipeModule,
     AngularPaginatorModule,
     // FilterModule,
+    LeafletModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MarketService } from 'src/providers/market/market.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
+import {icon,marker, Map, point, polyline, latLng, LatLng, tileLayer } from 'leaflet';
 
 @Component({
   selector: 'app-accueil-marche',
@@ -10,6 +11,51 @@ import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./accueil-marche.component.css']
 })
 export class AccueilMarcheComponent implements OnInit {
+ 
+     // Define our base layers so we can reference them multiple times
+     streetMaps = tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      detectRetina: true,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    });
+    wMaps = tileLayer('http://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
+      detectRetina: true,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    });
+  
+  var_position : any;
+  var_coord = [{
+    lat: 0,
+    lon:0
+  }]
+ 
+  var_summit: any; 
+  var_parasite: any;
+
+      // Marker for the parking lot at the base of Mt. Ranier trails
+       paradise = marker([ 11.0681114196777,1.92061114311218 ], {
+        icon: icon({
+          iconSize: [ 25, 41 ],
+          iconAnchor: [ 13, 41 ],
+          iconUrl: 'leaflet/marker-icon.png',
+          shadowUrl: 'leaflet/marker-shadow.png'
+        })
+      });
+  // Layers control object with our two base layers and the three overlay layers
+  layersControl = {
+    baseLayers: {
+      'Street Maps': this.streetMaps,
+      'Wikimedia Maps': this.wMaps
+    },
+    overlays: {
+      'Mt. Rainier Paradise Start': this.paradise,
+    }
+  };
+
+   options = {
+    layers: [ this.streetMaps, this.paradise ],
+    zoom: 7,
+    center: latLng([ 11.0138607025146, 3.76263880729675  ])
+  };
 
   search_result: any;
   accueil_list: any;
@@ -46,6 +92,7 @@ export class AccueilMarcheComponent implements OnInit {
     this.list_departement();
     this.rec_date = this.objet_market.date;     // 
     this.list_accueil();
+    this.search_market();
   }
 
   goto(n=0) {
@@ -58,6 +105,7 @@ export class AccueilMarcheComponent implements OnInit {
       this.objet_market.date = '';
       return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(res => {
         this.search_result = res;
+        this.fonction_locatlisation();
         this.loading = false;
         this.aff_bool = false;
         this.warning_bool = false;
@@ -79,6 +127,7 @@ export class AccueilMarcheComponent implements OnInit {
       this.objet_market.date = this.dat ;
       return this.market.recherche(JSON.stringify(this.objet_market)).subscribe( res => {
         this.search_result = res;
+        this.fonction_locatlisation();
         this.loading = false;
         this.aff_bool = false;
         this.warning_bool = false;
@@ -97,13 +146,6 @@ export class AccueilMarcheComponent implements OnInit {
         }
          });
     }
-    
-    /*return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
-      this.search_result = response;
-      this.loading = false;
-      this.aff_bool = false;
-      this.warning_bool = false;
-    }, );*/
   }
 
   barre_rech_respn () {
@@ -145,6 +187,29 @@ export class AccueilMarcheComponent implements OnInit {
     }
     // return this.market.recherche(JSON.stringify(this.objet_market)).subscribe(response => {
   // });
+  }
+  fonction_locatlisation() {
+    for (var i=0; i < this.search_result.length ; i++) {
+      this.var_position = this.search_result[i]['location'];
+      this.var_coord.push({lat:this.var_position.lat, lon:this.var_position.lon});
+   
+
+       // Marker for the parking lot at the base of Mt. Ranier trails
+       this.var_parasite = marker([ this.var_position.lat,this.var_position.lon ], {
+        icon: icon({
+          iconSize: [ 25, 41 ],
+          iconAnchor: [ 13, 41 ],
+          iconUrl: 'leaflet/marker-icon.png',
+          shadowUrl: 'leaflet/marker-shadow.png'
+        })
+      });
+ 
+ // this.var_parasite = paradise
+      // this.var_coord.lon = this.var_position.lon;
+
+    }
+
+    console.log(this.var_coord)
   }
   list_departement() {
     return this.market.departement().subscribe(response => {
