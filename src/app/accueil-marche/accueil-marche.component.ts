@@ -67,6 +67,7 @@ export class AccueilMarcheComponent implements OnInit {
   liste_communes: any;
   var_res = true;
   Today: any ;
+  rec_date: any;
   warning = '';
   objet_market = {
           date: '',
@@ -81,6 +82,8 @@ export class AccueilMarcheComponent implements OnInit {
   ngOnInit() {
     this.list_departement();
     this.Today =  this.calendar.getToday();
+    
+    this.rec_date = this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
     this.search_market();
   }
 
