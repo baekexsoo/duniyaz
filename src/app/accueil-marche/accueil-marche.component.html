@@ -31,7 +31,7 @@
 
               <div class="js-focus-state input-group u-form">
                 <select class="custom-select" name="departement" [(ngModel)]="objet_market.departement"
-                  (change)="list_commune()">
+                  (change)="list_commune(objet_market.departement)">
                   <option selected value="">Tous</option>
                   <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}
                   </option>
@@ -69,7 +69,7 @@
 
               <div class="js-focus-state input-group u-form ">
 
-                <input class="form-control u-form__input" type="text" id="dp" [(ngModel)]="Today" name="name"
+                <input class="form-control u-form__input" type="text" id="dp" [(ngModel)]="Today"  name="name"
                   ngbDatepicker #d="ngbDatepicker">
                 <div class="input-group-append">
                   <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
@@ -82,7 +82,7 @@
           </div>
           <div class="col-sm-3 mt-5">
             <div class="text-center ">
-              <button type="submit" (click)="search_market()"
+              <button type="submit" (click)="search_market(objet_market)"
                 class="btn btn-primary u-btn-primary u-btn-wide transition-3d-hover mb-4">Recherche</button>
             </div>
           </div>
@@ -162,7 +162,7 @@
   </div>
 
   <div class="container w-70" *ngIf = "step == 1" >
-    <div style="height: 300px;" leaflet [leafletOptions]="options" [leafletLayersControl]="layersControl">
+    <div style="height: 650px;" leaflet [leafletOptions]="options" (leafletMapReady)="onMapReady($event)">
       
     </div>
   </div>
@@ -285,7 +285,7 @@
 
                 <div class="js-focus-state input-group u-form">
                   <select class="custom-select" name="departement_mob" [(ngModel)]="objet_market.departement"
-                    (change)="list_commune()">
+                    (change)="list_commune(objet_market.departement)">
                     <option selected value="">Tous</option>
                     <option selected *ngFor="let d of liste_departement" [ngValue]="d.departement">{{d.departement}}
                     </option>
@@ -331,7 +331,7 @@
         </div>
         <div class="modal-footer mb-4 col-xs-12">
           <button type="button" class="btn btn-secondary col-xs-6 fermer" data-dismiss="modal">Annuler</button>
-          <button type="button" class="btn btn-primary col-xs-6" (click)="search_market()" data-dismiss="modal">
+          <button type="button" class="btn btn-primary col-xs-6" (click)="search_market(objet_market)" data-dismiss="modal">
             Rechercher</button>
         </div>
       </div>
