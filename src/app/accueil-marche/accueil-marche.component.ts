@@ -86,7 +86,15 @@ export class AccueilMarcheComponent implements OnInit {
  fonction_locatlisation() {
   for (var i=0; i < this.search_result.length ; i++) {
     this.var_position = this.search_result[i]['location'];
-     this.paradise = marker([ this.var_position.lat,this.var_position.lon ]);
+     // Marker for the parking lot at the base of Mt. Ranier trails
+  this.paradise = marker([ this.var_position.lat,this.var_position.lon ], {
+    icon: icon({
+      iconSize: [ 25, 41 ],
+      iconAnchor: [ 13, 41 ],
+      iconUrl: 'leaflet/marker-icon.png',
+      shadowUrl: 'leaflet/marker-shadow.png'
+    })
+  });
     this.var_coord.push(this.paradise)
   
   }
