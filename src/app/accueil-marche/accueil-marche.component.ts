@@ -29,33 +29,13 @@ export class AccueilMarcheComponent implements OnInit {
   }]
  
   var_summit: any; 
-  var_parasite: any;
+  var_paradise: any;
 
       // Marker for the parking lot at the base of Mt. Ranier trails
-       paradise = marker([ 11.0681114196777,1.92061114311218 ], {
-        icon: icon({
-          iconSize: [ 25, 41 ],
-          iconAnchor: [ 13, 41 ],
-          iconUrl: 'leaflet/marker-icon.png',
-          shadowUrl: 'leaflet/marker-shadow.png'
-        })
-      });
+       paradise : any;
   // Layers control object with our two base layers and the three overlay layers
-  layersControl = {
-    baseLayers: {
-      'Street Maps': this.streetMaps,
-      'Wikimedia Maps': this.wMaps
-    },
-    overlays: {
-      'Mt. Rainier Paradise Start': this.paradise,
-    }
-  };
-
-   options = {
-    layers: [ this.streetMaps, this.paradise ],
-    zoom: 7,
-    center: latLng([ 11.0138607025146, 3.76263880729675  ])
-  };
+  layersControl : any
+   options : any;
 
   search_result: any;
   accueil_list: any;
@@ -195,7 +175,7 @@ export class AccueilMarcheComponent implements OnInit {
    
 
        // Marker for the parking lot at the base of Mt. Ranier trails
-       this.var_parasite = marker([ this.var_position.lat,this.var_position.lon ], {
+       this.paradise = marker([ this.var_position.lat,this.var_position.lon ], {
         icon: icon({
           iconSize: [ 25, 41 ],
           iconAnchor: [ 13, 41 ],
@@ -203,13 +183,28 @@ export class AccueilMarcheComponent implements OnInit {
           shadowUrl: 'leaflet/marker-shadow.png'
         })
       });
- 
+      this.layersControl = {
+        baseLayers: {
+          'Street Maps': this.streetMaps,
+          'Wikimedia Maps': this.wMaps
+        },
+        overlays: {
+          'Mt. Rainier Paradise Start': this.paradise,
+        }
+      };
+    
+       this.options = {
+        layers: [ this.streetMaps, this.paradise ],
+        zoom: 7,
+        center: latLng([ 11.0138607025146, 3.76263880729675  ])
+      };
+      console.log(this.var_coord)
+      console.log(this.var_coord)
+      console.log(this.var_coord)
  // this.var_parasite = paradise
       // this.var_coord.lon = this.var_position.lon;
 
     }
-
-    console.log(this.var_coord)
   }
   list_departement() {
     return this.market.departement().subscribe(response => {
