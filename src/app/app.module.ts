@@ -141,8 +141,7 @@ const appRoutes: Routes = [
     // FilterModule,
     LeafletModule.forRoot(),
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      appRoutes
     )
   ],
   providers: [
