@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TransformateursService} from './../../providers/transformateur/transformateurs.service';
 
 @Component({
   selector: 'app-transformateurs',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransformateursComponent implements OnInit {
 
-  constructor() { }
+  list_transform : any;
+  loading= false;
+  constructor( private transform : TransformateursService) { }
 
   ngOnInit() {
+    this.list();  
+  }
+
+  list() {
+    this.loading = true;
+    return this.transform.list().subscribe( res => {
+      this.list_transform = res;
+      this.loading = false;
+    })
   }
 
 }

@@ -41,18 +41,26 @@ import { AuthGuard } from './auth/auth.guard';
 import { DatavizComponent } from './dataviz/dataviz.component';
 import { AccueilMarcheComponent } from './accueil-marche/accueil-marche.component';
 import { MarketService } from '../providers/market/market.service';
-//import { TransformateurComponent } from './transformateur/transformateur.component';
+import { OngComponent } from './ong/ong.component';
+import { CulturesComponent } from './cultures/cultures/cultures.component';
+import { ProgrammesComponent } from './programmes/programmes.component';
+import { DetailProgramComponent } from './detail-program/detail-program.component';
 //import { TransformeService } from 'src/providers/transforme/transforme.service';
 //import { ExportService } from '../providers/exportateurs/export.service';
-//import { DistributeursService } from '../providers/distributeurs/distributeurs.service';
-//import { ProgrammeService } from '../providers/programmes/programme.service';
+import { DistributeursService } from '../providers/distributeurs/distributeurs.service';
+import { ProgrammeService } from '../providers/programmes/programme.service';
 //import { ExportateursComponent } from './exportateurs/exportateurs/exportateurs.component';
-//import { DistributeursComponent } from './distributeurs/distributeurs/distributeurs.component';
+import { DistributeursComponent } from './distributeurs/distributeurs.component';
 //import { CulturesComponent } from './cultures/cultures.component';
+import { CultureService } from '../providers/culture/culture.service';
+
+
+import { OngService } from '../providers/ong/ong.service';
 //import { CultureService } from '../providers/culture/culture.service';
 import { from } from 'rxjs';
 import { ExportateursComponent } from './exportateurs/exportateurs.component';
 import { TransformateursComponent } from './transformateurs/transformateurs.component';
+import { UnionProducteurComponent } from './union-producteur/union-producteur.component';
 //import { OngComponent } from './ong/ong.component';
 //import { OngService } from '../providers/ong/ong.service';
 //import { ProgrammesComponent } from './programmes/programmes.component';
@@ -68,15 +76,16 @@ const appRoutes: Routes = [
   ], canActivate: [AuthGuard]
 },
   { path: 'marches', component: AccueilMarcheComponent },
-//  { path: 'ong', component: OngComponent },
-//  { path: 'transformateur', component: TransformateurComponent },
-//  { path: 'programmes', component: ProgrammesComponent },
-//  { path: 'detail-programme', component: DetailProgramComponent },
+  { path: 'ong', component: OngComponent },
+  { path: 'transformateur', component: TransformateursComponent },
+  { path: 'programmes', component: ProgrammesComponent },
+  { path: 'detail-programme', component: DetailProgramComponent },
 //  { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent},
-//  { path: 'exportateurs', component: ExportateursComponent},
-//  { path: 'distributeurs', component: DistributeursComponent},
-//  { path: 'culture', component: CulturesComponent},
+  { path: 'exportateurs', component: ExportateursComponent},
+  { path: 'distributeurs', component: DistributeursComponent},
+  { path: 'culture', component: CulturesComponent},
+  { path: 'producteurs', component: UnionProducteurComponent },
 //  { path: '', redirectTo: 'accueil', pathMatch: 'full'},
 //  { path: 'signin/form/sms', component: SmsCreatComponent},
 //  { path: 'update/activate/:ref?', component: UpdatePwdComponent},
@@ -105,11 +114,14 @@ const appRoutes: Routes = [
     SelectionSolComponent,
     DatavizComponent,
     AccueilMarcheComponent,
+    OngComponent,
+    CulturesComponent,
+    ProgrammesComponent,
+    DetailProgramComponent,
     ExportateursComponent,
     TransformateursComponent,
-//    TransformateurComponent,
-//    ExportateursComponent,
-//    DistributeursComponent,
+    DistributeursComponent,
+    UnionProducteurComponent,
 //    CulturesComponent,
 //    OngComponent,
 //    ProgrammesComponent,
@@ -125,6 +137,7 @@ const appRoutes: Routes = [
     NgbModule,
     Ng2SearchPipeModule,
     AngularPaginatorModule,
+    LeafletModule.forRoot(),
     // FilterModule,
     LeafletModule.forRoot(),
     RouterModule.forRoot(
@@ -141,10 +154,10 @@ const appRoutes: Routes = [
   MarketService,
 //  TransformeService,
 //  ExportService,
-//  DistributeursService,
-//  CultureService,
-//  ProgrammeService,
-//  OngService
+  DistributeursService,
+  CultureService,
+  ProgrammeService,
+  OngService
   ],
   bootstrap: [AppComponent]
 })

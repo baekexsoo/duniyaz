@@ -1,20 +1,17 @@
 <app-header></app-header>
 
-
-
-
 <!-- ========== MAIN ========== -->
 <main id="content" role="main" style="min-height:-webkit-fill-available">
   <div class="container u-space-3-top--lg mb-5">
-
     <div class="container position-relativez-index-2 pos_titr mb-4">
       <div class="mx-auto">
-        <h1 class="h4 text-primary" style="font-size: 1.7rem;">Transformateurs</h1>
+        <h1 class="h4 text-primary" style="font-size: 1.7rem;">Programmes</h1>
       </div>
     </div>
   </div>
+
   <div class="u-space-3-bottom">
-    <div class="container w-70" *ngIf="!loading">
+    <div class="container" *ngIf="!loading">
 
       <div class="row align-items-md-center u-space-2 d-none d-sm-block">
         <div class="col-lg-12 mb-12 mb-lg-0">
@@ -24,35 +21,48 @@
                 <span class="fa fa-search"></span>
               </span>
             </div>
-            <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search"
-              placeholder="Filtre par domaine de transformation" aria-label="Search Front">
+            <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre par projets" aria-label="Search Front">
           </form>
         </div>
       </div>
+      
+      <div class="u-bg-img-hero mb-3"
+        *ngFor="let prog of list_programmes| filter:search | paginate: { itemsPerPage: 7, currentPage: p }"
+        style="background-color: #f2f3f5; margin-top: 12px;background-image: url(../assets/img/1920x1080/img9.jpg);">
+        <div class="container u-space-2">
+          <div class="row align-items-md-center">
+            <div class="col-md-8 mb-7 mb-md-0">
+              <div class="media">
+                <div class="d-flex mr-4">
+                  <span class="u-icon-light--air">
+                    <span>{{prog.startDate}} - {{prog.endDate}} </span>
+                  </span>
+                </div>
+                <div class="media-body name">
+                  <h4 class="text-black font-weight-bold">{{ prog.programName }}</h4>
+                  <p class="u-text-light mb-0" style="color: #000; font-weight: bolder">Objectif principal : <span
+                      style="color: rgba(35, 34, 34, 0.7);"> {{ prog.principalObjectif  }}</span>
 
-      <table class="table  table-hover" style="background-color:#ffffffe0; border-radius: 10px;">
-        <thead>
-          <tr>
-            <th>Entreprise</th>
-            <!--th>Années</th-->
-            <th>Quantité</th>
-            <th>Domaine de transformation</th>
-            <!--th>Resistance de la variété</th-->
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let t of list_transform |filter: search | paginate: { itemsPerPage: 7, currentPage: p }">
-            <td style="width:40vh"><small> {{ t.nomEntreprise }} </small></td>
-            <!--td style="width:50vh"><small> {{ t.anneeCreation }} </small> </td-->
-            <td style="width:50vh"><small> {{ t.masseTransformation }} Jours </small> </td>
-            <td style="width:50vh" class="uk-text-center"><small> {{ t.domaineTransformation }} T/Ha </small> </td>
-            <!--td style="width:40vh"><small> {{ export.resistance }}  </small> </td-->
+                  </p>
+                </div>
+              </div>
+            </div>
 
-          </tr>
+            <div class="col-md-4 text-md-right">
+              <button type="submit" class="btn btn-lg btn_details u-btn-warning transition-3d-hover"
+                (click)="detail_program(prog)">
+                Détails
+                <span class="fa fa-angle-right ml-2"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        </tbody>
 
-      </table>
+
+
+
       <div class="row justify-content-center">
         <div class="paginate uk-text-center d-none d-sm-block">
           <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
@@ -71,19 +81,19 @@
         </button>
       </div>
       <div class="modal-body">
-          <div class="row align-items-md-center u-space-2">
-            <div class="col-lg-12 mb-12 mb-lg-0">
-              <form class="js-focus-state input-group u-form">
-                <div class="input-group-prepend u-form__prepend">
-                  <span class="input-group-text u-form__text">
-                    <span class="fa fa-search"></span>
-                  </span>
-                </div>
-                <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search"
-                  placeholder="Filtre par domaine de transformation" aria-label="Search Front">
-              </form>
-            </div>
+       
+      <div class="row align-items-md-center u-space-2">
+          <div class="col-lg-12 mb-12 mb-lg-0">
+            <form class="js-focus-state input-group u-form">
+              <div class="input-group-prepend u-form__prepend">
+                <span class="input-group-text u-form__text">
+                  <span class="fa fa-search"></span>
+                </span>
+              </div>
+              <input type="search" class="form-control u-form__input" [(ngModel)]="search" name="search" placeholder="Filtre par projets" aria-label="Search Front">
+            </form>
           </div>
+        </div>
       </div>
       <div class="modal-footer mb-4 col-xs-12 justify-content-center">
         <button type="button" class="btn btn-primary col-xs-12 fermer" data-dismiss="modal">
@@ -101,6 +111,8 @@
   </div>
 
 </main>
+
+
 <!-- ========== END MAIN ========== -->
 
 <div class="text-center col-xs-12 mt-5 d-block d-sm-none fixed-bottom ">

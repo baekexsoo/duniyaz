@@ -6,6 +6,7 @@ import { Programmes } from 'src/app/mock_data/programmes';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
+    'Authorization': 'Bearer 31c79287-65c4-3609-91f4-ffbd1240a873',
   })
 };
 
@@ -14,18 +15,18 @@ const httpOptions = {
 })
 export class ProgrammeService {
  
-  Base_url = 'http://api.dev.duniyadata.com/dunya/programmes?zone=';
+  Base_url = 'http://api.dev.duniyadata.com/dunya/';
 
   constructor(public api: Api, private http: HttpClient) { }
 
-  list_programmes(zone, produit): Observable<any> {
-
-    return this.http.get(this.Base_url + zone + '&produit=' + produit, httpOptions);
+  list_programmes(zone,produit): Observable<any> {
+    let url ='programmes';
+    return this.api.get(url , httpOptions);
 
 }
 
-liste_simulation_prog (): Observable<any> {
+/*liste_simulation_prog (): Observable<any> {
   return of(Programmes);
-}
+}*/
 
 }
