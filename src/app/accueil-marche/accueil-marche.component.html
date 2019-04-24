@@ -162,7 +162,7 @@
   </div>
 
   <div class="container w-70" *ngIf = "step == 1" >
-    <div style="height: 300px;" leaflet [leafletOptions]="options" [leafletLayersControl]="layersControl">
+    <div style="height: 700px;" leaflet [leafletOptions]="options" (leafletMapReady)="onMapReady($event)">
       
     </div>
   </div>

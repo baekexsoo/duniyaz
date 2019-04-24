@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MarketService } from 'src/providers/market/market.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
-import {icon,marker, Map, point, polyline, latLng, LatLng, tileLayer } from 'leaflet';
+import {icon,marker,featureGroup, Map, point, polyline, latLng, LatLng, tileLayer } from 'leaflet';
 import { formatDate } from '@angular/common';
 
 @Component({
@@ -23,24 +23,13 @@ export class AccueilMarcheComponent implements OnInit {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
   
-  var_position : any;
-  var_coord = [{
-    lat: 0,
-    lon:0
-  }]
  
-  var_summit: any; 
-  var_parasite: any;
+    var_position : any;
+    var_coord = []
+  
 
       // Marker for the parking lot at the base of Mt. Ranier trails
-       paradise = marker([ 11.0681114196777,1.92061114311218 ], {
-        icon: icon({
-          iconSize: [ 25, 41 ],
-          iconAnchor: [ 13, 41 ],
-          iconUrl: 'leaflet/marker-icon.png',
-          shadowUrl: 'leaflet/marker-shadow.png'
-        })
-      });
+       paradise : any;
   // Layers control object with our two base layers and the three overlay layers
   layersControl = {
     baseLayers: {
@@ -48,12 +37,12 @@ export class AccueilMarcheComponent implements OnInit {
       'Wikimedia Maps': this.wMaps
     },
     overlays: {
-      'Mt. Rainier Paradise Start': this.paradise,
+      'Mt. Rainier Paradise Start': this.var_coord,
     }
   };
 
    options = {
-    layers: [ this.streetMaps, this.paradise ],
+    layers: [ this.streetMaps],
     zoom: 7,
     center: latLng([ 11.0138607025146, 3.76263880729675  ])
   };
@@ -82,11 +71,41 @@ export class AccueilMarcheComponent implements OnInit {
   ngOnInit() {
     this.list_departement();
     this.Today =  this.calendar.getToday();
-    
+    this.goto(0);
     this.rec_date = this.Today.day + '/' + '0' + this.Today.month + '/' + this.Today.year;
     this.search_market();
   }
 
+  onMapReady(map: Map) {
+   
+    const group = featureGroup(this.var_coord);
+
+    group.addTo(map);
+    map.fitBounds(group.getBounds());
+ }
+
+  fonction_locatlisation() {
+    for (var i=0; i < this.search_result.length ; i++) {
+      this.var_position = this.search_result[i]['location'];
+       // Marker for the parking lot at the base of Mt. Ranier trails
+    this.paradise = marker([ this.var_position.lat,this.var_position.lon ], {
+      icon: icon({
+        iconSize: [ 25, 41 ],
+        iconAnchor: [ 13, 41 ],
+        iconUrl: 'leaflet/marker-icon.png',
+        shadowUrl: 'leaflet/marker-shadow.png'
+      })
+    });
+      this.var_coord.push(this.paradise)
+    
+    }
+  }
+  
+  goto(n) {
+    this.step = n
+  }
+
+  
   search_market(search?: any ) {
     this.loading = true;
     let search_data = {
@@ -130,23 +149,6 @@ export class AccueilMarcheComponent implements OnInit {
     } else {this.var_res = false;}
   }
 
-  fonction_locatlisation() {
-    for (var i=0; i < this.search_result.length ; i++) {
-      this.var_position = this.search_result[i]['location'];
-      this.var_coord.push({lat:this.var_position.lat, lon:this.var_position.lon});
-       // Marker for the parking lot at the base of Mt. Ranier trails
-       this.var_parasite = marker([ this.var_position.lat,this.var_position.lon ], {
-        icon: icon({
-          iconSize: [ 25, 41 ],
-          iconAnchor: [ 13, 41 ],
-          iconUrl: 'leaflet/marker-icon.png',
-          shadowUrl: 'leaflet/marker-shadow.png'
-        })
-      });
-
-    }
-
-  }
   list_departement() {
     return this.market.departement().subscribe(response => {
       this.liste_departement = response;
