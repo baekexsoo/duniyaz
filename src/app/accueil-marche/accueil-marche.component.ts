@@ -4,6 +4,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { icon, marker, featureGroup, Map, point, polyline, latLng, LatLng, tileLayer } from 'leaflet';
 import { formatDate } from '@angular/common';
+import * as L from 'leaflet';
+// import '../../node_modules/leaflet.coordinates/dist/Leaflet.Coordinates-0.1.5.src.js';
+
 
 @Component({
   selector: 'app-accueil-marche',
@@ -17,10 +20,11 @@ export class AccueilMarcheComponent implements OnInit {
   streetMaps: any;
   wMaps: any
 
-
+var_popup: any;
   var_position: any;
-  var_coord = []
-  //objet_popup: any;
+  objet_popup: any;
+  tab_popup = [];
+  var_coord = [];
   // Marker for the parking lot at the base of Mt. Ranier trails
   paradise: any;
   // Layers control object with our two base layers and the three overlay layers
@@ -33,7 +37,7 @@ export class AccueilMarcheComponent implements OnInit {
       'Mt. Rainier Paradise Start': this.var_coord,
     }
   };
-
+  caretPos: number = 0;
   options: any;
   search_result: any;
   step = 0;
@@ -52,6 +56,7 @@ export class AccueilMarcheComponent implements OnInit {
     ville: ''
   };
   dateString: any;
+  popup_msg = 'hello pop up!'
 
   constructor(public market: MarketService, private router: Router, private calendar: NgbCalendar) {
   }
@@ -64,17 +69,21 @@ export class AccueilMarcheComponent implements OnInit {
     this.goto(0);
   }
 
+  // fonction qui charge plusieurs points sur les maps
   onMapReady(map: Map) {
-
+    
     const group = featureGroup(this.var_coord);
-
     group.addTo(map);
     map.fitBounds(group.getBounds());
-    group.bindPopup('test')
+
+    // module du popup
+    group.bindPopup('');
   }
+  
   fonction_locatlisation() {
     for (var i = 0; i < this.search_result.length; i++) {
       this.var_position = this.search_result[i]['location'];
+
       // Marker for the parking lot at the base of Mt. Ranier trails
       this.paradise = marker([this.var_position.lat, this.var_position.lon], {
         icon: icon({
@@ -84,44 +93,46 @@ export class AccueilMarcheComponent implements OnInit {
           shadowUrl: 'leaflet/marker-shadow.png'
         })
       });
-      this.var_coord.push(this.paradise)
-     /* if (this.search_result[i]['products'] !== undefined) {
-      for (var j=0; j < this.search_result[i]['products'].length; i++) {
-        this.objet_popup= {
-
-          commune: this.search_result[i]['commune'],
-          periode: this.search_result[i]['periode'],
-          arrondissement: this.search_result[i]['arrondissement'],
-          name: this.search_result[i]['name'],
-          departement: this.search_result[i]['departement'],
-          products: {
-            val:  this.search_result[i]['products'][j],
-            val1: "Igname",
-            val2: "Maïs",
-            val3: "Coton"
-          },
-          nextMarketDay: this.search_result[i]['nextMarketDay']
-        }
-      
+      this.objet_popup = {
+        commune: this.search_result[i]['commune'],
+        arrondissement: this.search_result[i]['arrondissement'],
+        countryName: this.search_result[i]['countryName'],
+        name: this.search_result[i]['name'],
+        departement: this.search_result[i]['departement'],
+        nextMarketDay: this.search_result[i]['nextMarketDay'],
+        location: this.paradise
       }
-      }*/
+
+      this.var_coord.push(this.paradise);
+      this.tab_popup.push(this.objet_popup);
     }
-// console.log(this.objet_popup)
-
     // Define our base layers so we can reference them multiple times
-    this.streetMaps = tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    this.streetMaps = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       detectRetina: true,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
-    this.wMaps = tileLayer('http://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
+    this.wMaps = L.tileLayer('http://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
       detectRetina: true,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
 
+    // Layers control object with our two base layers and the three overlay layers
+    this.layersControl = {
+      baseLayers: {
+        'Street Maps': this.streetMaps,
+        'Wikimedia Maps': this.wMaps
+      },
+      overlays: {
+
+        'Mt. Rainier Paradise Start': this.paradise,
+
+      }
+    }
+    // variable qui affiche les maps
     this.options = {
       layers: [this.streetMaps],
       zoom: 7,
-      center: latLng([11.0138607025146, 3.76263880729675])
+      center: L.latLng([11.0138607025146, 3.76263880729675])
     };
 
   }
