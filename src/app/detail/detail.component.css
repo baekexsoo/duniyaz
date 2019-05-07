@@ -1,0 +1,14 @@
+.pos_titr {
+    margin-left:71%;
+}
+@media (max-width: 575.98px) {   
+    .pos_titr {
+        display: -webkit-box;
+        margin-left: 0%;
+    }
+    }
+
+   ul li{
+
+        padding-left:4%;
+    }

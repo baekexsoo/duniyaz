@@ -61,6 +61,7 @@ import { from } from 'rxjs';
 import { ExportateursComponent } from './exportateurs/exportateurs.component';
 import { TransformateursComponent } from './transformateurs/transformateurs.component';
 import { UnionProducteurComponent } from './union-producteur/union-producteur.component';
+import { DetailComponent } from './detail/detail.component';
 //import { OngComponent } from './ong/ong.component';
 //import { OngService } from '../providers/ong/ong.service';
 //import { ProgrammesComponent } from './programmes/programmes.component';
@@ -86,6 +87,7 @@ const appRoutes: Routes = [
   { path: 'distributeurs', component: DistributeursComponent},
   { path: 'culture', component: CulturesComponent},
   { path: 'producteurs', component: UnionProducteurComponent },
+  { path: 'detail', component: DetailComponent },
 //  { path: '', redirectTo: 'accueil', pathMatch: 'full'},
 //  { path: 'signin/form/sms', component: SmsCreatComponent},
 //  { path: 'update/activate/:ref?', component: UpdatePwdComponent},
@@ -122,6 +124,7 @@ const appRoutes: Routes = [
     TransformateursComponent,
     DistributeursComponent,
     UnionProducteurComponent,
+    DetailComponent,
 //    CulturesComponent,
 //    OngComponent,
 //    ProgrammesComponent,
