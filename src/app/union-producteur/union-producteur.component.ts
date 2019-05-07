@@ -21,7 +21,7 @@ export class UnionProducteurComponent implements OnInit {
     this.loading=true;
     return this.unions.list().subscribe( res => {
       this.list_union = res;
-     
+      this.loading=false;
     })
   }
 
