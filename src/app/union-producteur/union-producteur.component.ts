@@ -9,6 +9,7 @@ import { ProducteursService } from '../../providers/union_producteur/producteurs
 export class UnionProducteurComponent implements OnInit {
 
   list_union: any;
+  loading=false;
 
   constructor(private unions: ProducteursService) { }
 
@@ -17,8 +18,10 @@ export class UnionProducteurComponent implements OnInit {
   }
 
   liste() {
+    this.loading=true;
     return this.unions.list().subscribe( res => {
       this.list_union = res;
+     
     })
   }
 

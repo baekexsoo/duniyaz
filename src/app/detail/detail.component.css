@@ -8,7 +8,12 @@
     }
     }
 
-   ul li{
+ table {
+  border-collapse: collapse;
+  width: 100%;
+}
 
-        padding-left:4%;
-    }
+  
+  
+
+tr:nth-child(even) {background-color: #f2f2f2;}
