@@ -15,11 +15,19 @@ const httpOptions = {
 })
 export class ProducteursService {
 
-  constructor(private Api:Api) { }
+  Base_url = 'http://api.dev.duniyadata.com/dunya/';
+
+  constructor(private Api:Api, private http: HttpClient) { }
 
   list(): Observable<any>{
     let url = 'unions';
     return this.Api.get(url, httpOptions);
   }
 
+ 
+
 }
+
+
+
+

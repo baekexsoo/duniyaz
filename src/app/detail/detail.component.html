@@ -14,16 +14,16 @@
 <div class="row align-items-md-center u-space-2 d-none d-sm-block">
 
         <h5 class=" text-primary "   style="margin:0 0 40px 100px;">
-          <span >Groupement des Exploitants Agricoles du Bénin (GEA- BENIN)</span>
+          <span >{{mydetail.name}}</span>
         
         </h5>
       
 
       <div class="container" style=" background-color: #f2f2f2; padding-top: 10px;" >
       
-          <div style="margin:0 0 0px 880px; ">
+          <div style="margin:0 0 0px 880px; " >
             
-            <button style="padding:5px 25px 5px 25px;font-weight: bold;" class="btn btn-primary">   <a href="" >
+            <button style="padding:5px 25px 5px 25px;font-weight: bold;" class="btn btn-primary">   <a href="{{mydetail.website}}" >
                      Aller sur le site web
                   </a></button>
                 </div>
@@ -37,42 +37,42 @@
 
             <tr>
             <th>Fédération des producters:</th>
-            <td> Plateforme Nationale des Organisations Paysannes et de 
-              Producteurs Agricoles du Bénin (PNOPPA-Bénin)</td>
+            <td>{{mydetail.parent}}</td>
             </tr>
 
 
             <tr>
               <th>Téléphone:</th>
-              <td>20214321</td>
+              <td>{{mydetail.contacts}}</td>
               </tr>
 
 
               <tr>
                 <th>Boite postal:</th>
-                <td>Porto-Novo, 01 BP 1891</td>
+                <td>{{mydetail.postBox}}</td>
                 </tr>
 
 
                 <tr>
                   <th>Responsable:</th>
-                  <td>Mr Landry BANKOLE</td>
-                  </tr>
+                  <td>{{mydetail.responsibleName}}</td>
+                </tr>
+                 
 
                   <tr>
                     <th>Adresse géographique :</th>
-                    <td>Sèmè-Kpodji, Djérègbé, Immeuble Mme BELLO Falilatou</td>
+                    <td>{{mydetail.seat}}</td>
                     </tr>
 
 
                     <tr>
                       <th>Produits:</th>
-                      <td>mais, sorgho, riz, mil</td>
+                      <td>{{mydetail.products}}</td>
                       </tr>
 
                       <tr>
                         <th>Mail:</th>
-                        <td>geabenin@yahoo.fr, geabenin@geabenin.org</td>
+                        <td>{{mydetail.mail}}</td>
                         </tr>
 
 

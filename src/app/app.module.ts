@@ -55,6 +55,7 @@ import { DistributeursComponent } from './distributeurs/distributeurs.component'
 import { CultureService } from '../providers/culture/culture.service';
 
 
+
 import { OngService } from '../providers/ong/ong.service';
 //import { CultureService } from '../providers/culture/culture.service';
 import { from } from 'rxjs';
@@ -160,6 +161,7 @@ const appRoutes: Routes = [
   CultureService,
   ProgrammeService,
   OngService
+  
   ],
   bootstrap: [AppComponent]
 })
