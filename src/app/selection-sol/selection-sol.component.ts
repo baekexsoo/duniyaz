@@ -8,7 +8,6 @@ import {DataAnalys} from '../../providers/mock/prediction';
 import { ActivatedRouteSnapshot, ActivatedRoute } from '@angular/router';
 import { format } from 'url';
 import { removeAllListeners, removeListener } from 'cluster';
-import { removeDebugNodeFromIndex } from '@angular/core/src/debug/debug_node';
 
 @Component({
   selector: 'app-selection-sol',

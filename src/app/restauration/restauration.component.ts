@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UtilisateurService } from '../../providers/utilisateur/utilisateur.service';
-import { load } from '@angular/core/src/render3/instructions';
 import {WindowRefService} from './../window-ref.service';
 
 @Component({

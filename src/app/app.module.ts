@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import {WindowRefService} from './window-ref.service';
 import {NgxPaginationModule} from 'ngx-pagination';
@@ -13,7 +12,7 @@ import localeFr from '@angular/common/locales/fr';
 import localeFrExtra from '@angular/common/locales/extra/fr';
 import { AngularPaginatorModule } from 'angular-paginator';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-// import * as $ from 'jquery';
+import * as $ from 'jquery';
 
 
 
@@ -137,7 +136,6 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule,
     NgxPaginationModule,
-    HttpModule,
     NgbModule,
     Ng2SearchPipeModule,
     AngularPaginatorModule,

@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { NgbDateParserFormatter, NgbDateStruct } from "@ng-bootstrap/ng-bootstrap";
+import * as $ from 'jquery';
 
 function padNumber(value: number) {
     if (isNumber(value)) {
